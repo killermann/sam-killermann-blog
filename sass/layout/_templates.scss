@@ -1,0 +1,42 @@
+header#masthead {
+    @extend .grid;
+}
+
+div#primary {
+    padding:4vw;
+}
+
+section#content {
+    @extend .grid;
+    @extend .grid--full;
+    @extend .medium-grid--fit;
+    @extend .grid--guttersXl;
+
+    & > main, & > aside{
+        @extend .grid-cell;
+    }
+
+    & > aside {
+        flex: 0 0 38.196601125vw;
+    }
+}
+
+.single section.entry-content {
+    @extend .grid;
+    @extend .grid--full;
+    @extend .large-grid--fit;
+    @extend .grid--guttersXl;
+
+    & > main, & > aside{
+        @extend .grid-cell;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1030px) {
+    .single section#content, .single section.entry-content {
+        & > aside {
+            flex: 0 0 calc(38.196601125vw / 2);
+        }
+    }
+}

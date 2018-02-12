@@ -36,6 +36,11 @@ Based on this https://philipwalton.github.io/solved-by-flexbox/demos/grids/
 
 .grid--center {
   align-items: center;
+  justify-content: center;
+}
+
+.grid--alignCenter {
+    align-items:center;
 }
 
 .grid--justifyCenter {
@@ -93,10 +98,10 @@ Based on this https://philipwalton.github.io/solved-by-flexbox/demos/grids/
 }
 
 .grid--guttersXl {
-  margin: -2em 0 2em -2em;
+  margin: -4vw 0 4vw -4vw;
 }
 .grid--guttersXl > .grid-cell {
-  padding: 2em 0 0 2em;
+  padding: 4vw 0 0 4vw;
 }
 
 /* Small screens */

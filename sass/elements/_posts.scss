@@ -1,0 +1,28 @@
+.single article.type-post {
+	h2 {
+	}
+
+	.post-thumbnail {
+		margin-bottom:2vw;
+	}
+
+	.entry-content {
+		main > p:first-of-type {
+			margin-top:0;
+			font-size:1.4em;
+			line-height:1.2;
+			font-weight:bold;
+			font-family:$sans-serif;
+		}
+
+		main {
+			p {
+				font-family:$serif;
+			}
+
+			blockquote {
+				font-family:$sans-serif;
+			}
+		}
+	}
+}

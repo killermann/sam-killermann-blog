@@ -1,9 +1,7 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
+	@extend .grid;
+	@extend .grid--center;
+	
 	ul {
 		display: none;
 		list-style: none;

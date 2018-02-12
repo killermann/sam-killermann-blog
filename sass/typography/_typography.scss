@@ -8,6 +8,8 @@ textarea {
 	font-family: $font__main;
 	@include font-size(1);
 	line-height: $font__line-height-body;
+	font-size:calc(16px + .5vw);
+	text-rendering: optimizelegibility;
 }
 
 @import "headings";

@@ -20,3 +20,35 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+#posts {
+	#main {
+		display:flex;
+		flex-wrap: wrap;
+		@extend .grid;
+	}
+
+	article.type-post {
+		margin:2vw;
+		@extend .grid-cell;
+		display:flex;
+		flex-direction:column;
+
+		.entry-title {
+			font-family:$serif;
+			font-size:1.2em;
+			margin:0;
+		}
+		.entry-content {
+			margin:0;
+			max-height:200px;
+			overflow:hidden;
+			line-height:1.2;
+
+			.entry-meta {
+				margin:.6em auto;
+				font-size:.6em;
+			}
+		}
+	}
+}

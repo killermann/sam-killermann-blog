@@ -1,4 +1,15 @@
-nav#site-navigation {
+.main-navigation {
+	@extend .grid;
+	@extend .grid--center;
+	font-weight:bold;
+	align-items: stretch;
+	align-self:stretch;
+
+	.menu-main-nav-container {
+		display:flex;
+		align-self:stretch;
+	}
+
 	button {
 		background:rgba(255,255,255,.9);
 		padding:2vw;
@@ -20,10 +31,6 @@ nav#site-navigation {
 			color:#000;
 		}
 	}
-}
-.main-navigation {
-	@extend .grid;
-	@extend .grid--center;
 
 	ul {
 		display: none;
@@ -35,6 +42,7 @@ nav#site-navigation {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			position: absolute;
 			top: 100%;
+			margin:0;
 			left: -999em;
 			z-index: 99999;
 
@@ -51,7 +59,6 @@ nav#site-navigation {
 			}
 
 			a {
-				padding:1vw 4vw;
 			}
 
 			:hover > a,
@@ -70,21 +77,60 @@ nav#site-navigation {
 	}
 
 	li {
-		&:hover > a,
-		&.focus > a {
-		}
-	}
+		padding:0;
+		margin:0;
+		a {
+			display: flex;
+			position:relative;
+			align-self: stretch;
+			padding:1vw;
+			text-decoration: none;
+			transition:none;
+			color:rgba(255,255,255,.7);
 
-	a {
-		display: flex;
-		padding:2vw;
-		text-decoration: none;
+			&:after {
+				display:block;
+				content: "";
+				height:8px;
+				width:90%;
+				left:5%;
+				position:absolute;
+				bottom:-10px;
+				opacity:0;
+				background-repeat: no-repeat;
+				background-position:center;
+				background-size:contain;
+				background-image:url(img/sk-underline-1.svg);
+				transition:all .1s ease-in-out;
+			}
+
+			&:hover {
+				color:#fff;
+
+				&:after {opacity:1; bottom:5px;}
+			}
+		}
+
+		&:nth-of-type(2) a:after {background-image:url(img/sk-underline-2.svg);}
+		&:nth-of-type(3) a:after {background-image:url(img/sk-underline-3.svg);}
+		&:nth-of-type(4) a:after {background-image:url(img/sk-underline-4.svg);}
+		&:nth-of-type(5) a:after {background-image:url(img/sk-underline-5.svg);}
+		&:nth-of-type(6) a:after {background-image:url(img/sk-underline-2.svg);}
+		&:nth-of-type(7) a:after {background-image:url(img/sk-underline-3.svg);}
+		&:nth-of-type(8) a:after {background-image:url(img/sk-underline-4.svg);}
+		&:nth-of-type(9) a:after {background-image:url(img/sk-underline-5.svg);}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color:#fff !important;
+		&:after{
+			background-image:url(img/sk-arrow-down.svg) !important;
+			opacity:1!important;
+			bottom:5px!important;
+		}
 	}
 }
 
@@ -100,10 +146,8 @@ nav#site-navigation {
 	}
 	.main-navigation ul {
 		display: flex;
-
-		a {
-			color:#fff;
-		}
+		align-self:stretch;
+		align-items:center;
 	}
 }
 

@@ -1,5 +1,15 @@
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
+
+	.widget-title {
+		font-size:1.1em;
+		font-weight:900;
+	}
+
+	ul {
+		margin-left:0;
+		padding-left:1em;
+	}
 
 	/* Make sure select elements fit in widgets. */
 	select {

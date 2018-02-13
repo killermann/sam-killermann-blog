@@ -1,3 +1,15 @@
 @import "buttons";
 
 @import "fields";
+
+form.search-form {
+	display:flex;
+
+	label {
+		position:relative;
+	}
+
+	input[type=search] {
+		width:130px;
+	}
+}

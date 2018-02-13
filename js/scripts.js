@@ -1,4 +1,3 @@
-
 /*
     SHIFTING COLORS ~ Chameleon
     Written by King'ori
@@ -13,16 +12,13 @@ Chameleon.duration = 6; // should match the transition duration in css
 
 Chameleon.init = function() {
 
-  // Check if we support CSS transitions on the browser
-  if ( Modernizr.csstransitions ) {
-
     // Grab the body, we will be using it a lot
     Chameleon.bodyElement = jQuery("body");
 
     // ~~ faster than Math.floor() -> http://rocha.la/JavaScript-bitwise-operators-in-practice
     Chameleon.colorT = 0;
     Chameleon.changeColor();
-  }
+
   // Defaults to @orange and @skyblue on hover if we aren't doing this.
 };
 
@@ -34,11 +30,7 @@ Chameleon.changeColor = function() {
   setTimeout( Chameleon.changeColor, Chameleon.duration * 1000 );
 };
 
-
-$( document ).ready(function() {
-
-	// Get ready, set ... GO!
-	Chameleon.init();
-});
+// Get ready, set ... GO!
+Chameleon.init();
 
 /* end Chameleon */

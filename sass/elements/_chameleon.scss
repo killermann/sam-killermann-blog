@@ -1,0 +1,106 @@
+
+
+/* Chameleon Links */
+
+a {
+	text-decoration:none;
+	color:$color__primary;
+    -webkit-transition: color 6.0s linear, border-color 6.0s linear;
+    -moz-transition: color 6.0s linear, border-color 6.0s linear;
+    -o-transition: color 6.0s linear, border-color 6.0s linear;
+    transition: color 6.0s linear, border-color 6.0s linear;
+
+
+	&:hover {
+		text-decoration:underline;
+	}
+    /* on click */
+	&:active {
+		color:$teal;
+	}
+
+    &:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+.entry-content a {
+	border-bottom:2px solid $color__primary;
+    transition: color 6.0s linear, border-color 6.0s linear;
+
+    &:hover {
+		border-width:3px;
+		text-decoration:none;
+	}
+
+}
+
+/* CHAMELEON */
+
+.chameleon {
+	-webkit-transition: color 6.0s linear, border-color 6.0s linear, background-color 6.0s linear;
+    -moz-transition: color 6.0s linear, border-color 6.0s linear, background-color 6.0s linear;
+    -o-transition: color 6.0s linear, border-color 6.0s linear, background-color 6.0s linear;
+    transition: color 6.0s linear, border-color 6.0s linear, background-color 6.0s linear;
+}
+
+.color1 a, .color .entry-content a  { color: $purple;  border-color:$purple}
+.color2 a, .color .entry-content a  { color: $blue;  border-color:$blue}
+.color3 a, .color .entry-content a  { color: $light-blue;  border-color:$light-blue}
+.color4 a, .color .entry-content a  { color: $teal;  border-color:$teal}
+.color5 a, .color .entry-content a {color: $light-green; border-color:$light-green}
+.color6 a, .color .entry-content a  { color:$green;  border-color:$green}
+.color7 a, .color .entry-content a  { color:$light-orange;  border-color:$light-orange}
+.color8 a, .color .entry-content a  { color: $orange;  border-color:$orange}
+.color9 a, .color .entry-content a  { color: $bright-red;  border-color:$bright-red}
+.color10 a, .color .entry-content a  { color: $red;  border-color:$red}
+.color11 a, .color .entry-content a  { color: $pink;  border-color:$pink}
+.color12 a, .color .entry-content a  { color: $fuschia;  border-color:$fuschia}
+
+.chameleon-bg {background-color:$color__primary; a {color:#fff; text-decoration:underline;}}
+.color1 .chameleon-bg  	{background-color:$purple}
+.color2 .chameleon-bg  	{background-color:$blue}
+.color3 .chameleon-bg  	{background-color:$light-blue}
+.color4 .chameleon-bg  	{background-color:$teal}
+.color5 .chameleon-bg 	{background-color:$light-green}
+.color6 .chameleon-bg  	{background-color:$green}
+.color7 .chameleon-bg  	{background-color:$light-orange}
+.color8 .chameleon-bg  	{background-color:$orange}
+.color9 .chameleon-bg  	{background-color:$bright-red}
+.color10 .chameleon-bg  {background-color:$red}
+.color11 .chameleon-bg  {background-color:$pink}
+.color12 .chameleon-bg  {background-color:$fuschia}
+
+.chameleon-color {color:$color__primary;}
+.color1 .chameleon-color  { color: $purple;}
+.color2 .chameleon-color  { color: $blue;}
+.color3 .chameleon-color  { color: $light-blue;}
+.color4 .chameleon-color  { color: $teal;}
+.color5 .chameleon-color {color: $light-green;}
+.color6 .chameleon-color  { color:$green;}
+.color7 .chameleon-color  { color:$light-orange;}
+.color8 .chameleon-color  { color: $orange;}
+.color9 .chameleon-color  { color: $bright-red;}
+.color10 .chameleon-color  { color: $red;}
+.color11 .chameleon-color  { color: $pink;}
+.color12 .chameleon-color  { color: $fuschia;}
+
+
+.chameleon-border {border-color:$color__primary;}
+.color1 .chameleon-border  {border-color:$purple}
+.color2 .chameleon-border  {border-color:$blue}
+.color3 .chameleon-border  {border-color:$light-blue}
+.color4 .chameleon-border  {border-color:$teal}
+.color5 .chameleon-border {border-color:$light-green}
+.color6 .chameleon-border  {border-color:$green}
+.color7 .chameleon-border  {border-color:$light-orange}
+.color8 .chameleon-border  {border-color:$orange}
+.color9 .chameleon-border  {border-color:$bright-red}
+.color10 .chameleon-border  {border-color:$red}
+.color11 .chameleon-border  {border-color:$pink}
+.color12 .chameleon-border  {border-color:$fuschia}

@@ -1,0 +1,21 @@
+header#masthead {
+	display:flex;
+	justify-content: space-between;
+	.site-branding {
+		padding:2vw;
+		line-height:1.1;
+
+		h1, p, span {
+			margin:0;
+		}
+
+		a {
+			text-decoration:none;
+		}
+
+		.site-title {
+			font-size:1.2em;
+			font-weight:900;
+		}
+	}
+}

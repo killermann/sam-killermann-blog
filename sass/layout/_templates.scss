@@ -15,10 +15,6 @@ section#content {
     & > main, & > aside{
         @extend .grid-cell;
     }
-
-    & > aside {
-        flex: 0 0 38.196601125vw;
-    }
 }
 
 .single section.entry-content {
@@ -32,11 +28,18 @@ section#content {
     }
 }
 
+/* Medium screens */
+@media (min-width: 768px) {
+    section#content > aside {
+        flex: 0 0 calc(38.196601125vw / 2);
+    }
+}
+
+
 /* Large screens */
 @media (min-width: 1030px) {
-    .single section#content, .single section.entry-content {
-        & > aside {
-            flex: 0 0 calc(38.196601125vw / 2);
-        }
+
+    div#primary {
+        padding:4vw 4vw 0;
     }
 }

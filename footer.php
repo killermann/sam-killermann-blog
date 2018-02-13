@@ -14,7 +14,7 @@
 		</section><!-- #content -->
 	</div><!--/#primary-->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="chameleon chameleon-bg site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sam-killermann-blog' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -28,6 +28,10 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+<script
+  src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
 
 <?php wp_footer(); ?>
 

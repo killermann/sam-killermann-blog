@@ -2,7 +2,8 @@ a {
 	color: $color__link;
 
 	&:visited {
-		color: $color__link-visited;
+		opacity:$color__text-main;
+		text-decoration:underline;
 	}
 	&:hover,
 	&:focus,

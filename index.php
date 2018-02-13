@@ -12,10 +12,74 @@
  * @package samkillermannblog
  */
 
+
+ global $wp_query;
+ $modifications = array();
+ if( !empty( $_GET['catname'] ) ) {
+ 	$modifications['category_name'] = $_GET['catname'];
+ }
+
+ $args = array_merge(
+ 	$wp_query->query_vars,
+ 	$modifications
+ );
+
+query_posts( $args );
+
 get_header(); ?>
 
-	<div id="posts" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="posts chameleon chameleon-border">
+
+			<nav class="post-filters">
+				<form >
+					<div class="post-filter">
+						<label for="orderby">Showing</label>
+						<select class="chameleon chameleon-color"  id="order" name="order" onchange="this.form.submit()">
+							<?php
+								$order_options = array(
+									'DESC' => 'The Latest',
+									'ASC' => 'The Oldest'
+								);
+								foreach( $order_options as $value => $label ) {
+									echo "<option ".selected( $_GET['order'], $value )." value='$value'>$label</option>";
+								}
+							?>
+						</select>
+					</div>
+					<div class="post-filter">
+						<label for="catname">Posts about</label>
+						<select class="chameleon chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
+							<?php
+								$order_options = array(
+									'' => 'All Topics',
+									'diy' => 'DIY',
+									'happiness' => 'Happiness',
+									'technology' => 'Technology',
+									'travel' => 'Travel'
+								);
+								foreach( $order_options as $value => $label ) {
+									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";
+								}
+							?>
+						</select>
+					</div>
+					<div class="post-filter">
+						<label for="catname">For</label>
+						<select class="chameleon chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
+							<?php
+								$order_options = array(
+									'' => 'Everyone',
+									'patrons-only' => 'Patrons Only'
+								);
+								foreach( $order_options as $value => $label ) {
+									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";
+								}
+							?>
+						</select>
+					</div>
+				</form>
+			</nav><!--/post-filters-->
+
 
 		<?php
 		if ( have_posts() ) :
@@ -31,7 +95,7 @@ get_header(); ?>
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content-loop', get_post_format() );
 
 			endwhile;
 
@@ -44,7 +108,6 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 get_sidebar();

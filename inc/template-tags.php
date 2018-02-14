@@ -59,17 +59,17 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'sam-killermann-blog' ) );
+			$categories_list = get_the_category_list( esc_html__( ' ', 'sam-killermann-blog' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'sam-killermann-blog' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'sam-killermann-blog' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'sam-killermann-blog' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'sam-killermann-blog' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'sam-killermann-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'sam-killermann-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 

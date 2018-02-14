@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('color0'); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sam-killermann-blog' ); ?></a>
 
@@ -50,7 +50,14 @@
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
+
+			<section id="site-access" class="secondary-navigation">
+				<a id="sign-in" href="" alt="Sign in">Sign in</a>
+				<span>or</span>
+				<a id="sign-up" href="" alt="Sign up">Sign up</a>
+			</section>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="primary" class="content-area">

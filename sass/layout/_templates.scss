@@ -3,7 +3,7 @@ header#masthead {
 }
 
 div#primary {
-    padding:4vw;
+    padding:4vw 4vw 0;
 }
 
 section#content {
@@ -11,6 +11,8 @@ section#content {
     @extend .grid--full;
     @extend .medium-grid--fit;
     @extend .grid--guttersXl;
+
+    margin-bottom:0;
 
     & > main, & > aside{
         @extend .grid-cell;
@@ -44,7 +46,6 @@ section#content {
 @media (min-width: 1030px) {
 
     section#content {
-        margin-bottom:0;
 
         & > main {
             padding-bottom:4vw;

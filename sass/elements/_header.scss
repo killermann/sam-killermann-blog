@@ -1,8 +1,10 @@
 header#masthead {
 	display:flex;
 	justify-content: space-between;
-	box-shadow:inset 0 -2px 5px -2px rgba(0,0,0,.3);
-	background:$color__primary;
+	background-color:$color__primary;
+	transition:none;
+	transition:background 6s linear;
+	@extend .wiggly-border;
 	@extend .chameleon-bg;
 
 	.site-branding {

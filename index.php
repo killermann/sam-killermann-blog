@@ -28,7 +28,7 @@ query_posts( $args );
 
 get_header(); ?>
 
-		<main id="main" class="posts chameleon chameleon-border">
+		<main id="main" class="loop chameleon chameleon-border">
 
 			<nav class="post-filters">
 				<form >

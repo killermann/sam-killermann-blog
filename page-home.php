@@ -13,7 +13,7 @@ get_header(); ?>
 					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional comedian / author / activist person for almost a decade.
 				</p>
 
-				<p>Oh, and before you ask: yes, "Killermann" is my real last name. (sorry<a class="asterisk" href="#asterisk">&#42;</a>)</p>
+				<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a class="asterisk" href="#asterisk">&#42;</a>)</p>
 
 			</div>
 			<div class="hero--image">
@@ -40,27 +40,90 @@ get_header(); ?>
 			</div><!--/buttons-->
 		</div><!--/hero--cta-->
 	</section><!--/hero-->
-	<section id="latest" class="grid">
-		<aside class="grid-cell">
-			Categories
-		</aside>
-		<main class="loop grid-cell">
-			<h2>Recently Posted</h2>
-			<?php $home_query = new WP_Query(
+	<section id="latest" class="grid grid--full large-grid--fit">
+		<main class="grid-cell">
+			<h2 class="page-subtitle">The Latest</h2>
+			<?php $home_latest = new WP_Query(
 				array(
-					'posts_per_page' => 2,
+					'posts_per_page' => 1,
+					'post_type' => 'post',
+
+					'category__not_in' => 'patrons-only',
+					'orderby' => 'published',
+					'order' => 'DESC'
+				)
+			);
+
+			while($home_latest->have_posts()) : $home_latest->the_post();?>
+
+			<article id="post-<?php the_ID(); ?>" <?php post_class('latest--single'); ?>>
+				<div class="chameleon chameleon-bg">
+					<?php sam_killermann_blog_post_thumbnail(); ?>
+				</div>
+
+				<header class="entry-header">
+					<h2 class="entry-title">
+						<a href="<?php esc_url( get_permalink() );?>" rel="bookmark">
+							<?php the_title();?>
+						</a>
+					</h2>
+					<?php
+						sam_killermann_blog_posted_on();
+						sam_killermann_blog_posted_by();
+					?>
+				</header><!-- .entry-header -->
+
+				<section class="entry-content">
+					<?php
+					if ( 'post' === get_post_type() ) : ?>
+					<aside class="entry-meta">
+
+					</aside><!-- .entry-meta -->
+					<main>
+						<?php
+						endif;
+							the_content( sprintf(
+								wp_kses(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'sam-killermann-blog' ),
+									array(
+										'span' => array(
+											'class' => array(),
+										),
+									)
+								),
+								get_the_title()
+							) );
+
+
+						?>
+					</main>
+				</section><!-- .entry-content -->
+
+				<footer class="entry-footer">
+				</footer><!-- .entry-footer -->
+			<?php endwhile; wp_reset_postdata(); ?>
+
+
+		</main>
+		<aside class="loop grid-cell">
+			<h2 class="page-subtitle">Recent Hits</h2>
+			<?php $home_recent = new WP_Query(
+				array(
+					'posts_per_page' => 3,
+					'offset' => '1',
 					'post_type' => 'post',
 					'orderby' => 'published',
 					'order' => 'DESC'
 				)
 			);
 
-			while($home_query->have_posts()) : $home_query->the_post();
+			while($home_recent->have_posts()) : $home_recent->the_post();
 
 				get_template_part( 'template-parts/content-loop', get_post_format() );
 
 			endwhile; wp_reset_postdata(); ?>
-		</main>
+		</aside>
 	</section>
 	<section id="subscribe" class="subscribe--home">
 		<a href="" alt="">Join my mailing list</a>

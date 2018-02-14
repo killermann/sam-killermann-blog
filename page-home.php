@@ -5,34 +5,41 @@ Template Name: Homepage
 
 get_header(); ?>
 
-	<section id="hero" class="grid grid--full grid--center medium-grid--fit chameleon chameleon-bg">
-		<div class="hero--text grid-cell">
-			<h2>Hi there! I’m Sam and I love making things.</h2>
-			<p>
-				Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional comedian / author / activist person for almost a decade.
-			</p>
-			<p>
-				Here, I write about things like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
-			</p>
-		</div>
-		<div class="hero--image">
-			<img src="http://u1kwao9i7u9xyle2hibw4g6h.wpengine.netdna-cdn.com/wp-content/themes/ipm4theme/library/images/hi-im-sam-bottom-shadow.png"/>
-		</div>
-		<div id="heroCTA" class="grid grid--center grid--fit">
-			<a href="" alt="Sign in" class="button grid-cell">
-				<strong>Sign in</strong>
-				<span>if you already have an account</span>
-			</a>
-			<a href="" alt="" class="button grid-cell">
-				<strong>Sign up</strong>
-				<span>to get access to the Patron-only stuff</span>
-			</a>
+	<section class="hero">
+		<div class="hero--section grid grid--full grid--center medium-grid--fit chameleon chameleon-bg">
+			<div class="hero--text grid-cell">
+				<h2>Hi there! I’m Sam and I love making things.</h2>
+				<p>
+					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional comedian / author / activist person for almost a decade.
+				</p>
 
-				<a href="" alt="Sign in" class="button grid-cell">
-					<strong>Start Reading</strong>
-					<span>if that's more your style</span>
+				<p>Oh, and before you ask: yes, "Killermann" is my real last name. (sorry<a class="asterisk" href="#asterisk">&#42;</a>)</p>
+
+			</div>
+			<div class="hero--image">
+				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle-500.png">
+			</div>
+		</div><!--hero--section-->
+		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon chameleon-border">
+			<p class="chameleon chameleon-color">
+				Here, I write about how to make things like I've made them, by focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
+			</p>
+			<div class="hero--cta--buttons grid grid--center grid--fit">
+				<a href="login" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
+					<strong>Sign in</strong>
+					<span>if you already have an account</span>
 				</a>
-	</section>
+				<a href="sign-up" alt="Sign up" class="button chameleon chameleon-bg grid-cell">
+					<strong>Sign up</strong>
+					<span>to access the Patron-only stuff</span>
+				</a>
+				<a href="posts" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
+					<strong>Start Reading</strong>
+					<span>if you're not big on "accounts"</span>
+				</a>
+			</div><!--/buttons-->
+		</div><!--/hero--cta-->
+	</section><!--/hero-->
 	<section id="latest" class="grid">
 		<aside class="grid-cell">
 			Categories
@@ -82,5 +89,8 @@ get_header(); ?>
 		</section>
 
 	</main><!-- #main -->
+	<div id="asterisk">
+		<p>&#42; Not sorry.</p>
+	</div>
 
 <?php get_footer();

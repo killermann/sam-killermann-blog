@@ -26,7 +26,7 @@ if ( ! function_exists( 'sam_killermann_blog_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'sam-killermann-blog' ),
+			esc_html_x( '%s', 'post date', 'sam-killermann-blog' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -111,26 +111,60 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 	}
 endif;
 
+function sam_killermann_blog_primary_category() {
+
+	// SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
+	// By https://joshuawinn.com/using-yoasts-primary-category-in-wordpress-theme/
+	$category = get_the_category();
+	$useCatLink = true;
+	// If post has a category assigned.
+	if ($category){
+		$category_display = '';
+		$category_link = '';
+		if ( class_exists('WPSEO_Primary_Term') )
+		{
+			// Show the post's 'Primary' category, if this Yoast feature is available, & one is set
+			$wpseo_primary_term = new WPSEO_Primary_Term( 'category', get_the_id() );
+			$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+			$term = get_term( $wpseo_primary_term );
+			if (is_wp_error($term)) {
+				// Default to first category (not Yoast) if an error is returned
+				$category_display = $category[0]->name;
+				$category_link = get_category_link( $category[0]->term_id );
+			} else {
+				// Yoast Primary category
+				$category_display = $term->name;
+				$category_link = get_category_link( $term->term_id );
+			}
+		}
+		else {
+			// Default, display the first category in WP's list of assigned categories
+			$category_display = $category[0]->name;
+			$category_link = get_category_link( $category[0]->term_id );
+		}
+		// Display category
+		if ( !empty($category_display) ){
+		    if ( $useCatLink == true && !empty($category_link) ){
+			echo '<span class="primary-category">';
+			echo '<a href="'.$category_link.'">'.htmlspecialchars($category_display).'</a>';
+			echo '</span>';
+		    } else {
+			echo '<span class="post-category">'.htmlspecialchars($category_display).'</span>';
+		    }
+		}
+	}
+}
+
+
 if ( ! function_exists( 'sam_killermann_blog_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
  *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
  */
 function sam_killermann_blog_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
-	}
-
-	if ( is_singular() ) :
-	?>
-
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
-
-	<?php else : ?>
+	}?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
@@ -142,6 +176,5 @@ function sam_killermann_blog_post_thumbnail() {
 		?>
 	</a>
 
-	<?php endif; // End is_singular().
-}
-endif;
+	<?php
+} endif;

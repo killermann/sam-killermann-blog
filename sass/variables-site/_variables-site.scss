@@ -3,10 +3,3 @@
 @import "structure";
 @import "columns";
 @import "chameleon";
-
-.wiggly-border {
-    background-image:url(img/sk-border-1.svg);
-    background-repeat:repeat-x;
-    background-position:0 calc(100% + 18px);
-    background-size:300px 30px;
-}

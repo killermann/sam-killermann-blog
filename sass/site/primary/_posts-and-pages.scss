@@ -109,6 +109,7 @@
 .post-thumbnail img {
 	width:100%;
 	height:auto;
+	display:block;
 }
 
 .page-links {
@@ -170,7 +171,7 @@
 		}
 	}
 
-	article.type-post {
+	article.type-post.loopCard {
 		margin:20px;
 		border-width:2px;
 		border-radius:2px;
@@ -178,26 +179,31 @@
 
 		.entry-header, .entry-content, .entry-footer {
 			padding:20px 20px 0;
-			h2 {
-				margin:0;
-			}
+		}
+
+		.primary-category a{
+			font-weight:bold;
+			font-size:.8em;
+			line-height:1;
+			color:#000;
 		}
 
 		.entry-title {
 			font-size:calc(1.2em + .3vw);
-			margin:0;
+			margin:.1em auto;
+		}
+
+		.entry-meta {
+			margin:0 auto;
+			font-family:$serif;
+			font-size:.7em;
+			line-height:1;
 		}
 
 		.entry-content {
 			line-height:1.2;
 			margin:0;
-
-			.entry-meta {
-				margin:0 auto;
-				font-family:$serif;
-
-				font-size:.6em;
-			}
+			padding-top:0;
 		}
 
 		.entry-footer {
@@ -205,6 +211,11 @@
 			font-weight:bold;
 			font-size:.6em;
 			margin-bottom:-1px;
+			
+			.cat-links {
+				display:none;
+			}
+
 			a.readMore {
 				color:$color__primary;
 				@extend .chameleon;
@@ -282,11 +293,18 @@ body.page-template-page-home {
 
 	}
 
-	section#hero {
+	section.hero {
 		z-index:9999;
 		position:relative;
-		padding:4vw;
-		@extend .wiggly-border;
+
+		.hero--section {
+			padding:4vw;
+		}
+
+		.hero--image {
+			max-width:40vw;
+			padding:2vw;
+		}
 
 		h2 {
 			font-weight:900;
@@ -302,10 +320,28 @@ body.page-template-page-home {
 		.hero--text {
 			padding:0 4vw;
 			max-width:800px;
+
+			a.asterisk {
+				text-decoration:none;
+				font-size:1.2em;
+			}
 		}
 
-		#heroCTA {
+		.hero--cta {
+
+			border-width:6px;
+			border-style: dashed;
+			border-left:none;
+			border-right:none;
+			border-bottom:none;
 			flex-basis:100%;
+			background:#fff;
+			text-align:center;
+
+			p {
+				max-width:720px;
+				font-size:1.3em;
+			}
 
 			span.grid-cell {
 				font-weight:bold;
@@ -322,17 +358,18 @@ body.page-template-page-home {
 				padding:20px;
 				letter-spacing:.05em;
 				border-radius:2px;
-				background:rgba(255,255,255,.8);
 				text-decoration:none;
 				font-weight:800;
-				box-shadow: 5px 5px 0 0 rgba(0,0,0,.5);
+				box-shadow: 5px 5px 0 0 rgba(0,0,0,.2);
 				transition:none;
-				color:black;
+				transition:background 6s linear;
 				align-self:stretch;
+				text-align:center;
 
 				strong {
 					font-size:1.2em;
 					line-height:1;
+					color:rgba(255,255,255,.95);
 				}
 
 				span {
@@ -347,14 +384,17 @@ body.page-template-page-home {
 				}
 
 				&:hover {
-					background:#fff;
-					box-shadow: 7px 7px 3px 0 rgba(0,0,0,.4);
+					transform:translatey(-1px);
+					box-shadow: 7px 7px 3px 0 rgba(0,0,0,.15), inset 0 20px 40px 0 rgba(255,255,255,.1);
+					align-items: center;
+					strong {color:#fff;}
 				}
 
 				&:active {
-					box-shadow:none;
+					box-shadow:inset 0 20px 40px 0 rgba(0,0,0,.25);
 					background:rgba(0,0,0,.4);
 					color:#000;
+					strong {color:rgba(0,0,0,.5);}
 				}
 
 

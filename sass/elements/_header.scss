@@ -4,7 +4,6 @@ header#masthead {
 	background-color:$color__primary;
 	transition:none;
 	transition:background 6s linear;
-	@extend .wiggly-border;
 	@extend .chameleon-bg;
 
 	.site-branding {

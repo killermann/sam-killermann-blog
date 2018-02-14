@@ -14,19 +14,21 @@
 
 	<header class="entry-header">
 		<?php
+			sam_killermann_blog_primary_category();
+
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		?>
+		<span class="entry-meta">
+			<?php
+				sam_killermann_blog_posted_on();
+				sam_killermann_blog_posted_by();
+			?>
+		</span><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<section class="entry-content">
 		<?php
 		if ( 'post' === get_post_type() ) : ?>
-		<aside class="entry-meta">
-			<?php
-				sam_killermann_blog_posted_on();
-				sam_killermann_blog_posted_by();
-			?>
-		</aside><!-- .entry-meta -->
 		<main>
 			<?php
 			endif;

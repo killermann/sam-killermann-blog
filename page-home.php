@@ -22,7 +22,7 @@ get_header(); ?>
 		</div><!--hero--section-->
 		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon chameleon-border">
 			<p class="chameleon chameleon-color">
-				Here, I write about how to make things like I've made them, by focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
+				Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
 			</p>
 			<div class="hero--cta--buttons grid grid--center grid--fit">
 				<a href="login" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
@@ -62,11 +62,18 @@ get_header(); ?>
 				</div>
 
 				<header class="entry-header">
+
 					<h2 class="entry-title">
-						<a href="<?php esc_url( get_permalink() );?>" rel="bookmark">
+
+						<a alt="<?php the_title();?>" href="<?php the_permalink(); ?>" rel="bookmark">
 							<?php the_title();?>
 						</a>
 					</h2>
+
+					Posted in <?php
+						sam_killermann_blog_primary_category();
+					?> on
+
 					<?php
 						sam_killermann_blog_posted_on();
 						sam_killermann_blog_posted_by();
@@ -107,7 +114,7 @@ get_header(); ?>
 
 		</main>
 		<aside class="loop grid-cell">
-			<h2 class="page-subtitle">Recent Hits</h2>
+			<h2 class="page-subtitle">Super Fresh</h2>
 			<?php $home_recent = new WP_Query(
 				array(
 					'posts_per_page' => 3,

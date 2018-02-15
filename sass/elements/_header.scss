@@ -18,7 +18,7 @@ header#masthead {
 		}
 
 		.site-title {
-			font-size:1.8em;
+			font-size:1.3em;
 			font-weight:900;
 			a {
 				text-decoration:none;
@@ -40,6 +40,16 @@ header#masthead {
 
 		.site-description {
 			color:#000;
+			font-size:.8em;
 		}
 	}
+}
+
+@media (min-width:768px){
+	header#masthead {
+		justify-content:space-between;
+		flex-direction:row;
+		align-items:stretch;
+	}
+
 }

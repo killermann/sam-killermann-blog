@@ -152,6 +152,77 @@ require get_template_directory() . '/inc/template-functions.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+/**
+ * Custom Log-in Page
+*/
+
+function sam_killermann_login_logo() { ?>
+    <style type="text/css">
+		body {
+			background-color:#fff !important;
+			font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+			$serif: Georgia, Cambria,"Times New Roman", Times, "Times New Roman", Times New Roman, "Times",serif !important;
+		}
+
+		#login form {
+			box-shadow:none;
+			border-radius:2px;
+		}
+
+		#login form input[type=submit] {
+			background:#444;
+			border:none;
+			display:block;
+			border-radius:2px;
+			text-shadow:none;
+			font-size:17px;
+			padding:.7em 1em;
+			height:auto;
+			width:auto;
+			box-shadow:3px 3px 0 0 rgba(0,0,0,.2);
+		}
+
+		#login form input[type=submit]:hover {
+			background:#AF6EE2;
+			box-shadow:4px 4px 1px 0 rgba(0,0,0,.2);
+		}
+
+		#login form input[type=submit]:active {
+			background:#000;
+			color:rgba(255,255,255,.8);
+			box-shadow:none;
+		}
+
+		#login form p label {
+			font-weight:bold;
+			font-size:17px;
+			color:#000;
+		}
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/sam-killermann-headshot-doodle-500.png);
+			height:200px;
+			width:200px;
+			background-size:contain;
+			background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+
+		#login h1 a:hover {
+			transform:translateY(-2px);
+		}
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'sam_killermann_login_logo' );
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Back to the Blog';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 /** CLEANING UP HEAD BY REMOVING UNUSED STUFF **/
 

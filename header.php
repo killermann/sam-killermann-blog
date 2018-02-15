@@ -50,13 +50,12 @@
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
-
-			<section id="site-access" class="secondary-navigation">
-				<a id="sign-in" href="" alt="Sign in">Sign in</a>
-				<span>or</span>
-				<a id="sign-up" href="" alt="Sign up">Sign up</a>
-			</section>
 		</nav><!-- #site-navigation -->
+		<nav class="site-access secondary-navigation">
+			<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/login" alt="Sign in">Sign in</a>
+			<span>or</span>
+			<a id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
+		</nav>
 
 	</header><!-- #masthead -->
 

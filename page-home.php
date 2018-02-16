@@ -25,7 +25,7 @@ get_header(); ?>
 				Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
 			</p>
 			<div class="hero--cta--buttons grid grid--center grid--fit">
-				<a href="login" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
+				<a href="wp-admin" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
 					<strong>Sign in</strong>
 					<span>if you already have an account</span>
 				</a>

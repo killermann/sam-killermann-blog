@@ -252,6 +252,35 @@
 				}
 			}
 		}
+		&.tag-patrons-only {
+			position:relative;
+			border-color:#F96854;
+
+			a {color:#F96854 !important; &:hover {color:lighten(#F96854,10%);}}
+
+			footer.entry-footer {
+				background:#F96854;
+
+				a {color:#fff !important;}
+				a.readMore {color:#F96854 !important; &:hover {color:lighten(#F96854,10%);}}
+			}
+			&:before {
+				display:block;
+				content:'Patrons Only';
+				background:#F96854;
+				color:#fff;
+				text-transform:uppercase;
+				padding:.8em;
+				font-size:.6em;
+				font-weight:900;
+				position:absolute;
+				border-radius:2px;
+				top:0;
+				right:0;
+			}
+
+
+		}
 	}
 }
 

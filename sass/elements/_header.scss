@@ -3,11 +3,23 @@ header#masthead {
 	justify-content: space-between;
 	background-color:$color__primary;
 	transition:none;
-	transition:background 6s linear;
+	transition:background-color 6s linear;
 	@extend .chameleon-bg;
 
 	.site-branding {
-		padding:1vw;
+
+		img.custom-logo {
+			max-width:80%; /* For Retina Screens */
+			height:auto;
+
+			&:hover {
+				transform:translateY(-2px);
+			}
+
+			&:active {
+				opacity:.8;
+			}
+		}
 
 		h1, p, span {
 			margin:0;
@@ -18,12 +30,15 @@ header#masthead {
 		}
 
 		.site-title {
+			padding:1vw;
 			font-size:1.3em;
 			font-weight:900;
 			a {
 				text-decoration:none;
 				color:#fff;
-				text-shadow: 3px 3px 0 rgba(0,0,0,.4);
+				text-shadow: 3px
+
+				 0 rgba(0,0,0,.4);
 				transition:none;
 
 				&:hover {

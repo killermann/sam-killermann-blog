@@ -12,17 +12,18 @@
  * @package samkillermannblog
  */
 
+global $wp_query;
 
- global $wp_query;
- $modifications = array();
- if( !empty( $_GET['catname'] ) ) {
- 	$modifications['category_name'] = $_GET['catname'];
- }
+$modifyargs = array();
 
- $args = array_merge(
- 	$wp_query->query_vars,
- 	$modifications
- );
+if( !empty( $_GET['catname'] ) ) {
+	$modifyargs['category_name'] = $_GET['catname'];
+}
+
+$args = array_merge(
+	$wp_query->query_vars,
+	$modifyargs
+);
 
 query_posts( $args );
 
@@ -50,28 +51,14 @@ get_header(); ?>
 						<label for="catname">Posts about</label>
 						<select class="chameleon chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
 							<?php
-								$order_options = array(
+								$cat_options = array(
 									'' => 'All Topics',
 									'diy' => 'DIY',
 									'happiness' => 'Happiness',
 									'technology' => 'Technology',
 									'travel' => 'Travel'
 								);
-								foreach( $order_options as $value => $label ) {
-									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";
-								}
-							?>
-						</select>
-					</div>
-					<div class="post-filter">
-						<label for="catname">For</label>
-						<select class="chameleon chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
-							<?php
-								$order_options = array(
-									'' => 'Everyone',
-									'patrons-only' => 'Patrons Only'
-								);
-								foreach( $order_options as $value => $label ) {
+								foreach( $cat_options as $value => $label ) {
 									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";
 								}
 							?>

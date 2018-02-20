@@ -31,7 +31,7 @@ get_header(); ?>
 				<div class="chameleon-bg chameleon chameleon-color">
 					<h3>
 						Patreon.com
-						<small>$1+ (You Choose)</small>
+						<small>$1+ per Month</small>
 					</h3>
 				</div>
 				<ul>

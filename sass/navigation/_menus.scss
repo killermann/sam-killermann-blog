@@ -50,8 +50,11 @@
 			margin:0;
 			left: -999em;
 			z-index: 99999;
-			border-radius:2px;
+			border-radius:3px;
 			@extend .chameleon;
+			transition: none;
+		    transition: background-color 6s linear;
+		    border: 2px solid rgba(255,255,255,.15);
 			@extend .chameleon-bg;
 
 			ul {

@@ -133,7 +133,7 @@ get_header(); ?>
 		</aside>
 	</section>
 	<section id="subscribe" class="subscribe--home chameleon chameleon-bg">
-		<a href="" alt="">Join my mailing list</a>
+		<a href="" alt="" class="button">Join my mailing list</a>
 	</section>
 
 	<main id="home">

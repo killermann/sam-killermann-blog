@@ -517,11 +517,20 @@ body.page-template-page-sign-up {
 	h1.entry-title {
 		color:rgba(255,255,255,.6);
 		text-align:center;
+		font-weight:900;
+		font-size:calc(1.8em + .7vw);
 	}
+
+	.hero--section {
+		padding-bottom:calc(6vw + 10px);
+
+		article {margin:0;}
+	}
+
 	#signup-options {
 		display:block;
 		width:100%;
-		margin-top:-3vw;
+		margin-top:-5vw;
 
 		.grid {
 			justify-content: center;

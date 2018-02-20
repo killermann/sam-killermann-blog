@@ -1,10 +1,17 @@
 
+.text-center {
+	text-align: center;
+}
 .spin {
 	animation:spin 6s infinite linear;
 
 	&:hover, &:focus {
 		animation-play-state: paused;
 	}
+}
+
+.spin-hover:hover{
+	animation:spin 6s infinite linear;
 }
 
 @keyframes spin {

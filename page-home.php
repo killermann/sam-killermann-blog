@@ -10,7 +10,7 @@ get_header(); ?>
 			<div class="hero--text grid-cell">
 				<h2>Hi there! I’m Sam and I love making things.</h2>
 				<p>
-					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional comedian / author / activist person for almost a decade.
+					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional author / activist / comedian person for almost a decade.
 				</p>
 
 				<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a class="asterisk" href="#asterisk">&#42;</a>)</p>
@@ -132,7 +132,7 @@ get_header(); ?>
 			endwhile; wp_reset_postdata(); ?>
 		</aside>
 	</section>
-	<section id="subscribe" class="subscribe--home">
+	<section id="subscribe" class="subscribe--home chameleon chameleon-bg">
 		<a href="" alt="">Join my mailing list</a>
 	</section>
 
@@ -153,12 +153,31 @@ get_header(); ?>
 				endwhile; // End of the loop.
 				?>
 			</main>
-			<aside class="grid-cell">
-				<?php get_sidebar();?>
-			</aside>
 		</section>
 
 	</main><!-- #main -->
+	<section id="later">
+		<div class="text-center">
+			<h2 class="page-subtitle">Aging like a fine wine</h2>
+		</div>
+		<div class="loop">
+			<?php $home_all = new WP_Query(
+				array(
+					'posts_per_page' => 10,
+					'offset' => '4',
+					'post_type' => 'post',
+					'orderby' => 'published',
+					'order' => 'DESC'
+				)
+			);
+
+			while($home_all->have_posts()) : $home_all->the_post();
+
+				get_template_part( 'template-parts/content-loop', get_post_format() );
+
+			endwhile; wp_reset_postdata(); ?>
+		</div>
+	</section>
 	<div id="asterisk">
 		<p>&#42; Not sorry.</p>
 	</div>

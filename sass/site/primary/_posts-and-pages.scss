@@ -275,8 +275,8 @@
 				font-weight:900;
 				position:absolute;
 				border-radius:2px;
-				top:0;
-				right:0;
+				top:-1px;
+				right:-1px;
 			}
 
 
@@ -480,12 +480,32 @@ body.page-template-page-home {
 		}
 	}
 
-	#subscribe {
-		padding:4vw;
+	#home--subscribe {
 		margin-bottom:4vw;
 		z-index:9999;
 		text-align:center;
 		position:relative;
+		.mailchimp {
+			padding:4vw;
+			background:rgba(0,0,0,.6);
+			h3 {
+				text-shadow:4px 4px 0px rgba(0,0,0,.4);
+				strong {font-size:1.3em;text-transform:uppercase;font-weight:900;text-shadow:8px 8px 1px rgba(0,0,0,.4);}
+
+			}
+
+			input {
+				padding:1em;
+				line-height:1;
+				font-size:1.2em;
+				margin:10px;
+				box-shadow:5px 5px 0 0 rgba(0,0,0,.4);
+			}
+
+			input[type=email]{min-width:280px;}
+
+			p a {opacity:.8;}
+		}
 	}
 
 	#primary {
@@ -506,6 +526,8 @@ body.page-template-page-home {
 	section#later {
 		padding:0 2vw;
 	}
+
+	#asterisk1-note {padding:100px 4vw 2vw}
 }
 
 
@@ -513,6 +535,14 @@ body.page-template-page-home {
 /* Sign up Page Styles */
 
 body.page-template-page-sign-up {
+
+	#primary {
+		padding:0;
+	}
+
+	#content {
+		margin:0 auto;
+	}
 
 	h1.entry-title {
 		color:rgba(255,255,255,.6);
@@ -569,15 +599,27 @@ body.page-template-page-sign-up {
 			}
 			ul {
 				background:#fff;
-				margin:1em auto;
-				padding:0;
+				margin:.3em auto;
+				padding:0 1em;
 				list-style:none;
+
 				li {
-					margin:.2em auto;
+					display:flex;
+					margin:.7em auto;
+					line-height:1.2;
+					text-align:left;
+
+					span.icon {
+						display:block;
+						font-size:1.3em;
+						margin-right:.7em;
+						align-self:center;
+					}
 				}
 			}
 
 			.button {
+				margin:0 20px 20px;
 			}
 
 			&:hover {
@@ -587,8 +629,19 @@ body.page-template-page-sign-up {
 		}
 	}
 
+	#signup-FAQ {
+		margin:2vw auto;
+		width:100%;
+
+		h2 {
+			text-align:center;
+			margin:1vw auto;
+		}
+	}
+
 	#patrons-only {
 		margin:2vw auto;
+		padding:0 2vw;
 		h2.page-subtitle {
 			background:#F96854;
 			margin:3em auto 1em;
@@ -605,6 +658,53 @@ body.page-template-page-sign-up {
 	}
 }
 
+/* Sign up Page Styles */
+
+body.page-template-page-sign-up {
+
+}
+
+/* Archive Styles */
+
+.archive {
+
+	#primary {padding:0;}
+
+	#content {
+		padding-top:0;
+		.archive-header {
+			padding:0;
+			text-align:center;
+
+			.archive-header--inner {
+				padding:.5vw 4vw;
+				background:rgba(255,255,255,.6);
+
+				.archive-description {
+					padding-bottom:1vw;
+					p {
+						text-align:left;
+					}
+					a {
+						color:#000;
+						text-decoration:none;
+					}
+				}
+			}
+		}
+
+		.loop {
+			padding:2vw;
+		}
+	}
+}
+
+
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+MEDIA QUERIES
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
+
+
 /* Small screens */
 @media (min-width: 481px) {
 
@@ -613,7 +713,7 @@ body.page-template-page-sign-up {
 /* Medium screens */
 @media (min-width: 768px) {
 
-    .single, .blog{
+    .archive, .single, .blog{
 		main#main {
 			border-width:2px;
 			border-style:solid;

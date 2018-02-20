@@ -13,7 +13,7 @@ get_header(); ?>
 					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional author / activist / comedian person for almost a decade.
 				</p>
 
-				<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a class="asterisk" href="#asterisk">&#42;</a>)</p>
+				<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a rel="bookmark" class="asterisk" id="asterisk1" href="#asterisk1-note">&#42;</a>)</p>
 
 			</div>
 			<div class="hero--image">
@@ -132,8 +132,26 @@ get_header(); ?>
 			endwhile; wp_reset_postdata(); ?>
 		</aside>
 	</section>
-	<section id="subscribe" class="subscribe--home chameleon chameleon-bg">
-		<a href="" alt="" class="button">Join my mailing list</a>
+	<section id="home--subscribe" class="chameleon chameleon-bg">
+		<div class="mailchimp">
+			<h3 class="chameleon chameleon-color">
+				Get Sometimes-Emails from me:<br/>
+				<strong>Join my Brain Trust</strong>
+			</h3>
+			<form action="https://samkillermann.us3.list-manage.com/subscribe/post?u=b0497ab27b695ca0aa9c4787e&amp;id=a2529d5c19" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate grid grid--center grid--fit" target="_blank" novalidate>
+
+				<input type="email" value="" placeholder="youre@awesome.dude" name="EMAIL" class="required email" id="mce-EMAIL">
+
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b0497ab27b695ca0aa9c4787e_a2529d5c19" tabindex="-1" value=""></div>
+			   <input type="submit" value="Yes, please." name="subscribe" id="mc-embedded-subscribe" class="button">
+			</form>
+			<p><a href="https://us3.campaign-archive.com/home/?u=b0497ab27b695ca0aa9c4787e&id=a2529d5c19" title="View previous campaigns">View the Brain Trust archives.</a></p>
+		</div>
+		<!--End mc_embed_signup-->
 	</section>
 
 	<main id="home">
@@ -178,8 +196,8 @@ get_header(); ?>
 			endwhile; wp_reset_postdata(); ?>
 		</div>
 	</section>
-	<div id="asterisk">
-		<p>&#42; Not sorry.</p>
+	<div id="asterisk1-note">
+		<p><a rel="bookmark" href="#asterisk1">&#42; Not sorry.</a></p>
 	</div>
 
 <?php get_footer();

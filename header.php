@@ -29,7 +29,7 @@
 			<?php
 			the_custom_logo();
 			if ( is_front_page() || is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="screen-reader-text site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			<?php
@@ -43,7 +43,10 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle chameleon chameleon-color" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'sam-killermann-blog' ); ?></button>
+			<button class="menu-toggle chameleon chameleon-color" aria-controls="primary-menu" aria-expanded="false">
+				<div class="closed">Menu</div>
+				<div class="open">Close</div>
+			</button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

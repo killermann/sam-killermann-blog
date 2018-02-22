@@ -5,14 +5,18 @@ header#masthead {
 	transition:none;
 	transition:background-color 6s linear;
 	@extend .chameleon-bg;
+	height:60px;
 
 	.site-branding {
+		margin:0;
 
 		img.custom-logo {
-			max-width:80%; /* For Retina Screens */
-			height:auto;
+			height:50px;
+			margin:5px;
+			display:block;
+			width:auto;
 			@extend .spin-hover;
-			
+
 			&:active {
 				opacity:.8;
 			}
@@ -59,9 +63,20 @@ header#masthead {
 
 @media (min-width:768px){
 	header#masthead {
+		height:auto;
 		justify-content:space-between;
 		flex-direction:row;
 		align-items:stretch;
+
+		.site-branding {
+			margin:0;
+
+			img.custom-logo {
+				height:auto;
+				width:auto;
+				max-width:80%;
+			}
+		}
 	}
 
 }

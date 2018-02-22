@@ -108,6 +108,51 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 			'<span class="edit-link">',
 			'</span>'
 		);
+
+		if ( is_single() ) :
+
+			// Get Author Data
+			$author             = get_the_author();
+			$author_description = get_the_author_meta( 'description' );
+			$authorID 			= get_the_author_meta('ID');
+			$author_twitter 	= get_the_author_meta('twitter');
+			$author_url         = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+			$author_avatar      = get_avatar( get_the_author_meta( 'user_email' ), '200' );
+
+			// Only display if author has a description
+
+			if ( $author_description ) : ?>
+
+
+				<div class="authorBox chameleon chameleon-border authorID-<?php echo $authorID ?> clearfix">
+					<h4 class="heading">
+						<span>
+							<?php printf( esc_html__( 'Written by %s', 'text_domain' ), esc_html( $author ) ); ?>
+						</span>
+						<?php
+						if ($author_twitter) { ?>
+						<a href="https://twitter.com/<?php echo $author_twitter ?>" data-size="large" class="twitter-follow-button" data-show-count="true">@<?php echo $author_twitter ?>
+						</a>
+						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<?php } ?>
+					</h4>
+					<?php if ( $author_avatar ) { ?>
+					<div class="author-avatar">
+						<a href="<?php echo esc_url( $author_url ); ?>" rel="author">
+							<?php echo $author_avatar; ?>
+						</a>
+						<a class="button" href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_html_e( 'View all author posts', 'text_domain' ); ?>">
+						All Posts by Author
+						</a>
+					</div><!-- .author-avatar -->
+					<?php } ?>
+					<div class="author-description">
+						<p><?php echo wp_kses_post( $author_description ); ?></p>
+					</div><!-- .author-description -->
+				</div><!-- .author-info -->
+
+			<?php endif;
+		endif;
 	}
 endif;
 

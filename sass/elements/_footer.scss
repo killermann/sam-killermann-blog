@@ -11,7 +11,6 @@ footer#colophon {
 		border-left:none;
 		border-right:none;
 
-
 		h3 {
 			text-shadow:4px 4px 0px rgba(0,0,0,.4);
 			strong {font-size:1.3em;text-transform:uppercase;font-weight:900;text-shadow:8px 8px 1px rgba(0,0,0,.4);}
@@ -26,7 +25,7 @@ footer#colophon {
 			box-shadow:5px 5px 0 0 rgba(0,0,0,.4);
 		}
 
-		input[type=email]{min-width:280px;}
+		input[type=email]{min-width:280px;text-align:center;}
 
 		p a {opacity:.8;}
 	}

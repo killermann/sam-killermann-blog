@@ -37,11 +37,15 @@ get_header(); ?>
 				<ul>
 					<li>
 						<span class="icon">🔐</span>
-						<span>Access Patron-Only Posts &amp; Feed</span>
+						<span>Locked content on this site</span>
 					</li>
 					<li>
 						<span class="icon">💬</span>
-						<span>Comments &amp; Discussion</span>
+						<span>Comments &amp; discussion</span>
+					</li>
+					<li>
+						<span class="icon">👓</span>
+						<span>Patron-only feed on Patreon</span>
 					</li>
 					<li>
 						<span class="icon">👋</span>
@@ -53,7 +57,7 @@ get_header(); ?>
 					</li>
 
 				</ul>
-				<a class="button" alt="" href="">Become a Patron</a>
+				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684">Become a Patron</a>
 			</div>
 			<div id="signup-options--mailing-list" class="grid-cell option chameleon-border chameleon">
 				<div class="chameleon-bg chameleon chameleon-color">
@@ -65,22 +69,26 @@ get_header(); ?>
 				<ul>
 					<li>
 						<span class="icon">📬</span>
-						<span>Get popular posts in your inbox (a couple emails per month &mdash; tops)</span>
+						<span>Get posts in your inbox (a few emails per month, tops)</span>
 					</li>
 					<li>
-						<span class="icon">🥫</span>
+						<span class="icon">🌟</span>
+						<span>Never miss a popular article or special announcement</span>
+					</li>
+					<li>
+						<span class="icon">💯</span>
 						<span>Zero spam, easy unsubscribe</span>
 					</li>
 				</ul>
-				<a class="button" alt="" href="">Join the Mailing List</a>
+				<a class="button" alt="Join Mailing List" href="http://eepurl.com/HVL7X">Join the Mailing List</a>
 			</div>
 		</div><!--/options-->
 	</section>
 	<section id="signup-FAQ">
-		<h2 class="chameleon chameleon-color">Answers before you Ask</h2>
+		<h2 class="chameleon chameleon-color">Answered before you Asked</h2>
 		<div class="faqs">
 			<h3>What's Patreon?</h3>
-			<p>Patreon connects creators (me!) to patrons (you, maybe?), to fund creative work. It's a new platform based on a really old model called <a href="https://en.wikipedia.org/wiki/Patronage" alt="Wiki Patronage">"patronage."</a> As of January 2018, I started to shift all of my work to enable patronage.</a></p>
+			<p>Patreon connects creators (me!) to patrons (you, maybe?), to fund creative work. It's a new platform based on a really old model called <a href="https://en.wikipedia.org/wiki/Patronage" alt="Wiki Patronage">"patronage."</a> As of February 2018, I started to shift all of my work to enable patronage.</a></p>
 			<h3>Why the + after $1?</h3>
 			<p>I encourage you to give whatever you're inspired to give based on gratitude, ability, or what you feel is fair. That's the "+" part. The "$1" part is setting the barrier as low as possible, because I don't want my work to be inaccessible to anyone who wants or needs it.</p>
 			<h3>What if I can't afford $1 / month?</h3>

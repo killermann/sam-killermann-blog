@@ -141,8 +141,8 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 						<a href="<?php echo esc_url( $author_url ); ?>" rel="author">
 							<?php echo $author_avatar; ?>
 						</a>
-						<a class="button" href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_html_e( 'View all author posts', 'text_domain' ); ?>">
-						All Posts by Author
+						<a class="button" href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_html_e( 'View all posts', 'text_domain' ); ?>">
+						View all posts
 						</a>
 					</div><!-- .author-avatar -->
 					<?php } ?>

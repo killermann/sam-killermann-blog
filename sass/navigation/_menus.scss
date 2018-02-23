@@ -1,6 +1,5 @@
 .main-navigation {
 	@extend .grid;
-	@extend .grid--center;
 	font-weight:bold;
 	align-items: stretch;
 	align-self:stretch;
@@ -216,7 +215,6 @@
 				padding:1em;
 
 				&:focus {
-					background:blue;
 				}
 			}
 

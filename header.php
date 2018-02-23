@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sam-killermann-blog' ); ?></a>
 
-	<header id="masthead" class="site-header chameleon chameleon-bg">
+	<header id="masthead" class="site-header">
 		<div class="site-branding">
 
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>

@@ -1,12 +1,10 @@
 
-
 /* Chameleon Links */
 
 a {
 	text-decoration:none;
 	color:$color__primary;
     transition: color 6.0s linear, border-color 6.0s linear;
-
 
 	&:hover {
 		text-decoration:underline;
@@ -42,7 +40,7 @@ a {
 .chameleon {
     transition: color 6.0s linear, border-color 6.0s linear, background-color 6.0s linear;
 }
-
+.color0 a, .color0 .entry-content a  { color: $color__primary;  border-color:$color__primary}
 .color1 a, .color .entry-content a  { color: $purple;  border-color:$purple}
 .color2 a, .color .entry-content a  { color: $blue;  border-color:$blue}
 .color3 a, .color .entry-content a  { color: $light-blue;  border-color:$light-blue}
@@ -56,7 +54,7 @@ a {
 .color11 a, .color .entry-content a  { color: $pink;  border-color:$pink}
 .color12 a, .color .entry-content a  { color: $fuschia;  border-color:$fuschia}
 
-.chameleon-bg {background-color:$color__primary; a {color:#fff; text-decoration:underline;}}
+.chameleon-bg, .color0 .chameleon-bg {background-color:$color__primary; a {color:#fff; text-decoration:underline;}}
 .color1 .chameleon-bg  	{background-color:$purple}
 .color2 .chameleon-bg  	{background-color:$blue}
 .color3 .chameleon-bg  	{background-color:$light-blue}
@@ -70,7 +68,7 @@ a {
 .color11 .chameleon-bg  {background-color:$pink}
 .color12 .chameleon-bg  {background-color:$fuschia}
 
-.chameleon-color {color:$color__primary;}
+.chameleon-color, .color0 .chameleon-color {color:$color__primary;}
 .color1 .chameleon-color  { color: $purple;}
 .color2 .chameleon-color  { color: $blue;}
 .color3 .chameleon-color  { color: $light-blue;}
@@ -85,7 +83,7 @@ a {
 .color12 .chameleon-color  { color: $fuschia;}
 
 
-.chameleon-border {border-color:$color__primary;}
+.chameleon-border, .color0 .chameleon-border {border-color:$color__primary;}
 .color1 .chameleon-border  {border-color:$purple}
 .color2 .chameleon-border  {border-color:$blue}
 .color3 .chameleon-border  {border-color:$light-blue}

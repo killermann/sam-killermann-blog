@@ -14,10 +14,10 @@
 		</section><!-- #content -->
 	</div><!--/#primary-->
 
-	<footer id="colophon" class="chameleon chameleon-bg site-footer">
-		<div id="footer-mailchimp" class="chameleon chameleon-border">
+	<footer id="colophon" class="chameleon-bg site-footer">
+		<div id="footer-mailchimp" class="chameleon-border">
 			<!-- Begin MailChimp Signup Form -->
-			<h3 class="chameleon chameleon-color">
+			<h3 class="chameleon-color">
 				Get Sometimes-Emails from me:<br/>
 				<strong>Join my Brain Trust</strong>
 			</h3>

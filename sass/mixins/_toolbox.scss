@@ -27,7 +27,6 @@
 .faqs {
 	h3, p {
 		border-color:$color__primary;
-		@extend .chameleon;
 		@extend .chameleon-border;
 		border-width:2px;
 		border-style:solid;

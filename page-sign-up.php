@@ -6,7 +6,7 @@ Template Name: Sign-Up Page
 get_header(); ?>
 
 	<section class="hero">
-		<div class="hero--section grid grid--full grid--center chameleon chameleon-bg">
+		<div class="hero--section grid grid--full grid--center chameleon-bg">
 			<div class="hero--text grid-cell">
 				<?php
 				while ( have_posts() ) : the_post();
@@ -28,7 +28,7 @@ get_header(); ?>
 	<section id="signup-options">
 		<div class="grid">
 			<div id="signup-options--sambassador" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon chameleon-color">
+				<div class="chameleon-bg chameleon-color">
 					<h3>
 						SAMbassador
 						<small>$20 per Month</small>
@@ -62,7 +62,7 @@ get_header(); ?>
 				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=2396885">Become SAMbassador</a>
 			</div>
 			<div id="signup-options--patreon" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon chameleon-color">
+				<div class="chameleon-bg chameleon-color">
 					<h3>
 						Member / Supporter
 						<small>$1+ per Month</small>
@@ -98,7 +98,7 @@ get_header(); ?>
 				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=000000">Become Member</a>
 			</div>
 			<div id="signup-options--mailing-list" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon chameleon-color">
+				<div class="chameleon-bg chameleon-color">
 					<h3>
 						Mailing List
 						<small>Free Ninety-Nine</small>
@@ -123,7 +123,7 @@ get_header(); ?>
 		</div><!--/options-->
 	</section>
 	<section id="signup-FAQ">
-		<h2 class="chameleon chameleon-color">Answered before you Asked</h2>
+		<h2 class="chameleon-color">Answered before you Asked</h2>
 		<div class="faqs">
 			<h3>What's Patreon?</h3>
 			<p>Patreon connects creators (me!) to patrons (you, maybe?), to fund creative work. It's a new platform based on a really old model called <a href="https://en.wikipedia.org/wiki/Patronage" alt="Wiki Patronage">"patronage."</a> As of February 2018, I started to shift all of my work to enable patronage.</a></p>

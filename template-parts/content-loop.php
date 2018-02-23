@@ -37,7 +37,7 @@
 		</main>
 	</section><!-- .entry-content -->
 
-	<footer class="entry-footer chameleon chameleon-bg grid grid--center">
+	<footer class="entry-footer chameleon-bg grid grid--center">
 		<div class="grid-cell">
 			<?php sam_killermann_blog_entry_footer(); ?>
 		</div>

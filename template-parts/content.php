@@ -35,7 +35,7 @@
 		<aside class="entry-meta">
 			<?php
 			if ( has_excerpt( $post->ID ) ) {
-				echo '<div class="excerpt chameleon chameleon-border">';
+				echo '<div class="excerpt chameleon-border">';
 				the_excerpt();
 				echo '</div>';
 			}

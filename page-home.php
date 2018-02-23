@@ -6,7 +6,7 @@ Template Name: Homepage
 get_header(); ?>
 
 	<section class="hero">
-		<div class="hero--section grid grid--full grid--center medium-grid--fit chameleon chameleon-bg">
+		<div class="hero--section grid grid--full grid--center medium-grid--fit chameleon-bg">
 			<div class="hero--text grid-cell">
 				<h2>Hi there! I’m Sam and I love making things.</h2>
 				<p>
@@ -20,20 +20,20 @@ get_header(); ?>
 				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg">
 			</div>
 		</div><!--hero--section-->
-		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon chameleon-border">
-			<p class="chameleon chameleon-color">
+		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon-border">
+			<p class="chameleon-color">
 				Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
 			</p>
 			<div class="hero--cta--buttons grid grid--center grid--fit">
-				<a href="wp-admin" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
+				<a href="wp-admin" alt="Sign in" class="chameleon-bg grid-cell">
 					<strong>Sign in</strong>
 					<span>if you already have an account</span>
 				</a>
-				<a href="sign-up" alt="Sign up" class="button chameleon chameleon-bg grid-cell">
+				<a href="sign-up" alt="Sign up" class="chameleon-bg grid-cell">
 					<strong>Sign up</strong>
 					<span>to access the Patron-only stuff</span>
 				</a>
-				<a href="posts" alt="Sign in" class="button chameleon chameleon-bg grid-cell">
+				<a href="posts" alt="Sign in" class="chameleon-bg grid-cell">
 					<strong>Start Reading</strong>
 					<span>if you're not big on "accounts"</span>
 				</a>
@@ -57,7 +57,7 @@ get_header(); ?>
 			while($home_latest->have_posts()) : $home_latest->the_post();?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class('latest--single'); ?>>
-				<div class="chameleon chameleon-bg">
+				<div class="chameleon-bg">
 					<?php sam_killermann_blog_post_thumbnail(); ?>
 				</div>
 
@@ -132,9 +132,9 @@ get_header(); ?>
 			endwhile; wp_reset_postdata(); ?>
 		</aside>
 	</section>
-	<section id="home--subscribe" class="chameleon chameleon-bg">
+	<section id="home--subscribe" class="chameleon-bg">
 		<div class="mailchimp">
-			<h3 class="chameleon chameleon-color">
+			<h3 class="chameleon-color">
 				Get Sometimes-Emails from me:<br/>
 				<strong>Join my Brain Trust</strong>
 			</h3>

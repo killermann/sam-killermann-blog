@@ -124,7 +124,7 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 			if ( $author_description ) : ?>
 
 
-				<div class="authorBox chameleon chameleon-border authorID-<?php echo $authorID ?> clearfix">
+				<div class="authorBox chameleon-border authorID-<?php echo $authorID ?> clearfix">
 					<h4 class="heading">
 						<span>
 							<?php printf( esc_html__( 'Written by %s', 'text_domain' ), esc_html( $author ) ); ?>

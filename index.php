@@ -29,13 +29,13 @@ query_posts( $args );
 
 get_header(); ?>
 
-		<main id="main" class="loop chameleon chameleon-border">
+		<main id="main" class="loop chameleon-border">
 
 			<nav class="post-filters">
 				<form >
 					<div class="post-filter">
 						<label for="orderby">Showing</label>
-						<select class="chameleon chameleon-color"  id="order" name="order" onchange="this.form.submit()">
+						<select class="chameleon-color"  id="order" name="order" onchange="this.form.submit()">
 							<?php
 								$order_options = array(
 									'DESC' => 'The Latest',
@@ -49,7 +49,7 @@ get_header(); ?>
 					</div>
 					<div class="post-filter">
 						<label for="catname">Posts about</label>
-						<select class="chameleon chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
+						<select class="chameleon-color"  id="catname" name="catname" onchange="this.form.submit()">
 							<?php
 								$cat_options = array(
 									'' => 'All Topics',

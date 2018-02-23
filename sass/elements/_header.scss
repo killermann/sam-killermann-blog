@@ -1,12 +1,9 @@
 header#masthead {
 	display:flex;
 	justify-content: space-between;
-	@extend .chameleon;
-	background-color:$color__primary;
-	transition:none;
-	transition:background-color 6s linear;
-	@extend .chameleon-bg;
 	height:60px;
+	background-color:$color__primary;
+	@extend .chameleon-bg;
 
 	.site-branding {
 		margin:0;

@@ -9,12 +9,12 @@
 
 get_header(); ?>
 
-		<main id="main" class="site-main chameleon chameleon-border">
+		<main id="main" class="site-main chameleon-border">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="archive-header chameleon chameleon-bg">
+			<header class="archive-header chameleon-bg">
 				<div class="archive-header--inner">
 					<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );

@@ -17,7 +17,7 @@ get_header(); ?>
 
 			</div>
 			<div class="hero--image">
-				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle-500.png">
+				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg">
 			</div>
 		</div><!--hero--section-->
 		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon chameleon-border">

@@ -26,6 +26,10 @@
 
 	<header id="masthead" class="site-header chameleon chameleon-bg">
 		<div class="site-branding">
+
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
+			<!-- Enable for Custom Logo or Blog name and tagline
+
 			<?php
 			the_custom_logo();
 			if ( is_front_page() || is_home() ) : ?>
@@ -40,6 +44,7 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
+			-->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">

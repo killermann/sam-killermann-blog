@@ -351,7 +351,7 @@
 }
 
 section.hero {
-	z-index:9999;
+	z-index:8888;
 	display:block;
 	width:100%;
 	position:relative;
@@ -363,6 +363,12 @@ section.hero {
 	.hero--image {
 		max-width:40vw;
 		padding:2vw;
+
+		img {
+			width:40vw;
+			height:auto;
+			max-width:100%;
+		}
 	}
 
 	h2 {
@@ -469,7 +475,7 @@ body.page-template-page-home {
 	header#masthead {
 		box-shadow:none;
 		position:fixed;
-		z-index:8888;
+		z-index:7777;
 		width:100%;
 		top:0;
 		left:0;
@@ -484,7 +490,7 @@ body.page-template-page-home {
 		position:relative;
 		padding:0;
 		margin:0;
-		z-index:9999;
+		z-index:8888;
 		background:#fff;
 
 		article.latest--single {
@@ -517,7 +523,7 @@ body.page-template-page-home {
 
 	#home--subscribe {
 		margin-bottom:4vw;
-		z-index:9999;
+		z-index:8888;
 		text-align:center;
 		position:relative;
 		.mailchimp {
@@ -608,7 +614,7 @@ body.page-template-page-sign-up {
 			align-items: stretch;
 			text-align:center;
 			padding:0;
-			z-index:9999;
+			z-index:8889;
 			max-width:360px;
 			margin:0 20px 20px;
 			box-shadow:12px 15px 1px 0 rgba(0,0,0,.12);
@@ -623,11 +629,13 @@ body.page-template-page-sign-up {
 				background:rgba(255,255,255,.85);
 				padding:.5em;
 				margin:0;
-				font-size:1.7em;
+				font-size:1.5em;
+				line-height:1;
 				font-weight:900;
 				text-shadow:1px 1px 1px rgba(255,255,255,1);
 				small {
 					display:block;
+					margin:.7em auto 0;
 					font-size:.6em;
 					font-weight:300;
 				}
@@ -641,7 +649,8 @@ body.page-template-page-sign-up {
 				li {
 					display:flex;
 					margin:.7em auto;
-					line-height:1.2;
+					font-size:.8em;
+					line-height:1.15;
 					text-align:left;
 
 					span.icon {
@@ -655,6 +664,8 @@ body.page-template-page-sign-up {
 
 			.button {
 				margin:0 20px 20px;
+				font-size:.8em;
+				padding:.8em .5em;
 			}
 
 			&:hover {

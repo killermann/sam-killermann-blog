@@ -70,7 +70,7 @@
 			</div><!--/grid-->
 			<div class="grid grid--center">
 				<div class="grid-cell text-center grid-cell--autoSize">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="home"><img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle-250.png"></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="home"><img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
 				</div>
 				<div class="site-info grid-cell">
 					<h3>How I Built this Site</h3>

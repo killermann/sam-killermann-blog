@@ -199,7 +199,7 @@ function sam_killermann_login_logo() { ?>
 			color:#000;
 		}
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/sam-killermann-headshot-doodle-500.png);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/sam-killermann-headshot-doodle.svg);
 			height:200px;
 			width:200px;
 			background-size:contain;

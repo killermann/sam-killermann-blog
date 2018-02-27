@@ -316,10 +316,17 @@
 
 			border-width:2px;
 			margin:4vw auto;
-			padding:4vw;
+			padding:4vw 4vw 0;
 			border-style:solid;
 			border-left:none;
 			border-right:none;
+
+			&:after {
+				content:"";
+				heigth:0px;
+				display:block;
+				clear:both;
+			}
 
 			.heading {
 				margin:0 auto .7em;
@@ -332,14 +339,14 @@
 				width:200px;
 				text-align:center;
 				float:left;
-				margin:0 2vw 2vw -4vw;
+				margin:0 1.5vw 1.5vw -4vw;
 
 				img:hover {transform:translateY(-2px)}
 			}
 
 			.author-description {
 
-				p {margin:0;}
+				p {margin:0 0 4vw;}
 			}
 		}
 
@@ -415,7 +422,7 @@ section.hero {
 			display:flex;
 			flex-direction:column;
 			justify-content:center;
-			margin:20px;
+			margin:10px;
 			padding:1em;
 			letter-spacing:.05em;
 			min-width:140px;

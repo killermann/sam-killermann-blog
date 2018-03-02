@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('loopCard chameleon-border chameleon'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('loopCard chameleon-border'); ?>>
 	<?php sam_killermann_blog_post_thumbnail(); ?>
 
 	<header class="entry-header">

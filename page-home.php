@@ -6,7 +6,7 @@ Template Name: Homepage
 get_header(); ?>
 
 	<section class="hero">
-		<div class="hero--section grid grid--full grid--center medium-grid--fit chameleon-bg">
+		<div class="hero--section grid grid--full grid--center chameleon-bg medium-grid--fit">
 			<div class="hero--text grid-cell">
 				<h2>Hi there! I’m Sam and I love making things.</h2>
 				<p>
@@ -20,7 +20,7 @@ get_header(); ?>
 				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg">
 			</div>
 		</div><!--hero--section-->
-		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit chameleon-border">
+		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit">
 			<p class="chameleon-color">
 				Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
 			</p>

@@ -357,10 +357,16 @@ section.hero {
 	display:block;
 	width:100%;
 	position:relative;
-	background-color:$color__primary;
+	background:$color__primary;
 
 	.hero--section {
 		padding:4vw;
+
+		&.chameleon-bg {
+			border-bottom-width:6px;
+			border-bottom-style: dashed;
+			border-bottom-color:#fff;
+		}
 	}
 
 	.hero--image {
@@ -396,11 +402,6 @@ section.hero {
 	}
 
 	.hero--cta {
-		border-width:6px;
-		border-style: dashed;
-		border-left:none;
-		border-right:none;
-		border-bottom:none;
 		flex-basis:100%;
 		background:#fff;
 		text-align:center;

@@ -1,9 +1,12 @@
-header#masthead {
-	display:flex;
-	justify-content: space-between;
-	height:60px;
+#masthead {
 	background-color:$color__primary;
-	@extend .chameleon-bg;
+
+	#masthead--inner {
+		display:flex;
+		justify-content: space-between;
+		height:60px;
+		width:100%;
+	}
 
 	.site-branding {
 		margin:0;
@@ -57,22 +60,31 @@ header#masthead {
 			font-size:.8em;
 		}
 	}
+
+	nav.site-access {
+		background:rgba(0,0,0,.1);
+		align-self:flex-start;
+		border-radius:4px;
+		margin:2px;
+		padding:5px;
+	}
 }
 
 @media (min-width:768px){
-	header#masthead {
-		height:auto;
-		justify-content:space-between;
-		flex-direction:row;
-		align-items:stretch;
+	#masthead {
+		#masthead--inner {
+			height:auto;
+			flex-direction:row;
+			align-items:stretch;
 
-		.site-branding {
-			margin:0;
+			.site-branding {
+				margin:0;
 
-			img.custom-logo {
-				height:100px;
-				width:auto;
-				max-width:80%;
+				img.custom-logo {
+					height:100px;
+					width:auto;
+					max-width:80%;
+				}
 			}
 		}
 	}

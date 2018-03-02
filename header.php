@@ -28,44 +28,45 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sam-killermann-blog' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<div id="masthead--inner" class="chameleon-bg">
+			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
 
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
+				<!-- Enable for Custom Logo or Blog name and tagline
+				<?php
+				the_custom_logo();
+				if ( is_front_page() || is_home() ) : ?>
+					<h1 class="screen-reader-text site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				<?php
+				endif;
 
-			<!-- Enable for Custom Logo or Blog name and tagline
-			<?php
-			the_custom_logo();
-			if ( is_front_page() || is_home() ) : ?>
-				<h1 class="screen-reader-text site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-			<?php
-			endif;
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+				endif; ?>-->
+			</div><!-- .site-branding -->
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>-->
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle chameleon-color" aria-controls="primary-menu" aria-expanded="false">
-				<div class="closed">Menu</div>
-				<div class="open">Close</div>
-			</button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-		<nav class="site-access secondary-navigation">
-			<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-admin" alt="Sign in">Sign in</a>
-			<span>or</span>
-			<a id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
-		</nav>
+			<nav id="site-navigation" class="chameleon-bg main-navigation">
+				<button class="menu-toggle chameleon-color" aria-controls="primary-menu" aria-expanded="false">
+					<div class="closed">Menu</div>
+					<div class="open">Close</div>
+				</button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+			</nav><!-- #site-navigation -->
+			<nav class="site-access secondary-navigation">
+				<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-admin" alt="Sign in">Sign in</a>
+				<span>or</span>
+				<a id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
+			</nav>
+		</div>
 
 	</header><!-- #masthead -->
 

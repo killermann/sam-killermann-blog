@@ -604,7 +604,7 @@ body.page-template-page-sign-up {
 	#signup-options {
 		display:block;
 		width:100%;
-		margin-top:-5vw;
+		margin-top:-6vw;
 
 		.grid {
 			justify-content: center;
@@ -618,9 +618,9 @@ body.page-template-page-sign-up {
 			text-align:center;
 			padding:0;
 			z-index:8889;
-			max-width:360px;
+			max-width:320px;
 			margin:0 20px 20px;
-			box-shadow:12px 15px 1px 0 rgba(0,0,0,.12);
+			box-shadow:12px 15px 1px 0 rgba(0,0,0,.15);
 			border-radius:2px;
 			display:flex;
 			justify-content: space-between;
@@ -629,7 +629,7 @@ body.page-template-page-sign-up {
 			border-style:solid;
 
 			h3 {
-				background:rgba(255,255,255,.85);
+				background:rgba(255,255,255,.8);
 				padding:.5em;
 				margin:0;
 				font-size:1.5em;

@@ -152,6 +152,7 @@ require get_template_directory() . '/inc/template-functions.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
 /**
  * Custom Log-in Page
 */
@@ -224,6 +225,35 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
+/**
+ * Adjusting the Patreon
+*/
+
+// add_filter('ptrn/post_content','my_excerpt_adding_function');
+//
+// function my_excerpt_adding_function($content) {
+//
+// 	global $post;
+//
+// 	add_filter('ptrn/bypass_filtering','toggle_patreon_filtering');
+//
+// 	$untilreadmore = get_extended ( $post->post_content );
+//
+// 	remove_filter('ptrn/bypass_filtering','toggle_patreon_filtering');
+//
+// 	// Format the excerpt in any way you want after this point
+//
+// 	return $untilreadmore['main'].$content;
+//
+// }
+//
+// function toggle_patreon_filtering($filter) {
+//
+// 	if(!$filter) {
+// 		return true;
+// 	}
+// 	return false;
+// }
 /** CLEANING UP HEAD BY REMOVING UNUSED STUFF **/
 
 remove_action( 'wp_head', 'wlwmanifest_link');
@@ -233,3 +263,36 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+/*------------------------------------*\
+	Customize Admin Area
+\*------------------------------------*/
+
+function remove_dashboard_widgets() {
+    global $wp_meta_boxes;
+	remove_action('welcome_panel', 'wp_welcome_panel');
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['jetpack_summary_widget']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['wpseo-dashboard-overview']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['pressable_dashboard_widget']);
+}
+
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+
+function set_default_admin_color($user_id) {
+    $args = array(
+        'ID' => $user_id,
+        'admin_color' => 'light'
+    );
+    wp_update_user( $args );
+}
+add_action('user_register', 'set_default_admin_color');

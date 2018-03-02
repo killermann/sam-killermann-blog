@@ -109,3 +109,19 @@ a {
 .color10 .chameleon-border  {border-color:$red}
 .color11 .chameleon-border  {border-color:$pink}
 .color12 .chameleon-border  {border-color:$fuschia}
+
+.chameleon-colorborder {color:$color__primary; border-color:$color__primary; transition: color 6s linear, border 6s linear;}
+
+.color0 .chameleon-colorborder {color:$color__primary;border-color:$color__primary;}
+.color1 .chameleon-colorborder  { color: $purple;border-color:$purple}
+.color2 .chameleon-colorborder  { color: $blue;border-color:$blue}
+.color3 .chameleon-colorborder  { color: $light-blue;color:$light-blue}
+.color4 .chameleon-colorborder  { color: $teal;border-color:$teal}
+.color5 .chameleon-colorborder {color: $light-green; border-color:$light-green}
+.color6 .chameleon-colorborder  { color:$green; border-color:$green}
+.color7 .chameleon-colorborder  { color:$light-orange; border-color:$light-orange}
+.color8 .chameleon-colorborder  { color: $orange; border-color:$orange}
+.color9 .chameleon-colorborder  { color: $bright-red; border-color:$bright-red}
+.color10 .chameleon-colorborder  { color: $red; border-color:$red}
+.color11 .chameleon-colorborder  { color: $pink; border-color:$pink}
+.color12 .chameleon-colorborder  { color: $fuschia; border-color:$fuschia}

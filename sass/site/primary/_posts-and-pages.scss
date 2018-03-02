@@ -174,7 +174,7 @@
 				border-radius:2px;
 				font-size:1.2em;
 				padding:5px;
-				@extend .chameleon-border;
+				@extend .chameleon-colorborder;
 			}
 		}
 	}
@@ -349,7 +349,6 @@
 				p {margin:0 0 4vw;}
 			}
 		}
-
 	}
 }
 

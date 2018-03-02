@@ -10,7 +10,7 @@ get_header(); ?>
 			<div class="hero--text grid-cell">
 				<h2>Hi there! I’m Sam and I love making things.</h2>
 				<p>
-					Elsewhere, I've created a bunch of projects that have reached hundreds of millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional author / activist / comedian person for almost a decade.
+					Elsewhere, I've created a bunch of projects that have reached millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional author / activist / comedian person for almost a decade.
 				</p>
 
 				<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a rel="bookmark" class="asterisk" id="asterisk1" href="#asterisk1-note">&#42;</a>)</p>

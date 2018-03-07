@@ -179,7 +179,7 @@
 		}
 	}
 
-	article.type-post.loopCard {
+	article.type-post {
 		margin:20px;
 		border-width:2px;
 		border-radius:2px;
@@ -252,7 +252,7 @@
 			position:relative;
 			border-color:#F96854;
 
-			a {color:#F96854 !important; &:hover {color:lighten(#F96854,10%);}}
+			a {color:#F96854 !important; border-color:#F96854 !important; &:hover {color:lighten(#F96854,10%);}}
 
 			footer.entry-footer {
 				background:#F96854;
@@ -313,13 +313,13 @@
 	.entry-footer {
 
 		.authorBox {
-
 			border-width:2px;
 			margin:4vw auto;
 			padding:4vw 4vw 0;
 			border-style:solid;
 			border-left:none;
-			border-right:none;
+			border-bottom:none;
+			border-radius:2px;
 
 			&:after {
 				content:"";
@@ -504,6 +504,10 @@ body.page-template-page-home {
 				}
 			}
 
+			.entry-meta {
+				font-family:$serif;
+			}
+
 			header, section, footer {
 				padding:0 4vw;
 			}
@@ -516,7 +520,7 @@ body.page-template-page-home {
 		aside.loop {
 			padding:0 2vw;
 
-			article.type-post.loopCard {
+			article.type-post {
 				flex-basis:100%;
 				margin:0 0 2vw;
 				flex-direction:column;
@@ -699,7 +703,7 @@ body.page-template-page-sign-up {
 			max-width:760px;
 			padding:0;
 
-			.loopCard {
+			.type-post {
 				flex-basis:100%;
 				margin:0 auto 4vw;
 			}
@@ -748,7 +752,6 @@ body.page-template-page-sign-up {
 	}
 }
 
-
 /*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 MEDIA QUERIES
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
@@ -762,13 +765,8 @@ MEDIA QUERIES
 /* Medium screens */
 @media (min-width: 768px) {
 
-    .archive, .single, .blog{
+    .archive, .single, .blog, .search{
 		main#main {
-			border-width:2px;
-			border-style:solid;
-			border-top:none;
-			border-left:none;
-			border-bottom:none;
 
 			header.entry-header, .entry-content main {
 				padding-right:4vw;
@@ -780,10 +778,16 @@ MEDIA QUERIES
 		}
     }
 
-	.blog {
+	.blog, .search{
 		#content main#main {
 			padding:4vw;
 		}
+	}
+}
+
+.search {
+	.loop {
+
 	}
 }
 
@@ -796,7 +800,7 @@ MEDIA QUERIES
 		align-items:stretch;
 		align-content:flex-start;
 
-		article.loopCard.type-post {
+		article.type-post {
 			max-width:100%;
 			flex-basis: 45%;
 			margin:2.5%;
@@ -806,6 +810,8 @@ MEDIA QUERIES
 
 			.entry-header, .entry-content {
 				padding:0 4% 0;
+
+				p {margin-left:0;}
 			}
 
 			.entry-header {
@@ -813,7 +819,22 @@ MEDIA QUERIES
 			}
 			.entry-footer {
 				justify-self:flex-end;
-				padding:2% 4%;
+				padding:2%;
+			}
+		}
+	}
+
+	.search {
+		.loop {
+			article.type-post {
+				flex-basis:95%;
+
+				.entry-header {
+					flex-basis:66.666%;
+				}
+				.entry-content {
+					flex-basis:33.333%;
+				}
 			}
 		}
 	}
@@ -831,7 +852,6 @@ MEDIA QUERIES
 		#latest {
 			&>main {
 				flex-basis:66.666%;
-
 			}
 
 			& > aside {

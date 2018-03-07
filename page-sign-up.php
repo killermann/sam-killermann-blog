@@ -27,9 +27,9 @@ get_header(); ?>
 	</section><!--/hero-->
 	<section id="signup-options">
 		<div class="grid">
-			<div id="signup-options--sambassador" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon-color">
-					<h3>
+			<div id="signup-options--sambassador" class="grid-cell option chameleon-border">
+				<div class="chameleon-bg">
+					<h3 class="chameleon-color">
 						SAMbassador
 						<small>$20 per Month</small>
 					</h3>
@@ -62,8 +62,8 @@ get_header(); ?>
 				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=2396885">Become SAMbassador</a>
 			</div>
 			<div id="signup-options--patreon" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon-color">
-					<h3>
+				<div class="chameleon-bg">
+					<h3 class="chameleon-color">
 						Member / Supporter
 						<small>$1+ per Month</small>
 					</h3>
@@ -98,8 +98,8 @@ get_header(); ?>
 				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=000000">Become Member</a>
 			</div>
 			<div id="signup-options--mailing-list" class="grid-cell option chameleon-border chameleon">
-				<div class="chameleon-bg chameleon-color">
-					<h3>
+				<div class="chameleon-bg">
+					<h3 class="chameleon-color">
 						Mailing List
 						<small>Free Ninety-Nine</small>
 					</h3>

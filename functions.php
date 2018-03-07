@@ -154,6 +154,25 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Post Formats Support
+ */
+
+ function sam_killermann_blog_add_post_formats() {
+	add_theme_support( 'post-formats', array(
+		'gallery',
+		'quote',
+		'video',
+		'aside',
+		'image',
+		'link',
+		'status',
+		'audio',
+		'chat'
+	) );
+}
+add_action( 'after_setup_theme', 'sam_killermann_blog_add_post_formats' );
+
+/**
  * Custom Log-in Page
 */
 

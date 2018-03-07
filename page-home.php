@@ -19,7 +19,7 @@ get_header(); ?>
 			<div class="hero--image">
 				<img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg">
 			</div>
-		</div><!--hero--section-->
+		</div><!--hero-section-->
 		<div class="hero--section hero--cta grid grid--full grid--center medium-grid--fit">
 			<p class="chameleon-color">
 				Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
@@ -38,16 +38,15 @@ get_header(); ?>
 					<span>if you're not big on "accounts"</span>
 				</a>
 			</div><!--/buttons-->
-		</div><!--/hero--cta-->
+		</div><!--/hero-cta-->
 	</section><!--/hero-->
 	<section id="latest" class="grid grid--full large-grid--fit">
 		<main class="grid-cell">
 			<h2 class="page-subtitle">The Latest</h2>
 			<?php $home_latest = new WP_Query(
 				array(
-					'posts_per_page' => 1,
 					'post_type' => 'post',
-
+					'posts_per_page' => 1,
 					'category__not_in' => 'patrons-only',
 					'orderby' => 'published',
 					'order' => 'DESC'
@@ -69,15 +68,17 @@ get_header(); ?>
 							<?php the_title();?>
 						</a>
 					</h2>
+					<span class="entry-meta">
 
-					Posted in <?php
-						sam_killermann_blog_primary_category();
-					?> on
+						Posted in <?php
+							sam_killermann_blog_primary_category();
+						?> on
 
-					<?php
-						sam_killermann_blog_posted_on();
-						sam_killermann_blog_posted_by();
-					?>
+						<?php
+							sam_killermann_blog_posted_on();
+							sam_killermann_blog_posted_by();
+						?>
+					</span>
 				</header><!-- .entry-header -->
 
 				<section class="entry-content">
@@ -115,9 +116,9 @@ get_header(); ?>
 			<h2 class="page-subtitle">Super Fresh</h2>
 			<?php $home_recent = new WP_Query(
 				array(
+					'post_type' => 'post',
 					'posts_per_page' => 3,
 					'offset' => '1',
-					'post_type' => 'post',
 					'orderby' => 'published',
 					'order' => 'DESC'
 				)
@@ -125,7 +126,7 @@ get_header(); ?>
 
 			while($home_recent->have_posts()) : $home_recent->the_post();
 
-				get_template_part( 'template-parts/content-loop', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile; wp_reset_postdata(); ?>
 		</aside>
@@ -179,9 +180,9 @@ get_header(); ?>
 		<div class="loop">
 			<?php $home_all = new WP_Query(
 				array(
-					'posts_per_page' => 10,
-					'offset' => '4',
 					'post_type' => 'post',
+					'posts_per_page' => 10,
+					'offset' => 4,
 					'orderby' => 'published',
 					'order' => 'DESC'
 				)
@@ -189,9 +190,11 @@ get_header(); ?>
 
 			while($home_all->have_posts()) : $home_all->the_post();
 
-				get_template_part( 'template-parts/content-loop', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile; wp_reset_postdata(); ?>
+
+			<a href="" alt="" class="button button-wide">View All Posts</a>
 		</div>
 	</section>
 	<div id="asterisk1-note">

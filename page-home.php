@@ -194,7 +194,7 @@ get_header(); ?>
 
 			endwhile; wp_reset_postdata(); ?>
 
-			<a href="" alt="" class="button button-wide">View All Posts</a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>/posts" alt="All Posts" class="button">View All Posts</a>
 		</div>
 	</section>
 	<div id="asterisk1-note">

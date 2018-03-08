@@ -29,49 +29,77 @@
 
 	<header id="masthead" class="site-header">
 		<div id="masthead--inner" class="chameleon-bg">
-			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
+			<div id="marquee" class="">
+				<div id="marquee--latest">
+					<?php $marquee_latest = new WP_Query(
+						array(
+							'post_type' => 'post',
+							'posts_per_page' => 1,
+							'orderby' => 'published',
+							'order' => 'DESC'
+						)
+					);
 
-				<!-- Enable for Custom Logo or Blog name and tagline
-				<?php
-				the_custom_logo();
-				if ( is_front_page() || is_home() ) : ?>
-					<h1 class="screen-reader-text site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<?php
-				endif;
+					while($marquee_latest->have_posts()) : $marquee_latest->the_post();?>
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>-->
-			</div><!-- .site-branding -->
+					<article id="marquee-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<span class="chameleon-color">New</span> <a alt="<?php the_title();?>" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title();?></a>
+					</article>
 
-			<nav id="site-navigation" class="chameleon-bg main-navigation">
-				<button class="menu-toggle chameleon-color" aria-controls="primary-menu" aria-expanded="false">
-					<div class="closed">Menu</div>
-					<div class="open">Close</div>
-				</button>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					) );
-				?>
-			</nav><!-- #site-navigation -->
-			<nav class="site-access secondary-navigation">
-				<?php
-					if ( ! is_user_logged_in() ) {?>
-						<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-admin" alt="Sign in">Sign in</a>
-						<span>or</span>
-						<a id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
-					<?php }
-					else {
-						?><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tag/patrons-only/" alt="">Patrons-Only 👉</a><?php
-					}?>
-			</nav>
+					<?php endwhile; wp_reset_postdata(); ?>
+				</div>
+				<nav class="site-access">
+					<?php
+						if ( ! is_user_logged_in() ) {?>
+							<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-admin" alt="Sign in">Sign in</a>
+							<span>or</span>
+							<a id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
+						<?php }
+						else {
+							?><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tag/patrons-only/" alt="">Patrons-Only 👉</a><?php
+						}?>
+				</nav>
+			</div><!--/marquee-->
+			<div id="masthead--nav">
+
+				<div class="site-branding">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" alt="Sam Killermann's Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
+
+					<!-- Enable for Custom Logo or Blog name and tagline
+					<?php
+					the_custom_logo();
+					if ( is_front_page() || is_home() ) : ?>
+						<h1 class="screen-reader-text site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+					<?php
+					endif;
+
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<?php
+					endif; ?>-->
+				</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="chameleon-bg main-navigation">
+					<button class="menu-toggle chameleon-color" aria-controls="primary-menu" aria-expanded="false">
+						<div class="closed">Menu</div>
+						<div class="open">Close</div>
+					</button>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						) );
+					?>
+				</nav><!-- #site-navigation -->
+
+				<div id="masthead--search">
+					<?php get_search_form()?>
+				</div>
+
+			</div><!--/mastheadnav-->
 		</div>
 
 	</header><!-- #masthead -->

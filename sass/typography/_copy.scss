@@ -31,6 +31,13 @@ code, kbd, tt, var {
 	font-size:.9rem;
 }
 
+ul, ol {
+	li {
+		margin-bottom:.75em;
+	}
+}
+
+
 abbr, acronym {
 	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;

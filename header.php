@@ -29,7 +29,7 @@
 
 	<header id="masthead" class="site-header">
 		<div id="masthead--inner" class="chameleon-bg">
-			<div id="marquee" class="">
+			<div id="marquee">
 				<div id="marquee--latest">
 					<?php $marquee_latest = new WP_Query(
 						array(
@@ -42,7 +42,7 @@
 
 					while($marquee_latest->have_posts()) : $marquee_latest->the_post();?>
 
-					<article id="marquee-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<article id="marquee-<?php the_ID(); ?>">
 						<span class="chameleon-color">New</span> <a alt="<?php the_title();?>" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title();?></a>
 					</article>
 
@@ -96,6 +96,12 @@
 				</nav><!-- #site-navigation -->
 
 				<div id="masthead--search">
+					<div id="search-icon">
+						<svg>
+							<circle class="st0" cx="11.7" cy="9.4" r="8.4"/>
+							<path d="M5.7,15.4l3.1,1.8l-5.5,8.1c-0.4,0.4-1.5,0.2-2.3-0.4c-0.9-0.6-1.2-1.3-0.8-1.7c0,0,0,0,0,0"/>
+						</svg>
+					</div>
 					<?php get_search_form()?>
 				</div>
 

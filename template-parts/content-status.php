@@ -16,21 +16,24 @@
 		<?php
 		sam_killermann_blog_primary_category();
 		echo ' | ';
-		echo '<span class="primary-category"><a href="' . esc_url( home_url() ) . '/type/quote" rel="bookmark">Quote</a></span>';
+		echo '<span class="primary-category"><a href="' . esc_url( home_url() ) . '/type/status" rel="bookmark">Status</a></span>';
 		?>
 	</header><!-- .entry-header -->
 
 	<section class="entry-content">
 		<main>
-			<?php
-			the_content();
-			?>
+			<p><strong><?php the_title();?></strong></p>
+			<?php the_content();?>
 		</main>
 	</section><!-- .entry-content -->
 
 	<footer class="entry-footer chameleon-bg grid grid--center">
 		<div class="grid-cell">
-			<?php sam_killermann_blog_entry_footer(); ?>
+			<?php
+			sam_killermann_blog_posted_on();
+			sam_killermann_blog_posted_by();
+			sam_killermann_blog_entry_footer();
+			?>
 		</div>
 		<?php if( ! is_singular()) : ?>
 			<a href="<?php the_permalink(); ?>" class="grid-cell grid-cell--autoSize">

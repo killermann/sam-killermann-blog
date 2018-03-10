@@ -45,11 +45,25 @@ get_header(); ?>
 			<h2 class="page-subtitle">The Latest</h2>
 			<?php $home_latest = new WP_Query(
 				array(
-					'post_type' => 'post',
+					'post_type' => 'post', // if the post type is post
 					'posts_per_page' => 1,
-					'category__not_in' => 'patrons-only',
-					'orderby' => 'published',
-					'order' => 'DESC'
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'post_format',
+							'field' => 'slug',
+							'terms' => array (
+								'post-format-audio',
+								'post-format-chat',
+								'post-format-gallery',
+								'post-format-image',
+								'post-format-link',
+								'post-format-quote',
+								'post-format-status',
+								'post-format-video'
+							),
+							'operator' => 'NOT IN',
+						)
+					)
 				)
 			);
 
@@ -116,11 +130,26 @@ get_header(); ?>
 			<h2 class="page-subtitle">Super Fresh</h2>
 			<?php $home_recent = new WP_Query(
 				array(
-					'post_type' => 'post',
+					'post_type' => 'post', // if the post type is post
 					'posts_per_page' => 3,
 					'offset' => '1',
-					'orderby' => 'published',
-					'order' => 'DESC'
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'post_format',
+							'field' => 'slug',
+							'terms' => array (
+								'post-format-audio',
+								'post-format-chat',
+								'post-format-gallery',
+								'post-format-image',
+								'post-format-link',
+								'post-format-quote',
+								'post-format-status',
+								'post-format-video'
+							),
+							'operator' => 'NOT IN',
+						)
+					)
 				)
 			);
 

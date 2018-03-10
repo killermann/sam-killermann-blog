@@ -21,6 +21,8 @@
 
 	<header class="entry-header">
 		<?php
+		sam_killermann_blog_primary_category();
+		
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :

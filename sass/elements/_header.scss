@@ -8,7 +8,7 @@
 
 	#marquee {
 		display:flex;
-		background:rgba(0,0,0,.5);
+		background:rgba(0,0,0,.2);
 		width:100%;
 		justify-content: center;
 		font-size:13px;
@@ -19,7 +19,7 @@
 	}
 
 	nav.site-access {
-		background:rgba(0,0,0,.4);
+		background:rgba(0,0,0,.3);
 		border-radius:4px;
 		padding:0 4px;
 		margin:4px;
@@ -97,16 +97,16 @@
 
 			#marquee--latest {
 				display:flex;
-				padding:9px;
+				padding:7px;
 
 				article {
 					margin:0;
 					line-height:1.1;
-					font-size:12px;
+					font-size:13px;
 
 					span {
 						display:inline-block;
-						background:black;
+						background:rgba(0,0,0,.5);
 						padding:2px 4px;
 						font-weight:bold;
 						text-transform:uppercase;
@@ -153,23 +153,47 @@
 			display:flex;
 			align-items:center;
 			margin:0 1vw;
+			position:relative;
+
+			#search-icon {
+				position:absolute;
+				z-index:1;
+				left:8px;
+				top:50%;
+				margin-top:-12px;
+				opacity:1;
+
+				.st0{fill:none;stroke:#fff;stroke-width:2;}
+				svg {
+					width:22px;
+					height:27px;
+					path {fill:#fff}
+				}
+			}
 
 			form {
+				position:relative;
+				z-index:2;
+
 				input {
+					padding-left:35px;
 					border-radius:4px;
 					font-size:1em;
 					font-weight:bold;
 					background:rgba(255,255,255,.5);
-					border:2px solid rgba(255,255,255,.5);
-					transition:all .5s linear;
+					border:none;
+					transition:all .3s linear;
+					box-shadow:3px 3px 0 rgba(0,0,0,.2);
 
 					&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 					  color: black;
 					}
 
 					&:focus {
-						background:rgba(255,255,255,.7);
+						background:rgba(255,255,255,1);
 						border-color:white;
+						padding-left:10px;
+						box-shadow:0px 0px 1px rgba(0,0,0,.4);
 					}
 				}
 
@@ -177,5 +201,15 @@
 			}
 		}
 	}
-
+}
+@media (min-width:1030px){
+	#masthead {
+		#marquee {
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.2+0,0+33,0+66,0.2+100 */
+			background: -moz-linear-gradient(left, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.2) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=1 ); /* IE6-9 */
+		}
+	}
 }

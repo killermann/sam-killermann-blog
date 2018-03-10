@@ -16,6 +16,7 @@
 	border-bottom:none;
 	padding:1.5rem 1.5rem 0 0;
 	border-radius:2px;
+	hyphens: auto;
 
 	p {
 		margin:0;
@@ -178,7 +179,7 @@
 }
 
 .tags-links a{
-	opacity:.7;
+	opacity:.6;
 	&:hover {
 		opacity:1;
 	}
@@ -332,7 +333,7 @@
 			}
 
 			main {
-				p {
+				p, ul, ol {
 					font-family:$serif;
 				}
 
@@ -809,7 +810,7 @@ MEDIA QUERIES
 @media (min-width: 768px) {
 
     .archive, .single, .blog, .search{
-		main#main {
+		& > main#main {
 
 			header.entry-header, .entry-content main {
 				padding-right:4vw;
@@ -822,7 +823,7 @@ MEDIA QUERIES
     }
 
 	.blog, .search{
-		#content main#main {
+		& > #content main#main {
 			padding:4vw;
 		}
 	}
@@ -836,6 +837,11 @@ MEDIA QUERIES
 
 /* Large screens */
 @media (min-width: 1030px) {
+
+	.in-text--mailing-list  {
+		margin:2vw 4vw 4vw -6vw;
+	}
+
 	.loop {
 		display: flex;
 		flex-flow: row wrap;
@@ -893,7 +899,7 @@ MEDIA QUERIES
 
 	body.page-template-page-home {
 		#latest {
-			&>main {
+			& > main {
 				flex-basis:66.666%;
 			}
 

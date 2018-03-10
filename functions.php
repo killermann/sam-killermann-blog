@@ -341,6 +341,14 @@ function remove_dashboard_widgets() {
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+	}
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+
 
 function set_default_admin_color($user_id) {
     $args = array(

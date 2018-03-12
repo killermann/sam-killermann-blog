@@ -33,11 +33,11 @@ section#content {
 /* Medium screens */
 @media (min-width: 768px) {
     section#content > aside {
-        flex: 0 0 15vw;
+        flex: 0 0 25vw;
     }
 
     .page section#content > main {
-        padding-left:15vw;
+        padding-left:25vw;
     }
 }
 
@@ -50,14 +50,9 @@ section#content {
         & > main {
             padding-bottom:4vw;
         }
-
-        & > aside {
-            padding-right:4vw;
-        }
     }
 
     div#primary {
-        padding:4vw 0 0 4vw;
+        padding:2vw;
     }
-
 }

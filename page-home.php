@@ -211,7 +211,6 @@ get_header(); ?>
 				array(
 					'post_type' => 'post',
 					'posts_per_page' => 10,
-					'offset' => 4,
 					'orderby' => 'published',
 					'order' => 'DESC'
 				)

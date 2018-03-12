@@ -9,29 +9,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('chameleon-border'); ?>>
-	<?php
-		if ( is_single() ){
+	<?php if ( is_single() ){
 			if (function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 			}
-		}
-		?>
-
+		}?>
 	<?php sam_killermann_blog_post_thumbnail(); ?>
 
 	<header class="entry-header">
-		<?php
-		sam_killermann_blog_primary_category();
-		
-		if ( is_single() ) :
+		<?php if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
+			sam_killermann_blog_primary_category();
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		?>
+		endif; ?>
 	</header><!-- .entry-header -->
-
 
 	<section class="entry-content">
 		<?php
@@ -81,7 +73,6 @@
 
 	<?php if (is_single()){?>
 		<footer class="entry-footer">
-
 			<?php sam_killermann_blog_entry_footer();?>
 		</footer>
 	<?php }

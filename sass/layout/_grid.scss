@@ -83,25 +83,16 @@ Based on this https://philipwalton.github.io/solved-by-flexbox/demos/grids/
   flex: 0 0 25%;
 }
 
-.grid--gutters {
-  margin: -1em 0 1em -1em;
-}
 .grid--gutters > .grid-cell {
-  padding: 1em 0 0 1em;
+  padding:0 1em;
 }
 
-.grid--guttersLg {
-  margin: -1.5em 0 1.5em -1.5em;
-}
 .grid--guttersLg > .grid-cell {
-  padding: 1.5em 0 0 1.5em;
+  padding: 0 1.5em;
 }
 
-.grid--guttersXl {
-  margin: -4vw 0 4vw -4vw;
-}
 .grid--guttersXl > .grid-cell {
-  padding: 4vw 0 0 4vw;
+  padding:0 2vw;
 }
 
 /* Small screens */

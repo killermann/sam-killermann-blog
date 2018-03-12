@@ -23,7 +23,7 @@ __Patreon for Wordpress Plugin__: if you're wanting to use Patreon (using the of
 
 __Yoast SEO Plugin__: I'd strongly suggest using Yoast if you use this theme (or in general), because I've integrated Primary Categories, Breadcrumbs, and a few other Yoast-y things. However, it shouldn't break if you don't use Yoast (no promises).
 
-__Mailchimp__: I have a couple Mailchimp forms embedded throughout the theme, and a shortcode that displays a Mailchimp signup within posts (that shortcode is <pre>[mailinglist]</pre>). Swap my Mailchimp credentials for your list and you're good to go.
+__Mailchimp__: I have a couple Mailchimp forms embedded throughout the theme, and a shortcode that displays a Mailchimp signup within posts (that shortcode is <strong>[mailinglist]</strong>). Swap my Mailchimp credentials for your list and you're good to go.
 
 ## Support?
 

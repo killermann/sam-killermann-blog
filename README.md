@@ -1,4 +1,4 @@
-# sam-killermann-blog
+# The "Sam Killermann Blog" Wordpress Theme
 
 This theme was created for my "official" blog. You can check that out at http://samkillermann.com to see it in action.
 
@@ -23,12 +23,8 @@ __Patreon for Wordpress Plugin__: if you're wanting to use Patreon (using the of
 
 __Yoast SEO Plugin__: I'd strongly suggest using Yoast if you use this theme (or in general), because I've integrated Primary Categories, Breadcrumbs, and a few other Yoast-y things. However, it shouldn't break if you don't use Yoast (no promises).
 
-__Mailchimp__: I have a couple Mailchimp forms embedded throughout the theme, and a shortcode that displays a Mailchimp signup within posts (that shortcode is [mailinglist]). Swap my Mailchimp credentials for your list and you're good to go.
+__Mailchimp__: I have a couple Mailchimp forms embedded throughout the theme, and a shortcode that displays a Mailchimp signup within posts (that shortcode is <pre>[mailinglist]</pre>). Swap my Mailchimp credentials for your list and you're good to go.
 
-## Support
+## Support?
 
-I do not support this theme, or any of my other code. This is a big ol' __USE AT YOUR OWN CONVENIENCE/RISK/EXPERTISE__ repo. If you don't understand the code, it's probably best that you don't implement it.
-
-__Please do not email me, or reach out in any other way, with questions about implementing or customizing this theme.__ I won't reply, which will make me feel bad, then you'll feel bad. Avoid the bads.
-
-But __can you pay me to implement/customize this for you?__ What if you pay me a lot of money? Does that change the above rule? It does not. You may not. I will not.
+Nope! This theme is unsupported. Use it if you'd like, however you'd like, but please know that I can't help you out (beyond just making it available for download).

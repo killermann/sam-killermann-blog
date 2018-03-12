@@ -198,7 +198,7 @@ function mailingListShortcode(){
 					<div class="response" id="mce-success-response" style="display:none"></div>
 				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b0497ab27b695ca0aa9c4787e_a2529d5c19" tabindex="-1" value=""></div>
-			   <input type="submit" value="Count me in." name="subscribe" id="mc-embedded-subscribe" class="button">
+			   <input onClick="ga(\'send\', \'event\', { eventCategory: \'Mailing List\', eventAction: \'button_click\', eventLabel: \'Shortcode\'});" type="submit" value="Count me in." name="subscribe" id="mc-embedded-subscribe" class="button">
 			</form>
         </div>
 

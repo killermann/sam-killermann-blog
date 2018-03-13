@@ -760,7 +760,7 @@ body.page-template-page-sign-up {
 
 .archive {
 
-	#primary {padding:0;}
+	#primary, #primary main#main {padding:0;}
 
 	#content {
 		padding-top:0;
@@ -770,7 +770,7 @@ body.page-template-page-sign-up {
 
 			.archive-header--inner {
 				padding:.5vw 4vw;
-				background:rgba(255,255,255,.6);
+				background:rgba(255,255,255,.8);
 
 				.archive-description {
 					padding-bottom:1vw;
@@ -808,7 +808,7 @@ MEDIA QUERIES
 /* Medium screens */
 @media (min-width: 768px) {
 
-    .archive, .single, .blog, .search{
+    .single, .blog, .search{
 		& > main#main {
 
 			header.entry-header, .entry-content main {

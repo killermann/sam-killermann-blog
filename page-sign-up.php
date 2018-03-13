@@ -59,7 +59,7 @@ get_header(); ?>
 						<span>Plus, receive all Member / Supporter perks</span>
 					</li>
 				</ul>
-				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=2396885">Become SAMbassador</a>
+				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'SAMBassador - Sign-up Page'});" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=2396885">Become SAMbassador</a>
 			</div>
 			<div id="signup-options--patreon" class="grid-cell option chameleon-border chameleon">
 				<div class="chameleon-bg">
@@ -95,7 +95,7 @@ get_header(); ?>
 					</li>
 
 				</ul>
-				<a class="button" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=000000">Become Member</a>
+				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Member/Supporter - Sign-up Page'});" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=000000">Become Member</a>
 			</div>
 			<div id="signup-options--mailing-list" class="grid-cell option chameleon-border chameleon">
 				<div class="chameleon-bg">
@@ -118,7 +118,7 @@ get_header(); ?>
 						<span>Zero spam, easy unsubscribe</span>
 					</li>
 				</ul>
-				<a class="button" alt="Join Mailing List" href="http://eepurl.com/HVL7X">Join Mailing List</a>
+				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Mailing List', eventAction: 'button_click', eventLabel: 'Sign-up Page'});" alt="Join Mailing List" href="http://eepurl.com/HVL7X">Join Mailing List</a>
 			</div>
 		</div><!--/options-->
 	</section>

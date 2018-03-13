@@ -29,7 +29,7 @@ get_header(); ?>
 					<strong>Sign in</strong>
 					<span>if you already have an account</span>
 				</a>
-				<a href="sign-up" alt="Sign up" class="chameleon-bg grid-cell">
+				<a onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Home'});" href="sign-up" alt="Sign up" class="chameleon-bg grid-cell">
 					<strong>Sign up</strong>
 					<span>to access the Patron-only stuff</span>
 				</a>

@@ -28,7 +28,14 @@
 		</main>
 	</section><!-- .entry-content -->
 
-	<footer class="entry-footer chameleon-bg grid grid--center">
+	<?php if (is_single()){?>
+		<footer class="entry-footer">
+			<?php sam_killermann_blog_entry_footer();?>
+		</footer>
+	<?php }
+	else { ?>
+
+	<footer class="entry-footer grid grid--center">
 		<div class="grid-cell">
 			<?php sam_killermann_blog_entry_footer(); ?>
 		</div>
@@ -38,4 +45,5 @@
 			</a>
 		<?php endif;?>
 	</footer><!-- .entry-footer -->
+<?php }?>
 </article><!-- #post-<?php the_ID(); ?> -->

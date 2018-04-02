@@ -8,12 +8,15 @@
 
 	.entry-content {
 		font-size:1.5em;
+		max-width:520px;
+		margin:5vw auto !important;
 
 		blockquote p, p {
 			display:inline;
 			margin:1.5em auto;
 			font-weight:bold;
 			line-height:1.4;
+			font-family:$sans-serif !important;
 			background: lighten($teal,20%);
 
 		}
@@ -35,6 +38,7 @@
 		background:none;
 	}
 }
+
 	.loop .format-quote {
 
 		.entry-footer{
@@ -44,6 +48,33 @@
 				opacity:.5;
 
 				&:hover {opacity:1;}
+			}
+		}
+	}
+
+	.single {
+
+		main#main {
+
+			article.format-quote  {
+
+				.entry-content {
+					padding:60px 0px;
+					text-align:center;
+
+					blockquote {
+						font-size:calc(30px + 1.2vw);
+						margin:0 auto 1em;
+					}
+
+					cite {
+						font-size:calc(30px + .7vw);
+					}
+
+					blockquote p, p, cite, cite p {
+						text-align:center;
+					}
+				}
 			}
 		}
 	}

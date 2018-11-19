@@ -59,15 +59,9 @@
 					<?php endwhile; wp_reset_postdata(); ?>
 				</div>
 				<nav class="site-access">
-					<?php
-						if ( ! is_user_logged_in() ) {?>
-							<a id="sign-in" href="<?php echo esc_url( home_url( '/' ) ); ?>/wp-admin" alt="Sign in">Sign in</a>
-							<span>or</span>
-							<a onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Header'});" id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
-						<?php }
-						else {
-							?><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tag/patrons-only/" alt="">Patrons-Only 👉</a><?php
-						}?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/tag/patrons-only/" alt="">Employers Only 👉</a>
+					<span>or</span>
+					<a onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Header'});" id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
 				</nav>
 			</div><!--/marquee-->
 			<div id="masthead--nav">

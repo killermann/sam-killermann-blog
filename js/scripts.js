@@ -1,3 +1,6 @@
+//@prepros-prepend navigation.js
+//@prepros-prepend skip-link-focus-fix.js
+
 /*
     SHIFTING COLORS ~ Chameleon
     Written by King'ori

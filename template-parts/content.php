@@ -8,24 +8,29 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('chameleon-border'); ?>>
+<?php if ( ! is_single() ) : echo '<div class="loop-content chameleon-border">'; endif;?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('wrap'); ?>>
 	<?php if ( is_single() ){
 			if (function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 			}
 		}?>
-	<?php sam_killermann_blog_post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			sam_killermann_blog_primary_category();
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
+			the_title( '<h2 class="h1 entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+			sam_killermann_blog_posted_on();
+			sam_killermann_blog_posted_by();
+			sam_killermann_blog_post_thumbnail();
+		?>
+
 	</header><!-- .entry-header -->
 
-	<section class="entry-content">
+	<section class="entry-content text-wrap">
 		<?php
 		if ( 'post' == get_post_type() ) : ?>
 		<aside class="entry-meta">
@@ -37,12 +42,10 @@
 					echo '</div>';
 				}
 			}
-			sam_killermann_blog_posted_on();
-			sam_killermann_blog_posted_by();
+
 			?>
 		</aside><!-- .entry-meta -->
-		<?php endif;?>
-		<main>
+		<?php endif; ?>
 		<?php
 			if (is_single()){
 				the_content( sprintf(
@@ -68,23 +71,11 @@
 			}
 
 		?>
-		</main>
 	</section><!-- .entry-content -->
-
-	<?php if (is_single()){?>
-		<footer class="entry-footer">
-			<?php sam_killermann_blog_entry_footer();?>
-		</footer>
-	<?php }
-	else { ?>
-		<footer class="entry-footer chameleon-bg grid grid--center">
-			<div class="grid-cell">
-				<?php sam_killermann_blog_entry_footer(); ?>
-			</div>
-			<a href="<?php the_permalink(); ?>" class="readMore grid-cell grid-cell--autoSize">
-				Read More &rarr;
-			</a>
-		</footer><!-- .entry-footer -->
-	<?php }?>
+	<footer class="entry-footer">
+		<?php sam_killermann_blog_entry_footer();?>
+	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;?>

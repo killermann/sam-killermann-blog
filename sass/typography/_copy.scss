@@ -15,6 +15,14 @@ address {
 	margin: 0 0 1.5rem;
 }
 
+p {
+	margin-top:0;
+}
+
+p + p {
+	margin-bottom:1.5rem;
+}
+
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;

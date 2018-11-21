@@ -3,6 +3,12 @@
 	text-align: center;
 }
 
+.dont-render-dawg {
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+
 .spin {
 	animation:spin 6s infinite linear;
 

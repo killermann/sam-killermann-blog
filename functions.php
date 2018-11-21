@@ -272,35 +272,6 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
-/**
- * Adjusting the Patreon
-*/
-
-// add_filter('ptrn/post_content','my_excerpt_adding_function');
-//
-// function my_excerpt_adding_function($content) {
-//
-// 	global $post;
-//
-// 	add_filter('ptrn/bypass_filtering','toggle_patreon_filtering');
-//
-// 	$untilreadmore = get_extended ( $post->post_content );
-//
-// 	remove_filter('ptrn/bypass_filtering','toggle_patreon_filtering');
-//
-// 	// Format the excerpt in any way you want after this point
-//
-// 	return $untilreadmore['main'].$content;
-//
-// }
-//
-// function toggle_patreon_filtering($filter) {
-//
-// 	if(!$filter) {
-// 		return true;
-// 	}
-// 	return false;
-// }
 /** CLEANING UP HEAD BY REMOVING UNUSED STUFF **/
 
 remove_action( 'wp_head', 'wlwmanifest_link');

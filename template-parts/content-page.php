@@ -16,7 +16,7 @@
 
 	<?php sam_killermann_blog_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content type-wrap">
 		<?php
 			the_content();
 

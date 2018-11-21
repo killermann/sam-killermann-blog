@@ -1,2 +1,32 @@
 @import "grid";
 @import "templates";
+
+.pad {
+	padding:2vw;
+}
+
+.wrap {
+	max-width:960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.bigpad {
+	padding:4vw;
+}
+
+@media screen and (min-width:1030px) {
+	#page {
+		display: grid;
+		grid-template-columns: 144px 1fr
+	}
+
+	#masthead {
+		flex:1;
+		position:relative;
+	}
+
+	#colophon {
+		grid-column: span 2;
+	}
+}

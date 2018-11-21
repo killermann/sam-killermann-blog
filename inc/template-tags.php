@@ -12,10 +12,8 @@ if ( ! function_exists( 'sam_killermann_blog_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function sam_killermann_blog_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
@@ -72,25 +70,6 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'sam-killermann-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
-		// if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		// 	echo '<span class="comments-link">';
-		// 	comments_popup_link(
-		// 		sprintf(
-		// 			wp_kses(
-		// 				/* translators: %s: post title */
-		// 				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'sam-killermann-blog' ),
-		// 				array(
-		// 					'span' => array(
-		// 						'class' => array(),
-		// 					),
-		// 				)
-		// 			),
-		// 			get_the_title()
-		// 		)
-		// 	);
-		// 	echo '</span>';
-		// }
 
 		edit_post_link(
 			sprintf(
@@ -201,6 +180,49 @@ function sam_killermann_blog_primary_category() {
 }
 
 
+function getLoopSubscribe() { ?>
+
+	<article class="subscribeLoop clearfix yellow-bg rounded">
+		<h3 class="subscribe-heading">Subscribe</h3>
+		<h4>Never miss a new episode<br/>
+			<small>(unless you want to)</small></h4>
+		<ul class="hostingPlatforms">
+			<li>
+				<a data-ot="Email List" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" target="_blank" id="email" href="">
+					💌
+				</a>
+			</li>
+		</ul>
+	</article>
+
+<?php }
+
+
+
+function getMailingList() { ?>
+
+	<div class="hereticMailingListWrap clearfix">
+		<div class="hereticMailingList clearfix">
+			<h3>💌 Do you want an email when<br/> new episodes come out?</h3>
+			<ul class="buttonList flexcontainer">
+				<li>
+					<a class="button" alt="Get emails with new episodes" target="_blank" href="">
+						🤓 Yes, please.
+					</a>
+				</li>
+				<li>
+					<a class="button button-grey" href="<?php echo home_url(); ?>/subscribe" alt="Subscribe to the Podcast">
+						🖱 Other options?
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<?php }
+
+
+
 if ( ! function_exists( 'sam_killermann_blog_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
@@ -211,7 +233,7 @@ function sam_killermann_blog_post_thumbnail() {
 		return;
 	}?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+	<a class="post-thumbnail chameleon-bg" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(

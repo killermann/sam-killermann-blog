@@ -1,215 +1,151 @@
 #masthead {
-	background-color:$color__primary;
-
+	position:relative;
+}
 	#masthead--inner {
-		height:95px;
 		width:100%;
-	}
-
-	#marquee {
+		padding:0;
 		display:flex;
-		background:rgba(0,0,0,.2);
-		width:100%;
-		justify-content: center;
-		font-size:13px;
+		height:40px;
+		margin-bottom:10px;
+		justify-content: space-between;
+		align-items: flex-start;
 
-		#marquee--latest {
-			display:none;
+		.button {
+			background:rgba(255,255,255,.9);
+			padding:0 .7em;
+			margin:5px;
+			font-size:.8em;
+			color:black;
+			line-height:30px;
+			text-decoration:none;
+			font-weight:bold;
+			border:none;
+			border-radius:3px;
+			box-shadow: 3px 3px 0px 0px rgba(0,0,0,.4);
+
+			.open {display:none;}
+
+			&:hover {
+				background:#fff;
+				box-shadow: 5px 5px 3px 0 rgba(0,0,0,.4);
+			}
+
+			&:active {
+				box-shadow:none;
+				background:rgba(0,0,0,.5);
+				color:#000;
+			}
 		}
 	}
 
-	nav.site-access {
-		background:rgba(0,0,0,.3);
-		border-radius:4px;
-		padding:0 4px;
-		margin:4px;
-		color:rgba(255,255,255,.5);
+	#masthead-logo {
+		width:60px;
+		height:60px;
+		border:none;
+		margin:0;
+		@extend .spin-hover;
+		display:block;
+	}
+
+	#masthead--nav {
+		display:none;
+	}
+
+#marquee {
+	display:none;
+}
+
+@media (min-width:768px){
+
+}
+
+@media (min-width:1030px){
+
+	#marquee {
+		display:flex;
+		font-size:13px;
+		line-height:1.1;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	#marquee--latest {
+		display:flex;
+		padding:2px 10px;
+		background:#eaeaea;
+		margin:10px;
+		line-height:2;
+		border-radius:5px;
+		flex-basis:auto;
+	}
+
+	.marquee-post {
+		overflow:visible;
+		position:relative;
+
+		a, strong {
+			display:inline-block;
+			padding:0;
+			border:none;
+			vertical-align: middle;
+			max-width:320px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-decoration:none;
+		}
+
+		a:hover, a:focus {
+			text-decoration: underline;
+		}
+
+		#speech-bubble {
+			position:absolute;
+			bottom:-14px;
+			width:20px;
+			left:0px;
+			fill:#eaeaea;
+		}
+	}
+
+	.site-access {
+		margin:10px;
+		a {
+			margin:2px 5px;
+			border:none;
+		}
 	}
 
 	#masthead--nav {
 		display:flex;
-		justify-content: space-between;
-	}
+		width:90%;
+		flex-direction:column;
+		flex-wrap:nowrap;
+		justify-content:flex-start;
 
-	.site-branding {
-		margin:0;
-
-		img.custom-logo {
-			height:60px;
-			margin:0px;
-			display:block;
-			width:auto;
-			@extend .spin-hover;
-
-			&:active {
-				opacity:.8;
-			}
-		}
-
-		h1, p, span {
-			margin:0;
-			display:block;
-			padding:0;
-			line-height:1.1;
-			color:#fff;
-		}
-
-		.site-title {
-			padding:1vw;
-			font-size:1.3em;
-			font-weight:900;
-			a {
-				text-decoration:none;
-				color:#fff;
-				text-shadow: 3px
-
-				 0 rgba(0,0,0,.4);
-				transition:none;
-
-				&:hover {
-					color:#fff;
-					text-shadow: 5px 5px 3px rgba(0,0,0,.4);
-				}
-
-				&:active {
-					color:rgba(0,0,0,.5);
-					text-shadow:none;
-				}
-			}
-		}
-
-		.site-description {
-			color:#000;
-			font-size:.8em;
+		a {
+			width:100%;
+			margin:1.5em auto 0;
 		}
 	}
 
-	#masthead--search {
-		display:none;
-	}
-}
+	#masthead--inner {
+		display:flex;
+		height:auto;
+		align-items:center;
+		justify-content: center;
+		flex-direction:column;
 
-@media (min-width:768px){
-	#masthead {
-
-		#marquee {
-			justify-content: space-between;
-
-			#marquee--latest {
-				display:flex;
-				padding:7px;
-
-				article {
-					margin:0;
-					line-height:1.1;
-					font-size:13px;
-
-					span {
-						display:inline-block;
-						background:rgba(0,0,0,.5);
-						padding:2px 4px;
-						font-weight:bold;
-						text-transform:uppercase;
-						border-radius:2px;
-						vertical-align: middle;
-						margin-right:2px;
-					}
-					a {
-						display:inline-block;
-						padding:0;
-						border:none;
-						vertical-align: middle;
-						line-height:1;
-						width: 320px;
-						white-space: nowrap;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						text-decoration:none;
-
-						&:hover {
-							text-decoration:underline;
-						}
-					}
-				}
-			}
-		}
-		#masthead--inner {
-			height:auto;
-			flex-direction:row;
-			align-items:stretch;
-
-			.site-branding {
-				margin:0;
-
-				img.custom-logo {
-					height:100px;
-					width:auto;
-					max-width:80%;
-				}
-			}
-		}
-
-		#masthead--search {
-			display:flex;
-			align-items:center;
-			margin:0 1vw;
-			position:relative;
-
-			#search-icon {
-				position:absolute;
-				z-index:1;
-				left:8px;
-				top:50%;
-				margin-top:-12px;
-				opacity:1;
-
-				.st0{fill:none;stroke:#fff;stroke-width:2;}
-				svg {
-					width:22px;
-					height:27px;
-					path {fill:#fff}
-				}
-			}
-
-			form {
-				position:relative;
-				z-index:2;
-
-				input {
-					padding-left:35px;
-					border-radius:4px;
-					font-size:1em;
-					font-weight:bold;
-					background:rgba(255,255,255,.5);
-					border:none;
-					transition:all .3s linear;
-					box-shadow:3px 3px 0 rgba(0,0,0,.2);
-
-					&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-					  color: black;
-					}
-
-					&:focus {
-						background:rgba(255,255,255,1);
-						border-color:white;
-						padding-left:10px;
-						box-shadow:0px 0px 1px rgba(0,0,0,.4);
-					}
-				}
-
-				input[type=submit]{display:none}
-			}
+		.button {
+			display:none;
 		}
 	}
-}
-@media (min-width:1030px){
-	#masthead {
-		#marquee {
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.2+0,0+33,0+66,0.2+100 */
-			background: -moz-linear-gradient(left, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.2) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(left, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to right, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=1 ); /* IE6-9 */
-		}
+
+	#masthead-logo {
+		width:111px;
+		height:111px;
+		margin:0 auto;
 	}
+
+
 }

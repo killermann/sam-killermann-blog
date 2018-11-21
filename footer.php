@@ -34,20 +34,20 @@
 				</div>
 			</div>
 
-			<div class="button-group grid medium-grid--fit small-grid--full">
-				<div class="grid-cell">
+			<div class="button-group grid grid--full medium-grid--fit">
+				<div class="grid-cell bigpad">
 					<a href="https://patreon.com/killermann" title="Be My Boss" class="button">
 						Be My Boss
 					</a>
 					<div class="description">I'm employed by a fine group of the best people in the world ever on <a href="https://patreon.com/killermann" target="_blank">Patreon</a> i love them srsly wanna be one?</div>
 				</div>
-				<div class="grid-cell">
+				<div class="grid-cell bigpad">
 					<a href="https://patreon.com/killermann" title="Be My Boss" class="button">
 						View my CV
 					</a>
 					<div class="description">View <a href="https://samuelkillermann.com" target="_blank">online Curriculum Vitae</a> and see if I'm qualified to be your employee (or just to get a sense of where I'm coming from)</div>
 				</div>
-				<div class="grid-cell">
+				<div class="grid-cell bigpad">
 					<a href="https://hues.xyz" title="Buy Merch" class="button">
 						Buy Merch
 					</a>
@@ -83,10 +83,10 @@
 				</a>
 			</nav><!--/mastheadnav-->
 		</section><!-- #site-navigation -->
-		<div id="colophon--inner">
+		<section id="colophon--inner">
 
-			<div class="grid">
-				<div class="grid-cell">
+			<div class="grid grid--full medium-grid--fit">
+				<div class="grid-cell bigpad">
 					<h3>
 						Uncopyrighted
 					</h3>
@@ -97,7 +97,7 @@
 						<a href="http://uncopyright.org/notice/?uwn=www.samkillermann.com&?uwc=Sam+Killermann" alt="Uncopyright Notice" class="button">View Uncopyright Notice</a>
 					</p>
 				</div><!--/uncopyright-->
-				<div class="grid-cell">
+				<div class="grid-cell bigpad">
 					<h3>
 						Follow me Anywhere
 					</h3>
@@ -115,24 +115,19 @@
 					</p>
 				</div><!--/follow-->
 			</div><!--/grid-->
-			<div class="grid grid--center">
-				<div class="grid-cell text-center grid-cell--autoSize">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="home"><img class="spin" alt="Sam Killermann's Floating Head" src="<?php echo get_template_directory_uri();?>/img/sam-killermann-headshot-doodle.svg"></a>
-				</div>
-				<div class="site-info grid-cell">
-					<h3>How I Built this Site</h3>
-					<p>
-						This website is powered by <a href="http://wordpress.org" alt="Wordpress">Wordpress</a> (free, open-source software) using <a href="https://github.com/killermann/sam-killermann-blog" alt="Sam Killermann Blog Theme">a custom theme I built</a> (which I released free &amp; open-source) on top of <a href="http://underscores.me/" alt="underscores starter theme">Underscores</a> (which is, you guessed it, free &amp; open-source).
-					</p>
-					<p>
-						It's hosted with WPEngine, which is <em>incredibly</em> not free, but it's worth the chunk of change because I have to have fancy hosting <a href="https://www.patreon.com/posts/i-migrated-ipms-16260203">or my sites go down a lot</a>. If you want to sign up with them, you can click these affiliate links for discounts (and to get me a few dollars thousands-of-dollars-a-year hosting bill): <a href="http://shareasale.com/r.cfm?b=1055761&u=593446&m=41388&urllink=&afftrack=">Discounted Personal Plan</a> or <a href="http://shareasale.com/r.cfm?b=1055765&u=593446&m=41388&urllink=&afftrack=">Discounted Business Plan (what I'm on)</a> at WPEngine.
-					</p>
-					<p>
-						If you want to build a blog <em>exactly</em> like this one, you have almost everything you need above to get started. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
-					</p>
-				</div><!-- .site-info -->
-			</div>
-		</div><!--/inner-->
+			<div class="site-info bigpad">
+				<h3>How I Built this Site</h3>
+				<p>
+					This website is powered by <a href="http://wordpress.org" alt="Wordpress">Wordpress</a> (free, open-source software) using <a href="https://github.com/killermann/sam-killermann-blog" alt="Sam Killermann Blog Theme">a custom theme I built</a> (which I released free &amp; open-source) on top of <a href="http://underscores.me/" alt="underscores starter theme">Underscores</a> (which is, you guessed it, free &amp; open-source).
+				</p>
+				<p>
+					It's hosted with WPEngine, which is <em>incredibly</em> not free, but it's worth the chunk of change because I have to have fancy hosting <a href="https://www.patreon.com/posts/i-migrated-ipms-16260203">or my sites go down a lot</a>. If you want to sign up with them, you can click these affiliate links for discounts (and to get me a few dollars thousands-of-dollars-a-year hosting bill): <a href="http://shareasale.com/r.cfm?b=1055761&u=593446&m=41388&urllink=&afftrack=">Discounted Personal Plan</a> or <a href="http://shareasale.com/r.cfm?b=1055765&u=593446&m=41388&urllink=&afftrack=">Discounted Business Plan (what I'm on)</a> at WPEngine.
+				</p>
+				<p>
+					If you want to build a blog <em>exactly</em> like this one, you have almost everything you need above to get started. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
+				</p>
+			</div><!-- .site-info -->
+		</section><!--/inner-->
 	</footer><!-- #colophon -->
 	<svg id="icon-pencil-alt" aria-hidden="true" data-prefix="fal" data-icon="pencil-alt" class="spin-hover dont-render-dawg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M493.255 56.236l-37.49-37.49c-24.993-24.993-65.515-24.994-90.51 0L12.838 371.162.151 485.346c-1.698 15.286 11.22 28.203 26.504 26.504l114.184-12.687 352.417-352.417c24.992-24.994 24.992-65.517-.001-90.51zM164.686 347.313c6.249 6.249 16.379 6.248 22.627 0L368 166.627l30.059 30.059L174 420.745V386h-48v-48H91.255l224.059-224.059L345.373 144 164.686 324.687c-6.249 6.248-6.249 16.378 0 22.626zm-38.539 121.285l-58.995 6.555-30.305-30.305 6.555-58.995L63.255 366H98v48h48v34.745l-19.853 19.853zm344.48-344.48l-49.941 49.941-82.745-82.745 49.941-49.941c12.505-12.505 32.748-12.507 45.255 0l37.49 37.49c12.506 12.506 12.507 32.747 0 45.255z"></path></svg>
 	<svg id="icon-prescription-bottle-alt" aria-hidden="true" data-prefix="fal" data-icon="prescription-bottle-alt" class="spin-hover dont-render-dawg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M104 320h56v56c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-56h56c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8h-56v-56c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v56h-56c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM360 0H24C10.8 0 0 10.8 0 24v80c0 13.2 10.8 24 24 24h8v352c0 17.6 14.4 32 32 32h256c17.6 0 32-14.4 32-32V128h8c13.2 0 24-10.8 24-24V24c0-13.2-10.8-24-24-24zm-40 480H64V128h256v352zm32-384H32V32h320v64z"></path></svg>

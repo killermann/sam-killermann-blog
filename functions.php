@@ -59,6 +59,34 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 			'caption',
 		) );
 
+
+		/*
+		 * Enable Gutenberg Color Scheme Picker
+
+		add_theme_support( 'editor-color-palette',
+			'#000',
+			'#fff',
+			'#467cbf',
+			'#42b4e3',
+			'#31307e',
+			'#40ae49',
+			'#008345',
+			'#81bc41',
+			'#ccdb29',
+			'#fcdc00',
+			'#ffcd00',
+			'#ed7623',
+			'#f5a81c',
+			'#e02828',
+			'#b4292e',
+			'#cb2044',
+			'#e81d76',
+			'#8e1e58',
+			'#99298b',
+			'#AF6EE2',
+			'#803c96'
+		); */
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'sam_killermann_blog_custom_background_args', array(
 			'default-color' => 'ffffff',
@@ -114,6 +142,23 @@ function sam_killermann_blog_widgets_init() {
 add_action( 'widgets_init', 'sam_killermann_blog_widgets_init' );
 
 /**
+ * Remove WP Embed
+ */
+function sK_blog_include_custom_jquery() {
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'sK_blog_include_custom_jquery');
+
+/**
+ * Remove WP Embed
+ */
+function sK_deregister_wp_embed(){
+ wp_dequeue_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'sK_deregister_wp_embed' );
+
+/**
  * Enqueue scripts and styles.
  */
 function sam_killermann_blog_scripts() {
@@ -122,7 +167,7 @@ function sam_killermann_blog_scripts() {
 	wp_enqueue_script( 'sam-killermann-blog-scripts', get_template_directory_uri() . '/js/scripts-dist.js', array(), '1.0', true );
 
 }
-add_action( 'wp_enqueue_scripts', 'sam_killermann_blog_scripts' );
+add_action( 'wp_enqueue_scripts', 'sam_killermann_blog_scripts', 50 );
 
 /**
  * Implement the Custom Header feature.
@@ -166,7 +211,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_action( 'after_setup_theme', 'sam_killermann_blog_add_post_formats' );
 
 
-
 /**
  * Mailing List Shortcode [mailinglist]
 */
@@ -175,31 +219,31 @@ add_action( 'after_setup_theme', 'sam_killermann_blog_add_post_formats' );
 function mailingListShortcode(){
 
     $heyHeyLookMailingList = '
-	<div class="in-text--mailing-list chameleon-border">
-        <div class="mailing-list">
-            <h3 class="chameleon-color">Fear of Missing Out?</h3>
-            <p>
-				<strong>Join the mailing list</strong> to get occasional updates with the latest &amp; greatest.
-            </p>
+		<div class="in-text--mailing-list chameleon-border">
+	        <div class="mailing-list">
+	            <h3 class="chameleon-color">Fear of Missing Out?</h3>
+	            <p>
+					<strong>Join the mailing list</strong> to get occasional updates with the latest &amp; greatest.
+	            </p>
 
-			<form action="https://samkillermann.us3.list-manage.com/subscribe/post?u=b0497ab27b695ca0aa9c4787e&amp;id=a2529d5c19" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate grid grid--center grid--fit" target="_blank" novalidate>
+				<form action="https://samkillermann.us3.list-manage.com/subscribe/post?u=b0497ab27b695ca0aa9c4787e&amp;id=a2529d5c19" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate grid grid--center grid--fit" target="_blank" novalidate>
 
-				<input type="email" value="" placeholder="your@email.com" name="EMAIL" class="required email" id="mce-EMAIL">
+					<input type="email" value="" placeholder="your@email.com" name="EMAIL" class="required email" id="mce-EMAIL">
 
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b0497ab27b695ca0aa9c4787e_a2529d5c19" tabindex="-1" value=""></div>
-			   <input onClick="ga(\'send\', \'event\', { eventCategory: \'Mailing List\', eventAction: \'button_click\', eventLabel: \'Shortcode\'});" type="submit" value="Count me in." name="subscribe" id="mc-embedded-subscribe" class="button">
-			</form>
-        </div>
-
-	</div>';
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b0497ab27b695ca0aa9c4787e_a2529d5c19" tabindex="-1" value=""></div>
+				   <input onClick="ga(\'send\', \'event\', { eventCategory: \'Mailing List\', eventAction: \'button_click\', eventLabel: \'Shortcode\'});" type="submit" value="Count me in." name="subscribe" id="mc-embedded-subscribe" class="button">
+				</form>
+	        </div>
+		</div>';
     return $heyHeyLookMailingList;
 }
 
 add_shortcode('mailinglist', 'mailingListShortcode');
+
 /**
  * Custom Log-in Page
 */
@@ -281,6 +325,46 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+
+/*------------------------------------*\
+	Lazy Load All the Images
+\*------------------------------------*/
+
+/**
+ * Use Lozad (lazy loading) for images within the posts
+ */
+
+add_filter('the_content', function ($content) {
+	//-- Change src/srcset to data attributes.
+	$content = preg_replace("/<img(.*?)(src=|srcset=)(.*?)>/i", '<img$1data-$2$3>', $content);
+
+	//-- Add .lazy-load class to each image that already has a class.
+	$content = preg_replace('/<img(.*?)class=\"(.*?)\"(.*?)>/i', '<img$1class="$2 lazy-load"$3>', $content);
+
+	//-- Add .lazy-load class to each image that doesn't already have a class.
+	$content = preg_replace('/<img((?:(?!class=).)*?)>/i', '<img class="lazy-load"$1>', $content);
+
+	return $content;
+});
+
+/**
+ * Use Lozad (lazy loading) for attachments/featured images
+ */
+add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
+    // Bail on admin
+    if (is_admin()) {
+        return $attr;
+    }
+
+    $attr['data-src'] = $attr['src'];
+	$attr['data-src-set'] = $attr['src-set'];
+    $attr['class'] .= ' lazy-load';
+    unset($attr['src']);
+	unset($attr['src-set']);
+
+    return $attr;
+}, 10, 2);
 
 /*------------------------------------*\
 	Customize Admin Area

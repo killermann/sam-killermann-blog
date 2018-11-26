@@ -11,6 +11,7 @@ get_header(); ?>
 		$home_recent_args = array(
 			'post_type' => 'post', // if the post type is post
 			'posts_per_page' => 4,
+			'orderby' => 'date',
 			'tax_query' => array(
 				'relation' => 'AND',
 				array(
@@ -82,8 +83,19 @@ get_header(); ?>
 				<?php
 
 			else :
+				if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
+
+				if ( has_category( 'patrons-only' ) ) :
+					echo '
+					<a class="sign-post for-patrons-only" href="https://patreon.com/killermann" title="Content for Patrons Only">
+						<div class="sign-title">Patrons Only</div>
+						<div class="sign-description">No General Admittance</div>
+					</a>';
+				endif;
 
 				get_template_part( 'template-parts/content', get_post_format() );
+
+				if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;
 
 			endif;
 
@@ -117,8 +129,5 @@ get_header(); ?>
 		?>
 	</section>
 
-	<div id="asterisk1-note">
-		<p><a rel="bookmark" href="#asterisk1">&#42; Not sorry.</a></p>
-	</div>
 
 <?php get_footer();?>

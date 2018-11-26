@@ -25,7 +25,7 @@ if ( ! function_exists( 'sam_killermann_blog_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( '%s', 'post date', 'sam-killermann-blog' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'' . $time_string . ''
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -38,11 +38,20 @@ if ( ! function_exists( 'sam_killermann_blog_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function sam_killermann_blog_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'sam-killermann-blog' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+
+		if ( is_single() ) :
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				esc_html_x( 'by %s', 'post author', 'sam-killermann-blog' ),
+				'<span class="author vcard"><a rel="bookmark" class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			);
+		else :
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				esc_html_x( 'by %s', 'post author', 'sam-killermann-blog' ),
+				'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
+			);
+		endif;
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -58,14 +67,14 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ' ', 'sam-killermann-blog' ) );
-			if ( $categories_list ) {
+			if ( $categories_list && is_single() ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'sam-killermann-blog' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'sam-killermann-blog' ) );
-			if ( $tags_list ) {
+			if ( $tags_list && is_single() ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'sam-killermann-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
@@ -117,11 +126,8 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 					</h4>
 					<?php if ( $author_avatar ) { ?>
 					<div class="author-avatar">
-						<a href="<?php echo esc_url( $author_url ); ?>" rel="author">
+						<a title="View All Posts by Author" href="<?php echo esc_url( $author_url ); ?>" rel="author">
 							<?php echo $author_avatar; ?>
-						</a>
-						<a class="button" href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_html_e( 'View all posts', 'text_domain' ); ?>">
-						View all posts
 						</a>
 					</div><!-- .author-avatar -->
 					<?php } ?>
@@ -170,10 +176,15 @@ function sam_killermann_blog_primary_category() {
 		if ( !empty($category_display) ){
 		    if ( $useCatLink == true && !empty($category_link) ){
 			echo '<span class="primary-category">';
-			echo '<a href="'.$category_link.'">'.htmlspecialchars($category_display).'</a>';
+			if ( is_single() ) {
+				echo '<a href="'.$category_link.'">'.htmlspecialchars($category_display).'</a>';
+			}
+			else {
+				echo htmlspecialchars($category_display);
+			}
 			echo '</span>';
 		    } else {
-			echo '<span class="post-category">'.htmlspecialchars($category_display).'</span>';
+			echo '<span class="primary-category">'.htmlspecialchars($category_display).'</span>';
 		    }
 		}
 	}

@@ -9,18 +9,18 @@
 
 get_header(); ?>
 
-		<main id="main" class="site-main chameleon-border">
+		<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="archive-header chameleon-bg">
-				<div class="archive-header--inner">
-					<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="archive-description entry-content">', '</div>' );
-					?>
-				</div>
+			<header class="archive-header">
+			<?php
+				echo '<h1 class="page-title">';
+				echo single_term_title();
+				echo '</h1>';
+				the_archive_description( '<div class="archive-description entry-content">', '</div>' );
+			?>
 			</header><!-- .page-header -->
 			<section class="loop">
 
@@ -28,12 +28,11 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+					if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
+
 					get_template_part( 'template-parts/content', get_post_format() );
+
+					if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;
 
 				endwhile;
 

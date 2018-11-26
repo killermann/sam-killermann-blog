@@ -3,15 +3,15 @@
 	align-items:center;
 	display:flex;
 	flex-wrap:wrap;
+	margin:0 auto;
+
 
 	a {
 		display:block;
 		transition:none;
+		border:none;
 		color:black;
 		fill:currentColor;
-		margin:1em;
-		border:none;
-		text-decoration: none;
 
 		svg {
 			width:40px;
@@ -23,7 +23,7 @@
 
 		span {
 			display:block;
-			margin-top:1em;
+			margin-top:1vh;
 			font-size:14px;
 			font-weight:bold;
 			letter-spacing:.04em;
@@ -90,13 +90,5 @@
 
 	.site-access {
 		display:flex;
-	}
-}
-
-@media screen and (min-width: 1030px) {
-
-	#masthead--inner {
-		position:sticky;
-		top:10px;
 	}
 }

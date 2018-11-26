@@ -1,15 +1,15 @@
 body {
-	color: $color__text-main;
 	font-family: $font__main;
 	line-height: $font__line-height-body;
-	font-size:calc(16px + .3vw);
+	font-size:calc(16px + .4vw);
+	color:var(--text-color);
 	text-rendering: optimizelegibility;
 }
 
 .text-wrap {
 	max-width:33em;
-	margin-left:0;
-	margin-right:0;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 @import "headings";

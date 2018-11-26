@@ -29,7 +29,7 @@ query_posts( $args );
 
 get_header(); ?>
 
-		<main id="main" class="loop chameleon-border">
+		<main id="main" class="loop">
 
 			<nav class="post-filters">
 				<form>
@@ -82,7 +82,18 @@ get_header(); ?>
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
+				if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
+
+				if ( in_category('patrons-only') ) :
+					echo '<a class="sign-post for-patrons-only" href="https://patreon.com/killermann" title="Content for Patrons Only">
+						<div class="sign-title">Patrons Only</div>
+						<div class="sign-description">No General Admittance</div>
+					</a>';
+				endif;
+
 				get_template_part( 'template-parts/content', get_post_format() );
+
+				if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;
 
 			endwhile;
 

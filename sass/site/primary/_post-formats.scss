@@ -83,7 +83,7 @@
 	justify-content: center !important;
 	border:none !important;
 	max-width:800px;
-	margin:0 auto;
+	margin:4vw auto;
 
 	.entry-header {
 		padding:0 !important;
@@ -123,7 +123,8 @@
 
 	.entry-footer {
 		background:none;
-		padding-left:60px !important;
+		line-height:1;
+		padding:10px 0 0 60px;
 
 		.author {
 			margin-right:10px;

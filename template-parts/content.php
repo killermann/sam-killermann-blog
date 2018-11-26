@@ -8,74 +8,52 @@
  */
 ?>
 
-<?php if ( ! is_single() ) : echo '<div class="loop-content chameleon-border">'; endif;?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('wrap'); ?>>
-	<?php if ( is_single() ){
-			if (function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-			}
-		}?>
 
 	<header class="entry-header">
-		<?php if ( is_single() ) :
+		<?php
+		sam_killermann_blog_primary_category();
+		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			sam_killermann_blog_primary_category();
 			the_title( '<h2 class="h1 entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-			sam_killermann_blog_posted_on();
-			sam_killermann_blog_posted_by();
-			sam_killermann_blog_post_thumbnail();
-		?>
+		if ( has_excerpt() ) :
+			echo '<p class="excerpt">';
+			echo get_the_excerpt();
+			echo '</p>';
+		endif;
+		sam_killermann_blog_posted_on();
+		sam_killermann_blog_posted_by();
+		sam_killermann_blog_post_thumbnail();
 
+		?>
 	</header><!-- .entry-header -->
 
 	<section class="entry-content text-wrap">
 		<?php
-		if ( 'post' == get_post_type() ) : ?>
-		<aside class="entry-meta">
-			<?php
-			if (is_single()){
-				if ( has_excerpt( $post->ID ) ) {
-					echo '<div class="excerpt chameleon-border">';
-					the_excerpt();
-					echo '</div>';
-				}
-			}
+			the_content( sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading &rarr; <span class="screen-reader-text"> "%s"</span>', 'sam_killermann_blog' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			) );
 
-			?>
-		</aside><!-- .entry-meta -->
-		<?php endif; ?>
-		<?php
-			if (is_single()){
-				the_content( sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'sam_killermann_blog' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				) );
-
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sam_killermann_blog' ),
-					'after'  => '</div>',
-				) );
-			}
-			else {
-				the_excerpt();
-			}
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sam_killermann_blog' ),
+				'after'  => '</div>',
+			) );
 
 		?>
 	</section><!-- .entry-content -->
-	<footer class="entry-footer">
+	<footer class="entry-footer text-wrap">
 		<?php sam_killermann_blog_entry_footer();?>
 	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<?php if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;?>

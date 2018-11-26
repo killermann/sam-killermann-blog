@@ -9,8 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
-
+	<main id="main" class="bigpad site-main">
 	<?php
 	while ( have_posts() ) : the_post();
 
@@ -23,9 +22,7 @@ get_header(); ?>
 		// 	comments_template();
 		// endif;
 
-	endwhile; // End of the loop.
-	?>
-
+	endwhile; // End of the loop.?>
 	</main><!-- #main -->
 
 <?php

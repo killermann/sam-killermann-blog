@@ -6,7 +6,7 @@ Template Name: Sign-Up Page
 get_header(); ?>
 
 	<section class="hero">
-		<div class="hero--section grid grid--full grid--center chameleon-bg">
+		<div class="hero--section grid grid--full grid--center">
 			<div class="hero--text grid-cell">
 				<?php
 				while ( have_posts() ) : the_post();
@@ -17,7 +17,7 @@ get_header(); ?>
 				?>
 			</div>
 
-		</div><!--hero--section-->
+		</div><!--hero-section-->
 
 	</section><!--/hero-->
 	<section id="signup-options">

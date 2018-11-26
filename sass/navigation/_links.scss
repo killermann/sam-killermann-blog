@@ -1,8 +1,8 @@
 a {
-	color: $color__text-main;
 	border-bottom-width:.1em;
 	border-bottom-style:solid;
 	border-bottom-color:$color__primary;
+	color:var(--text-color);
 
 	&:visited {
 		opacity:.8;

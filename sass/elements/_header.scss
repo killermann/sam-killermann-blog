@@ -68,13 +68,9 @@
 			margin:3px;
 			background:none;
 			border-radius:100px;
-			color:white;
+			color:rgba(255,255,255,.7);
 			fill:currentColor;
-
-			&.is-active {
-				background:white;
-				@extend .chameleon-color;
-			}
+			transition:none;
 
 			&:hover {
 				transform:none;
@@ -82,7 +78,17 @@
 		}
 
 		#day-mode.is-active {
+			background:white;
+			color:#f5a81c;
+		}
 
+		#night-mode.is-active, #night-mode:active {
+			background:black;
+			color:white;
+
+			svg {
+				filter: drop-shadow(0px 0px 5px #FFFF66);
+			}
 		}
 
 		svg {
@@ -145,13 +151,13 @@
 			bottom:-1em;
 			width:20px;
 			left:0px;
-			fill:#eaeaea;
+			fill:var(--bg-faint);
 		}
 	}
 
 	.site-access {
 		padding:10px;
-		
+
 		a {
 			margin:2px 5px;
 			border:none;

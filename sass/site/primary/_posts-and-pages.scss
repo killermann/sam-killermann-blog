@@ -61,7 +61,7 @@
 	}
 
 	pre {
-		background: #eee;
+		background: var(--bg-faint);
 		border: 1px solid #cecece;
 		padding: 10px;
 	}
@@ -208,6 +208,7 @@
 			padding:5px 15px 5px 5px;
 			box-shadow:none;
 			appearance:none;
+			background:none;
 			@extend .chameleon-colorborder;
 		}
 	}
@@ -238,6 +239,8 @@
 
 	.sign-description {
 		padding:.3em .2em;
+		background:white;
+		color:black;
 	}
 
 	&:hover, &:focus {

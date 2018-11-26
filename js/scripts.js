@@ -2,30 +2,6 @@
 //@prepros-prepend intersection-observer.js
 //@prepros-prepend lozad.min.js
 
-
-/*
-    Dark Mode Color Scheme Toggle
-*/
-// const root = document.documentElement
-// const themeBtns = document.querySelectorAll('.color-scheme > button')
-//
-// themeBtns.forEach((btn) => {
-//   btn.addEventListener('click', handleThemeUpdate)
-// })
-//
-// function handleThemeUpdate(e) {
-//     switch(e.target.value) {
-//         case 'night':
-//             root.style.setProperty('--bg-color', 'black')
-//             root.style.setProperty('--text-color', '#ddd')
-//         break
-//         case 'day':
-//             root.style.setProperty('--bg-color', 'white')
-//             root.style.setProperty('--text-color', 'black')
-//         break
-//     }
-// }
-
 $( document ).ready(function() {
 
     // Initialize lozad
@@ -74,4 +50,34 @@ $( document ).ready(function() {
     Chameleon.init();
 
     /* end Chameleon */
+
+    /*
+        Dark Mode Color Scheme Toggle
+    */
+
+    $("#night-mode").on('click', function() {
+        localStorage.setItem('colorScheme', 'night');
+        $("html").get(0).style.setProperty('--bg-color', 'black');
+        $("html").get(0).style.setProperty('--text-color', '#ddd');
+        $("html").get(0).style.setProperty('--bg-faint', '#343434')
+        document.getElementById("night-mode").classList.add('is-active');
+		document.getElementById("day-mode").classList.remove('is-active');
+    });
+
+    $("#day-mode").on('click', function() {
+        localStorage.setItem('colorScheme', 'day');
+        $("html").get(0).style.setProperty('--bg-color', 'white');
+        $("html").get(0).style.setProperty('--text-color', 'black')
+        $("html").get(0).style.setProperty('--bg-faint', '#eaeaea')
+        document.getElementById("day-mode").classList.add('is-active');
+        document.getElementById("night-mode").classList.remove('is-active');
+    });
+
+    if(localStorage.getItem("colorScheme")==="night") {
+        document.getElementById("night-mode").classList.add('is-active');
+		document.getElementById("day-mode").classList.remove('is-active');
+    } else {
+        document.getElementById("day-mode").classList.add('is-active');
+        document.getElementById("night-mode").classList.remove('is-active');
+    }
 });

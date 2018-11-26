@@ -10,6 +10,7 @@ html {
 
 body {
 	background: var(--bg-color); /* Fallback for when there is no custom background color defined. */
+	transition:background 1s ease-in-out;
 }
 
 hr {

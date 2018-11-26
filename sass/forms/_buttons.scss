@@ -48,7 +48,7 @@ input[type="submit"] {
 	&:active, &:focus{
 		box-shadow:inset 0 20px 40px 0 rgba(0,0,0,.25);
 		background:rgba(0,0,0,.4);
-		color:rgba(0,0,0,.5) !important;
+		color:rgba(0,0,0,.5);
 		strong {color:rgba(0,0,0,.5);}
 	}
 }

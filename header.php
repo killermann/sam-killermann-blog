@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> >
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45231959-1"></script>
@@ -22,6 +22,17 @@
 
 		gtag('config', 'UA-45231959-1');
 	</script>
+	<script>
+	let root = document.documentElement;
+	if(localStorage.getItem("colorScheme")==="night") {
+		root.style.setProperty('--bg-color', 'black');
+		root.style.setProperty('--text-color', '#ddd');
+		root.style.setProperty('--bg-faint', '#343434');
+	} else if (localStorage.getItem("colorScheme")==="day") {
+		root.style.setProperty('--bg-color', 'white');
+		root.style.setProperty('--text-color', 'black');
+		root.style.setProperty('--bg-faint', '#eaeaea');
+	}</script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
 	<!-- mobile meta (hooray!) -->
@@ -118,13 +129,13 @@
 				<a onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Header'});" id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
 			</nav> -->
 
-			<!-- <div id="day-or-night" class="color-scheme">
-				<button id="day-mode" class="is-active" value="day">
+			<div id="day-or-night" class="color-scheme">
+				<button id="day-mode" title="Day Mode">
 					<svg><use xlink:href="#icon-sun"></svg>
 				</button>
-				<button id="night-mode" value="night">
+				<button id="night-mode" title="Night Mode">
 					<svg><use xlink:href="#icon-moon"></svg>
 				</button>
-			</div> -->
+			</div>
 		</div><!--/marquee-->
 		<section id="content" class="site-content">

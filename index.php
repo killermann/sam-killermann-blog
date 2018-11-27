@@ -80,24 +80,25 @@ get_header(); ?>
 			endif;
 
 			/* Start the Loop */
+
+			$count = 0;
+
 			while ( have_posts() ) : the_post();
 
-				if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
-
-				if ( in_category('patrons-only') ) :
-					echo '<a class="sign-post for-patrons-only" href="https://patreon.com/killermann" title="Content for Patrons Only">
-						<div class="sign-title">Patrons Only</div>
-						<div class="sign-description">No General Admittance</div>
-					</a>';
+				if ($count == 2) :
+					get_loop_post_formats();
+				elseif ($count == 6) :
+					get_loop_mailing_lists();
 				endif;
 
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/loop' );
 
-				if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;
+				$count++;
 
 			endwhile;
 
 			the_posts_navigation();
+
 
 		else :
 

@@ -16,7 +16,7 @@
 		<?php
 		sam_killermann_blog_primary_category();
 		echo ' | ';
-		echo '<span class="primary-category"><a href="' . esc_url( home_url() ) . '/type/status" rel="bookmark">Status</a></span>';
+		echo '<span class="primary-category"><a href="' . esc_url( home_url() ) . '/type/status" rel="bookmark" title="View other Statuses">Status</a></span>';
 		?>
 	</header><!-- .entry-header -->
 

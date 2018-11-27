@@ -51,6 +51,53 @@ $( document ).ready(function() {
 
     /* end Chameleon */
 
+    // Draw SVG on Hover
+    $('.draw-me').children('path').each(function() {
+    	var path = this;
+    	// Get the length of each path
+    	var pathLength = path.getTotalLength();
+    	$(this).css('stroke-dasharray', pathLength);
+    	$(this).css('stroke-dashoffset', 0);
+    });
+
+    $(function() {
+    	$('.svg-containment-system').hover(
+    		function() {
+    			$(this).children('.draw-me').children('path').each(function() {
+    				var path = this;
+    				var pathLength = path.getTotalLength();
+    				$(this).css('stroke-dasharray', pathLength);
+    				$(this).css('stroke-dashoffset', pathLength);
+    				$(path).css('stroke', '#ffffff');
+
+    				function whiteOut() {
+
+    					$(path).css('stroke-dashoffset', 0);
+    				}
+    				setTimeout(function() {
+    					whiteOut();
+    				}, 500);
+    			});
+    		},
+    		function() {
+    			$(this).children('.draw-me').children('path').each(function() {
+    				var path = this;
+    				var pathLength = path.getTotalLength();
+    				$(this).css('stroke-dasharray', pathLength);
+    				$(this).css('stroke-dashoffset', pathLength);
+
+    				function whiteIn() {
+    					$(path).css('stroke', '#000000');
+    					$(path).css('stroke-dashoffset', 0);
+    				}
+    				setTimeout(function() {
+    					whiteIn();
+    				}, 500);
+    			});
+    		}
+    	);
+    });
+
     /*
         Dark Mode Color Scheme Toggle
     */

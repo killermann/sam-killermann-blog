@@ -45,6 +45,7 @@
 		margin:0;
 		@extend .spin-hover;
 		display:block;
+
 	}
 
 	#masthead--nav {
@@ -97,6 +98,10 @@
 			display:block;
 		}
 	}
+
+	.draw-me{max-height:100px;max-width:100px}
+
+	.draw-me path{transition:all .5s linear;}
 
 #marquee {
 	display:none;

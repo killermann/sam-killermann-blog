@@ -12,8 +12,8 @@ if ( ! function_exists( 'sam_killermann_blog_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function sam_killermann_blog_posted_on() {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
@@ -208,28 +208,59 @@ function getLoopSubscribe() { ?>
 
 <?php }
 
-
-
-function getMailingList() { ?>
-
-	<div class="hereticMailingListWrap clearfix">
-		<div class="hereticMailingList clearfix">
-			<h3>💌 Do you want an email when<br/> new episodes come out?</h3>
-			<ul class="buttonList flexcontainer">
-				<li>
-					<a class="button" alt="Get emails with new episodes" target="_blank" href="">
-						🤓 Yes, please.
+function get_loop_mailing_lists() {?>
+	<section class="interstitial chameleon-bg">
+		<div class="email-interstitial inner bigpad">
+			<h3 class="chameleon-color">
+				Want emails from me?<br/>
+				<strong>Here are two options.</strong>
+			</h3>
+			<div class="button-group grid medium-grid--fit small-grid--full">
+				<div class="grid-cell">
+					<a class="button" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" target="_blank">
+						Get Posts in Your Inbox
 					</a>
-				</li>
-				<li>
-					<a class="button button-grey" href="<?php echo home_url(); ?>/subscribe" alt="Subscribe to the Podcast">
-						🖱 Other options?
+					<div class="description">Powered by Google's Feedburner, totally free for both of us. You'll only get an email when there is a new post here.</div>
+				</div>
+				<div class="grid-cell">
+					<a class="button button-secondary" target="_blank" href="https://app.convertkit.com/landing_pages/402557?v=7" title="Sam Killermann Email List">
+						Join my Mailing List
 					</a>
-				</li>
-			</ul>
+					<div class="description">Get emails about all of my projects, social good stuff, and activism. I send a few emails a month -- tops.</div>
+				</div>
+			</div>
 		</div>
-	</div>
+		<!--/email-inter-->
+	</section>
+<?php }
 
+function get_loop_post_formats() {?>
+	<section class="chameleon-bg interstitial">
+		<div class="post-formats-interstitial inner bigpad">
+			<h3>
+				Browse by Format
+			</h3>
+			<nav>
+				<a href="<?php echo esc_url( home_url() );?>/articles" title="Articles" rel="bookmark" class="svg-containment-system">
+					<svg aria-hidden="true" data-prefix="fal" data-icon="paragraph" class="draw-me svg-inline--fa fa-paragraph fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M372 32H159.529C72.194 32 .245 102.216.001 189.551-.243 276.877 70.729 348 158 348v120c0 6.627 5.373 12 12 12h12c6.627 0 12-5.373 12-12V68h60v400c0 6.627 5.373 12 12 12h12c6.627 0 12-5.373 12-12V68h82c6.627 0 12-5.373 12-12V44c0-6.627-5.373-12-12-12zM158 312c-67.271 0-122-54.729-122-122S90.729 68 158 68v244z"></path></svg>
+					<span>Articles</span>
+				</a>
+				<a href="<?php echo esc_url( home_url() );?>/type/link" title="Links" rel="bookmark">
+					<svg aria-hidden="true" data-prefix="fal" data-icon="link" class="svg-inline--fa fa-link fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M301.148 394.702l-79.2 79.19c-50.778 50.799-133.037 50.824-183.84 0-50.799-50.778-50.824-133.037 0-183.84l79.19-79.2a132.833 132.833 0 0 1 3.532-3.403c7.55-7.005 19.795-2.004 20.208 8.286.193 4.807.598 9.607 1.216 14.384.481 3.717-.746 7.447-3.397 10.096-16.48 16.469-75.142 75.128-75.3 75.286-36.738 36.759-36.731 96.188 0 132.94 36.759 36.738 96.188 36.731 132.94 0l79.2-79.2.36-.36c36.301-36.672 36.14-96.07-.37-132.58-8.214-8.214-17.577-14.58-27.585-19.109-4.566-2.066-7.426-6.667-7.134-11.67a62.197 62.197 0 0 1 2.826-15.259c2.103-6.601 9.531-9.961 15.919-7.28 15.073 6.324 29.187 15.62 41.435 27.868 50.688 50.689 50.679 133.17 0 183.851zm-90.296-93.554c12.248 12.248 26.362 21.544 41.435 27.868 6.388 2.68 13.816-.68 15.919-7.28a62.197 62.197 0 0 0 2.826-15.259c.292-5.003-2.569-9.604-7.134-11.67-10.008-4.528-19.371-10.894-27.585-19.109-36.51-36.51-36.671-95.908-.37-132.58l.36-.36 79.2-79.2c36.752-36.731 96.181-36.738 132.94 0 36.731 36.752 36.738 96.181 0 132.94-.157.157-58.819 58.817-75.3 75.286-2.651 2.65-3.878 6.379-3.397 10.096a163.156 163.156 0 0 1 1.216 14.384c.413 10.291 12.659 15.291 20.208 8.286a131.324 131.324 0 0 0 3.532-3.403l79.19-79.2c50.824-50.803 50.799-133.062 0-183.84-50.802-50.824-133.062-50.799-183.84 0l-79.2 79.19c-50.679 50.682-50.688 133.163 0 183.851z"></path></svg>
+					<span>Links</span>
+				</a>
+				<a href="<?php echo esc_url( home_url() );?>/type/quote" title="Quotes" rel="bookmark">
+					<svg aria-hidden="true" data-prefix="fal" data-icon="quote-right" class="svg-inline--fa fa-quote-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M176 32H64C28.7 32 0 60.7 0 96v128c0 35.3 28.7 64 64 64h64v24c0 30.9-25.1 56-56 56H56c-22.1 0-40 17.9-40 40v32c0 22.1 17.9 40 40 40h16c92.6 0 168-75.4 168-168V96c0-35.3-28.7-64-64-64zm32 280c0 75.1-60.9 136-136 136H56c-4.4 0-8-3.6-8-8v-32c0-4.4 3.6-8 8-8h16c48.6 0 88-39.4 88-88v-56H64c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h112c17.7 0 32 14.3 32 32v216zM448 32H336c-35.3 0-64 28.7-64 64v128c0 35.3 28.7 64 64 64h64v24c0 30.9-25.1 56-56 56h-16c-22.1 0-40 17.9-40 40v32c0 22.1 17.9 40 40 40h16c92.6 0 168-75.4 168-168V96c0-35.3-28.7-64-64-64zm32 280c0 75.1-60.9 136-136 136h-16c-4.4 0-8-3.6-8-8v-32c0-4.4 3.6-8 8-8h16c48.6 0 88-39.4 88-88v-56h-96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h112c17.7 0 32 14.3 32 32v216z"></path></svg>
+					<span>Quotes</span>
+				</a>
+				<a href="<?php echo esc_url( home_url() );?>/type/status" title="Statuses" rel="bookmark">
+					<svg aria-hidden="true" data-prefix="fal" data-icon="comment-alt-lines" class="svg-inline--fa fa-comment-alt-lines fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm32 352c0 17.6-14.4 32-32 32H293.3l-8.5 6.4L192 460v-76H64c-17.6 0-32-14.4-32-32V64c0-17.6 14.4-32 32-32h384c17.6 0 32 14.4 32 32v288zM280 240H136c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h144c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm96-96H136c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8z"></path></svg>
+					<span>Statuses</span>
+				</a>
+			</nav>
+		</div>
+		<!--/email-inter-->
+	</section>
 <?php }
 
 

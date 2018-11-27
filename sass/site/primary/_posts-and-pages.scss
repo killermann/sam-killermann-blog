@@ -215,11 +215,10 @@
 }
 
 .sign-post {
-	border-width:2px;
+	border:3px solid white !important;
 	display:block;
 	font-size:14px;
 	float:right;
-	border:none;
 	overflow:hidden;
 	text-align:center;
 	border-radius:2px;
@@ -395,10 +394,13 @@
 
 #asterisk1-note {padding:0 4vw 4vw;}
 
+.interstitial {
+	.inner {
+		background:rgba(0,0,0,.75);
+	}
+}
 
 .email-interstitial {
-	padding:8%;
-	background:rgba(0,0,0,.8);
 
 	h3 {
 		margin:0 auto 1em;
@@ -427,6 +429,40 @@
 		color:rgba(white,.75);
 		max-width:350px;
 		margin:0 0 0 auto;
+	}
+}
+
+.post-formats-interstitial {
+	text-align:center;
+	color:white;
+
+	h3 {
+		margin:.5em 0;
+	}
+
+	a {
+		color:white;
+		display:inline-block;
+		padding:2vw;
+		border:none;
+		border-radius:10px;
+
+		svg {
+			@extend .chameleon-color;
+			fill:currentColor;
+			width:2.5em;
+			height:2.5em;
+			display:block;
+			margin:0 auto 1vh;
+		}
+
+		span {
+			display:block;
+		}
+
+		&:hover, &:focus {
+			background:black;
+		}
 	}
 }
 
@@ -479,6 +515,7 @@
 				line-height:1;
 				font-weight:900;
 				text-shadow:1px 1px 1px rgba(255,255,255,1);
+
 				small {
 					display:block;
 					margin:.7em auto 0;
@@ -487,7 +524,6 @@
 				}
 			}
 			ul {
-				background:#fff;
 				margin:.3em auto;
 				padding:0 1em;
 				list-style:none;

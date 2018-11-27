@@ -133,26 +133,4 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section id="patrons-only">
-		<div class="text-center">
-			<h2 class="page-subtitle">Patron-Only Smörgåsbord</h2>
-		</div>
-		<div class="loop">
-			<?php $home_all = new WP_Query(
-				array(
-					'post_type' => 'post',
-					'tag' => 'patrons-only',
-					'orderby' => 'published',
-					'order' => 'DESC'
-				)
-			);
-
-			while($home_all->have_posts()) : $home_all->the_post();
-
-				get_template_part( 'template-parts/content-loop', get_post_format() );
-
-			endwhile; wp_reset_postdata(); ?>
-		</div>
-	</section>
-
 <?php get_footer();

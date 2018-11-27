@@ -59,14 +59,6 @@
 			<a href="#site-navigation" class="button" title="Navigate the Site">Menu</a>
 
 			<nav id="masthead--nav" class="sK-nav">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation">
-					<svg class="spin-hover"><use xlink:href="#icon-pencil-alt"></svg>
-					<span>About</span>
-				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation">
-					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
-					<span>Subscribe</span>
-				</a>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation">
 					<svg class="spin-hover"><use xlink:href="#icon-heartbeat"></svg>
 					<span>Popular</span>
@@ -75,9 +67,17 @@
 					<svg class="spin-hover"><use xlink:href="#icon-air-freshener"></svg>
 					<span>Fresh</span>
 				</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation">
+					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
+					<span>Subscribe</span>
+				</a>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation">
 					<svg class="spin-hover"><use xlink:href="#icon-books"></svg>
 					<span>Books</span>
+				</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation">
+					<svg class="spin-hover"><use xlink:href="#icon-pencil-alt"></svg>
+					<span>About</span>
 				</a>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation">
 					<svg class="spin-hover"><use xlink:href="#icon-kiss-wink-heart"></svg>

@@ -47,6 +47,8 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'sam-killermann-blog' ),
 		) );
 
+		add_theme_support( 'align-wide' );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.

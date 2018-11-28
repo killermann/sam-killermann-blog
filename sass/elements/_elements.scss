@@ -14,7 +14,7 @@ body {
 }
 
 hr {
-	background-color: $color__background-hr;
+	@extend .chameleon-bg;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -38,3 +38,5 @@ figure {
 @import "sidebar";
 
 @import "footer";
+
+@import "blocks";

@@ -54,11 +54,9 @@ get_header(); ?>
 								$cat_options = array(
 									'' => 'All Topics',
 									'better-humaning' => 'Better Humaning',
-									'diy' => 'DIY',
 									'happiness' => 'Happiness',
-									'technology' => 'Technolophizing',
+									'technolophizing' => 'Technolophizing',
 									'travel' => 'Travel',
-									'work-dot-com' => 'Work dot com'
 								);
 								foreach( $cat_options as $value => $label ) {
 									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";

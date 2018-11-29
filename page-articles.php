@@ -34,29 +34,13 @@ get_header(); ?>
 				'paged' => $paged,
 				'orderby' => 'date',
 				'tax_query' => array(
-					'relation' => 'AND',
-					array(
-						'taxonomy' => 'post_tag',
-						'field'    => 'slug',
-						'terms'    => 'patrons-only',
-						'operator' => 'NOT IN',
-					),
-					array(
-						'taxonomy' => 'post_format',
-						'field' => 'slug',
-						'terms' => array (
-							'post-format-audio',
-							'post-format-chat',
-							'post-format-gallery',
-							'post-format-image',
-							'post-format-link',
-							'post-format-quote',
-							'post-format-status',
-							'post-format-video'
-						),
-						'operator' => 'NOT IN',
-					)
-				)
+                    array(
+                        'taxonomy' => 'post_format',
+                        'field' => 'slug',
+                        'terms' => array('post-format-quote', 'post-format-link', 'post-format-status', 'post-format-image', 'post-format-transcript', 'post-format-aside', 'post-format-gallery', 'post-format-chat', 'post-format-audio'),
+                        'operator' => 'NOT IN'
+                    )
+                ),
 			);
 			$wp_query = new WP_Query( $articles_query_args );
 

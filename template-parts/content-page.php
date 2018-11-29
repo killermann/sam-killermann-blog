@@ -14,7 +14,9 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php sam_killermann_blog_post_thumbnail(); ?>
+	<div class="post-thumbnail chameleon-bg">
+		<?php the_post_thumbnail('full');?>
+	</div>
 
 	<div class="entry-content type-wrap">
 		<?php

@@ -5,6 +5,33 @@ Template Name: Homepage
 
 get_header(); ?>
 
+	<?php
+	$home_cover_args = array(
+		'post_type' => 'post', // if the post type is post
+		'posts_per_page' => 1,
+		'orderby' => 'date',
+		'tag_slug__in' => 'cover-stories',
+		'ignore_sticky_posts' => 1
+	);
+
+	$home_cover_story = new WP_Query( $home_cover_args );
+
+	$home_cover_ID = $home_cover_story->post->ID;
+
+	if ( $home_cover_story->have_posts() ) {?>
+
+	<section id="home-cover-story">
+
+		<?php while($home_cover_story->have_posts()) : $home_cover_story->the_post();
+
+			get_template_part( 'template-parts/loop' );
+
+		endwhile; ?>
+
+	</section>
+
+	<?php } wp_reset_query(); ?>
+
 	<section class="loop">
 
 		<?php
@@ -12,30 +39,9 @@ get_header(); ?>
 			'post_type' => 'post', // if the post type is post
 			'posts_per_page' => 10,
 			'orderby' => 'date',
-			// 'tax_query' => array(
-			// 	'relation' => 'AND',
-			// 	array(
-			// 		'taxonomy' => 'post_tag',
-			// 		'field'    => 'slug',
-			// 		'terms'    => 'patrons-only',
-			// 		'operator' => 'NOT IN',
-			// 	),
-			// 	array(
-			// 		'taxonomy' => 'post_format',
-			// 		'field' => 'slug',
-			// 		'terms' => array (
-			// 			'post-format-audio',
-			// 			'post-format-chat',
-			// 			'post-format-gallery',
-			// 			'post-format-image',
-			// 			'post-format-link',
-			// 			'post-format-quote',
-			// 			'post-format-status',
-			// 			'post-format-video'
-			// 		),
-			// 		'operator' => 'NOT IN',
-			// 	)
-			// )
+			'post__not_in' => array (
+				$home_cover_ID,
+			)
 		);
 
 		$home_recent_articles = new WP_Query( $home_recent_args );
@@ -46,13 +52,17 @@ get_header(); ?>
 
 			while($home_recent_articles->have_posts()) : $home_recent_articles->the_post();
 
-			if ( $count == 1 ) :
+			if ( $count == 0 ) :
 
 				get_loop_post_formats();
 
-			elseif ( $count == 4 ) :
+				get_template_part( 'template-parts/loop' );
+
+			elseif ( $count == 5 ) :
 
 				get_loop_mailing_lists();
+
+				get_template_part( 'template-parts/loop' );
 
 			else :
 
@@ -71,6 +81,6 @@ get_header(); ?>
 		} ?>
 
 	</section>
-	
+
 
 <?php get_footer();?>

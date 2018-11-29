@@ -362,6 +362,10 @@
 	text-align:center;
 }
 
+.page .post-thumbnail {
+	margin-bottom:4vw;
+}
+
 
 /* Home Page Styles */
 
@@ -373,24 +377,20 @@
 	}
 }
 
-.page-template-page-home {
-
-	#latest {
-		position:relative;
-		padding:0;
-		margin:0;
-		z-index:8888;
-		background:#fff;
-
-	}
-
-	#home--subscribe {
-		margin-bottom:4vw;
-		z-index:8888;
-		text-align:center;
-		position:relative;
-	}
-}
+// #home-cover-story {
+// 	margin-top:-60px;
+// 	color:white;
+//
+// 	.inner {
+// 		padding-top:60px;
+// 	}
+//
+// 	.entry-content {display:none;}
+//
+// 	a {
+// 		color:white;
+// 	}
+// }
 
 #asterisk1-note {padding:0 4vw 4vw;}
 
@@ -602,6 +602,27 @@ MEDIA QUERIES
 /* Large screens */
 
 @media (min-width: 1030px) {
+
+	// #home-cover-story {
+	//
+	// 	.inner {
+	// 		padding-bottom:2vw;
+	// 	}
+	//
+	// 	.wrap {
+	// 		max-width:96%;
+	// 	}
+	//
+	// 	.entry-header {
+	// 		display:flex;
+	// 		justify-content: center;
+	// 		align-items: center;
+	// 	}
+	//
+	// 	.entry-header-text {
+	// 		margin-right:4vw;
+	// 	}
+	// }
 
 }
 

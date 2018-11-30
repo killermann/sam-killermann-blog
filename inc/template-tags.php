@@ -99,6 +99,26 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 
 		if ( is_single() ) :
 
+			?>
+			<div id="footer-feedburner" class="bigpad">
+				<div class="inner bigpad">
+					<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+						<h2 class="chameleon-color">Do you want new posts in your inbox?</h2>
+						<p>I can make that happen. We have the technology. Just don't expect a bunch of emails from me.</p>
+						<label for="feedburner-email">Drop your email here:<br/></label>
+						<input class="chameleon-border" id="feedburner-email" placeholder="youre@awesome.bud" type="email" name="email"/>
+						<input type="hidden" value="samkillermannblog" name="uri"/>
+						<input type="hidden" name="loc" value="en_US"/>
+						<input type="submit" class="button" value="Sign me up." />
+						<p class="description">Delivered free and with zero advertising by <a href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog&amp;loc=en_US" target="_blank">FeedBurner</a>. Seriously. Ads are poison. Other <a href="https://samkillermann.com/subscribe" title="Other subscription options">subscription options here</a>.</p>
+					</form>
+				</div>
+				<div class="icon">
+					<svg class="chameleon-color"><use xlink:href="#icon-prescription-bottle-alt"></svg>
+				</div>
+			</div>
+			<?php
+
 			// Get Author Data
 			$author             = get_the_author();
 			$author_description = get_the_author_meta( 'description' );
@@ -273,17 +293,20 @@ if ( ! function_exists( 'sam_killermann_blog_post_thumbnail' ) ) :
 function sam_killermann_blog_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
-	}?>
+	}
 
-	<a class="post-thumbnail chameleon-bg" href="<?php the_permalink(); ?>" aria-hidden="true">
+	if ( !is_single() ) : ?>
+	<a class="post-thumbnail chameleon-bg" href="<?php the_permalink(); ?>" aria-hidden="true"><?php
+	else : ?><div class="post-thumbnail chameleon-bg">
+	<?php endif;?>
 		<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
 			) );
-		?>
-	</a>
+
+	if ( !is_single() ) : ?></a><?php else: ?></div><?php endif;?>
 
 	<?php
 } endif;

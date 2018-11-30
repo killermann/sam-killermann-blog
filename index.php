@@ -12,61 +12,11 @@
  * @package samkillermannblog
  */
 
-global $wp_query;
-
-$modifyargs = array();
-
-if( !empty( $_GET['catname'] ) ) {
-	$modifyargs['category_name'] = $_GET['catname'];
-}
-
-$args = array_merge(
-	$wp_query->query_vars,
-	$modifyargs
-);
-
-query_posts( $args );
-
 get_header(); ?>
 
 		<main id="main" class="loop">
 
-			<nav class="post-filters">
-				<form>
-					<div class="post-filter">
-						<label for="orderby">Showing</label>
-						<select id="order" name="order" onchange="this.form.submit()">
-							<?php
-								$order_options = array(
-									'DESC' => 'The Latest',
-									'ASC' => 'The Oldest'
-								);
-								foreach( $order_options as $value => $label ) {
-									echo "<option ".selected( $_GET['order'], $value )." value='$value'>$label</option>";
-								}
-							?>
-						</select>
-					</div>
-					<div class="post-filter">
-						<label for="catname">Posts about</label>
-						<select id="catname" name="catname" onchange="this.form.submit()">
-							<?php
-								$cat_options = array(
-									'' => 'All Topics',
-									'better-humaning' => 'Better Humaning',
-									'happiness' => 'Happiness',
-									'technolophizing' => 'Technolophizing',
-									'travel' => 'Travel',
-								);
-								foreach( $cat_options as $value => $label ) {
-									echo "<option ".selected( $_GET['catname'], $value )." value='$value'>$label</option>";
-								}
-							?>
-						</select>
-					</div>
-				</form>
-			</nav><!--/post-filters-->
-
+			
 
 		<?php
 		if ( have_posts() ) :

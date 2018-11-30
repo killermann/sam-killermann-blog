@@ -94,7 +94,7 @@
 	.entry-content {
 		position:relative;
 		padding:4% !important;
-		border-radius: 2px;
+		border-radius: 8px;
 		border:2px solid var(--bg-faint);
 		background:var(--bg-faint);
 
@@ -110,7 +110,7 @@
 			content: '';
 			position: absolute;
 			bottom: 0;
-			left: 10px;
+			left: 14px;
 			width: 0;
 			height: 0;
 			border: 30px solid transparent;

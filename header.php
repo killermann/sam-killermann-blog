@@ -63,7 +63,7 @@
 					<svg class="spin-hover"><use xlink:href="#icon-heartbeat"></svg>
 					<span>Popular</span>
 				</a>
-				<a href="/all/?order=DESC" title="Fresh" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation">
 					<svg class="spin-hover"><use xlink:href="#icon-air-freshener"></svg>
 					<span>Fresh</span>
 				</a>

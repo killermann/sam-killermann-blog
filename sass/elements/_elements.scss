@@ -16,8 +16,10 @@ body {
 hr {
 	@extend .chameleon-bg;
 	border: 0;
-	height: 1px;
+	height: 3px;
+	border-radius:10px;
 	margin-bottom: 1.5em;
+	max-width:16.66%;
 }
 
 @import "lists";

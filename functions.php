@@ -89,6 +89,15 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 			'#803c96'
 		); */
 
+		/**
+		 * Enqueue WordPress theme styles within Gutenberg.
+		 */
+		function sam_killermann_blog_gutenberg_styles() {
+			// Load the theme styles within Gutenberg.
+			 wp_enqueue_style( 'sam-killermann-blog-gutenberg', get_theme_file_uri( 'gutenberg.css' ), false, '@@pkg.version', 'all' );
+		}
+		add_action( 'enqueue_block_editor_assets', 'sam_killermann_blog_gutenberg_styles' );
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'sam_killermann_blog_custom_background_args', array(
 			'default-color' => 'ffffff',

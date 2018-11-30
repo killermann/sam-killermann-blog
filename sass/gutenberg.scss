@@ -1,0 +1,33 @@
+/*!--
+Styles for Gutenberg Editor
+**/
+
+.edit-post-visual-editor {
+
+
+	@import "variables-site/variables-site";
+
+	@import "mixins/mixins-master";
+
+	@import "elements/elements";
+
+	@import "typography/typography";
+
+	@import "media/media";
+
+
+	p {
+		margin:0 !important;
+	}
+
+	a {
+		color:black;
+		border-bottom:.1em solid $purple;
+	}
+
+	.editor-post-title__block .editor-post-title__input,
+	.wp-block-heading h1, .wp-block-heading h2, .wp-block-heading h3, .wp-block-heading h4, .wp-block-heading h5, .wp-block-heading h6 {
+		font-family:$sans-serif;
+		font-weight:bold;
+	}
+}

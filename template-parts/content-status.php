@@ -35,7 +35,7 @@
 			sam_killermann_blog_entry_footer();
 			?>
 		</div>
-		<?php if( ! is_singular()) : ?>
+		<?php if( ! is_single()) : ?>
 		<div class="grid-cell grid-cell--autoSize">
 			<a href="<?php the_permalink(); ?>">
 				Permalink &rarr;

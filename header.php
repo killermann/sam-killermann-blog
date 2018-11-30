@@ -112,7 +112,7 @@
 				<?php while($marquee_latest->have_posts()) : $marquee_latest->the_post();?>
 				<article id="marquee-<?php the_ID(); ?>" class="marquee-post">
 					<strong class="chameleon-color">New</strong> <a alt="<?php the_title();?>" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title();?></a>
-					<svg id="speech-bubble" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 11.53"><title>speech-bubble-arrow</title><path d="M0,0H20s-3.78,5.51-8,8C6.61,11.18,0,13,1,10S9,0,0,0Z"/></svg>
+					<svg id="speech-bubble" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 11.53"><path d="M0,0H20s-3.78,5.51-8,8C6.61,11.18,0,13,1,10S9,0,0,0Z"/></svg>
 				</article>
 				<?php endwhile; wp_reset_postdata(); ?>
 			</div>

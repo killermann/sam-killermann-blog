@@ -100,12 +100,15 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 		if ( is_single() ) :
 
 			?>
+			<div id="heart-sK">
+				<svg class="animated-svg" id="heart-sK" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.83 66.6"><path stroke-width="5" fill="none" id="heart" d="M22,36.39S20.5,26.67,11.64,23.5s-12.6,3.94-3,16.8S23.61,63.9,23.2,54.23,22.48,20.75,34.14,9.61C43.25.9,51.06,5.09,50.45,17.53c-.76,15.4-20.05,37.6-20.05,37.6"/><path stroke-width="5" fill="none" id="sK" d="M63,36.06a15.16,15.16,0,0,0-11-5.5C44,30.15,37.8,37,54.4,49.41s-19,22.07-11.93,4.84C46.05,45.53,58.78,34.86,64.77,24,71.94,11,74.91-2.56,73.24,5.35c-3.07,14.52-3.71,54.27-3.13,51.17,4.08-21.92,33.81-52.2,31-50.35S69.39,35.07,74.91,33.64,129,21.09,130.83,24.16"/></svg>
+			</div>
 			<div id="footer-feedburner" class="bigpad">
 				<div class="inner bigpad">
 					<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 						<h2 class="chameleon-color">Do you want new posts in your inbox?</h2>
 						<p>I can make that happen. We have the technology. Just don't expect a bunch of emails from me.</p>
-						<label for="feedburner-email">Drop your email here:<br/></label>
+						<label for="feedburner-email">Drop your email here 👇<br/></label>
 						<input class="chameleon-border" id="feedburner-email" placeholder="youre@awesome.bud" type="email" name="email"/>
 						<input type="hidden" value="samkillermannblog" name="uri"/>
 						<input type="hidden" name="loc" value="en_US"/>

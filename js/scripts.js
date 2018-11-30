@@ -129,4 +129,38 @@ $( document ).ready(function() {
         document.getElementById("day-mode").classList.add('is-active');
         document.getElementById("night-mode").classList.remove('is-active');
     }
+
+    // Animate SVG Icons
+
+    $.fn.isInViewport = function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    var path = document.querySelector('.animated-svg path');
+    var length = path.getTotalLength();
+    // Clear any previous transition
+    path.style.transition = path.style.WebkitTransition =
+      'none';
+    // Set up the starting positions
+    path.style.strokeDasharray = length + ' ' + length;
+    path.style.strokeDashoffset = length;
+    // Trigger a layout so styles are calculated & the browser
+    // picks up the starting position before animating
+    path.getBoundingClientRect();
+    // Define our transition
+    path.style.transition = path.style.WebkitTransition =
+      'stroke-dashoffset 1.2s ease-in-out, color 6s linear';
+
+    $(window).on('resize scroll', function() {
+
+        if($('#heart-sK').isInViewport()){
+            // Go!
+            path.style.strokeDashoffset = '0';
+        }
+    });
+
 });

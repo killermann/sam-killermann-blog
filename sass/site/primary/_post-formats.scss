@@ -87,14 +87,15 @@
 	margin:4vw auto;
 
 	.entry-header {
-		padding:0 !important;
+		padding:0 20px 0 0;
 		text-align:right;
+		margin-bottom:.2em;
 	}
 
 	.entry-content {
 		position:relative;
 		padding:4% !important;
-		border-radius: 8px;
+		border-radius: 1.3em;
 		border:2px solid var(--bg-faint);
 		background:var(--bg-faint);
 
@@ -105,37 +106,37 @@
 		p:last-of-type {
 			margin-bottom:0;
 		}
-
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 14px;
-			width: 0;
-			height: 0;
-			border: 30px solid transparent;
-			border-top-color: var(--bg-faint);
-			border-bottom: 0;
-			border-right: 0;
-			margin-left: 0px;
-			margin-bottom: -30px;
-		}
 	}
 
-	.entry-footer {
-		background:none;
+	.status-caption {
 		line-height:1;
-		padding:10px 0 0 60px;
+		position: relative;
+		padding:.5em 0 0 4em;
 
 		.author {
 			margin-right:10px;
 		}
-
-		a {
-			@extend .chameleon-color;
-		}
 	}
+
+	.cat-links, .tag-links {display:none;}
 }
+
+	#status-speech-bubble{
+		display:block;
+		position:absolute;
+		top:-.51em;
+		left:1.5em;
+		width:2em;
+		height:2em;
+		color:var(--bg-faint);
+		fill:currentColor;
+		-moz-transform: scaleX(-1);
+		-o-transform: scaleX(-1);
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		filter: FlipH;
+		-ms-filter: "FlipH";
+	}
 	.single-format-status .format-status {
 		margin:4vw auto;
 		width:90%;

@@ -274,6 +274,24 @@
 	}
 }
 
+#heart-sK {
+	width:120px;
+	margin:2vw auto;
+
+	path {
+		stroke-linecap:round;
+		stroke-linejoin:round;
+	}
+
+	#heart {
+		@extend .chameleon-color;
+		stroke: currentColor;
+	}
+	#sK {
+		stroke:var(--text-color);
+	}
+}
+
 #footer-feedburner {
 	margin:4vw auto;
 	position: relative;

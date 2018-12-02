@@ -1,8 +1,9 @@
 .wp-caption {
 	margin-bottom: 1.5em;
-	font-size:.8em;
+	font-size:.7em;
 	line-height:1.2;
 	max-width: 100%;
+	font-family:$sans-serif;
 
 	img[class*="wp-image-"] {
 		@include center-block;

@@ -13,28 +13,20 @@ get_header(); ?>
 		while ( have_posts() ) : the_post();?>
 
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('bigpad wrap'); ?>>
-			<header class="entry-header">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('bigpad'); ?> style="padding-bottom:0;">
+			<header class="page-header wrap">
 				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->
+				<div class="entry-content">
+					<?php
+						the_content();
 
-			<div class="post-thumbnail chameleon-bg">
-				<?php the_post_thumbnail('full');?>
-			</div>
-
-			<div class="entry-content type-wrap">
-				<?php
-					the_content();
-
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sam-killermann-blog' ),
-						'after'  => '</div>',
-					) );
-				?>
-			</div><!-- .entry-content -->
-
-			<?php if ( get_edit_post_link() ) : ?>
-				<footer class="entry-footer">
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sam-killermann-blog' ),
+							'after'  => '</div>',
+						) );
+					?>
+				</div><!-- .entry-content -->
+				<?php if ( get_edit_post_link() ) : ?>
 					<?php
 						edit_post_link(
 							sprintf(
@@ -53,8 +45,10 @@ get_header(); ?>
 							'</span>'
 						);
 					?>
-				</footer><!-- .entry-footer -->
-			<?php endif; ?>
+				<?php endif; ?>
+			</header><!-- .entry-header -->
+
+
 		</article><!-- #post-<?php the_ID(); ?> -->
 
 		<?php endwhile;?>

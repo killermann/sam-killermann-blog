@@ -40,7 +40,7 @@ get_header(); ?>
 							'post-format-chat',
 							'post-format-audio'
 						),
-						'operator' => 'NOT IN'
+	                    'operator' => 'NOT IN',
                     )
                 ),
 				'paged' => $paged,

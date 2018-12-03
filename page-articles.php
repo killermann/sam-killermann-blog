@@ -1,15 +1,8 @@
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Articles Page (no other formats)
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package samkillermannblog
+ * @package Sam Killermann Blog
  */
 
 get_header(); ?>
@@ -37,8 +30,18 @@ get_header(); ?>
                     array(
                         'taxonomy' => 'post_format',
                         'field' => 'slug',
-                        'terms' => array('post-format-quote', 'post-format-link', 'post-format-status', 'post-format-image', 'post-format-transcript', 'post-format-aside', 'post-format-gallery', 'post-format-chat', 'post-format-audio'),
-                        'operator' => 'NOT IN'
+						'operator' => 'NOT IN',
+                        'terms' => array(
+							'post-format-quote',
+							'post-format-link',
+							'post-format-status',
+							'post-format-image',
+							'post-format-transcript',
+							'post-format-aside',
+							'post-format-gallery',
+							'post-format-chat',
+							'post-format-audio'
+						)
                     )
                 ),
 			);

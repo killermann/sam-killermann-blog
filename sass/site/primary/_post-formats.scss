@@ -81,9 +81,6 @@
 	}
 
 .format-status{
-	justify-content: center !important;
-	border:none !important;
-	max-width:800px;
 	margin:4vw auto;
 
 	.entry-header {
@@ -140,13 +137,4 @@
 	.single-format-status .format-status {
 		margin:4vw auto;
 		width:90%;
-
-		.entry-content {
-			margin:0 !important;
-		}
-
-		main {
-			margin:0 !important;
-			padding:4vw !important;
-		}
 	}

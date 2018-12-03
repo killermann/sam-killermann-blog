@@ -18,19 +18,17 @@ get_header(); ?>
 
 		<section class="loop">
 			<?php
-			$temp = $wp_query;
-		    $wp_query = null;
+			$temp = $articles_query;
+		    $articles_query = null;
 
 			$articles_query_args = array(
 				'post_type' => 'post', // if the post type is post
-				'posts_per_page' => 7,
-				'paged' => $paged,
+				'posts_per_page' => 6,
 				'orderby' => 'date',
 				'tax_query' => array(
                     array(
                         'taxonomy' => 'post_format',
                         'field' => 'slug',
-						'operator' => 'NOT IN',
                         'terms' => array(
 							'post-format-quote',
 							'post-format-link',
@@ -41,21 +39,24 @@ get_header(); ?>
 							'post-format-gallery',
 							'post-format-chat',
 							'post-format-audio'
-						)
+						),
+						'operator' => 'NOT IN'
                     )
                 ),
+				'paged' => $paged,
 			);
-			$wp_query = new WP_Query( $articles_query_args );
+			$articles_query = new WP_Query( $articles_query_args );
 
-			if ( $wp_query->have_posts() ) {
+			if ( $articles_query->have_posts() ) {
 
 				$count = 0;
 
-				while($wp_query->have_posts()) : $wp_query->the_post();
+				while($articles_query->have_posts()) : $articles_query->the_post();
 
 				if ( $count == 3 ) :
 
 					get_loop_mailing_lists();
+					get_template_part( 'template-parts/loop' );
 
 				else :
 
@@ -69,8 +70,8 @@ get_header(); ?>
 
 				the_posts_navigation();
 
-				$wp_query = null;
-				$wp_query = $temp;  // Reset
+				$articles_query = null;
+				$articles_query = $temp;  // Reset
 
 			} else {
 

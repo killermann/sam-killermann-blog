@@ -14,12 +14,12 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="archive-header">
+			<header class="archive-header bigpad">
 			<?php
 				echo '<h1 class="page-title">';
 				echo single_term_title();
 				echo '</h1>';
-				the_archive_description( '<div class="archive-description entry-content">', '</div>' );
+				the_archive_description( '<div class="archive-description wrap entry-content">', '</div>' );
 			?>
 			</header><!-- .page-header -->
 			<section class="loop">
@@ -28,11 +28,7 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
-					if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
-
-					get_template_part( 'template-parts/content', get_post_format() );
-
-					if ( ! is_single() ) : echo '</div><!--loop-content-->'; endif;
+					get_template_part( 'template-parts/loop' );
 
 				endwhile;
 

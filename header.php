@@ -28,10 +28,12 @@
 		root.style.setProperty('--bg-color', 'black');
 		root.style.setProperty('--text-color', '#ddd');
 		root.style.setProperty('--bg-faint', '#343434');
+		root.style.setProperty('--bg-mask', 'rgba(0,0,0,.78)');
 	} else if (localStorage.getItem("colorScheme")==="day") {
 		root.style.setProperty('--bg-color', 'white');
 		root.style.setProperty('--text-color', 'black');
 		root.style.setProperty('--bg-faint', '#eaeaea');
+		root.style.setProperty('--bg-mask', 'rgba(255,255,255,.85)');
 	}</script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
@@ -40,6 +42,15 @@
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/site.webmanifest">
+	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/safari-pinned-tab.svg" color="#af6ee2">
+	<meta name="msapplication-TileColor" content="#af6ee2">
+	<meta name="theme-color" content="#af6ee2">
 
 	<?php wp_head(); ?>
 

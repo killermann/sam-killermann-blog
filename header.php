@@ -102,7 +102,7 @@
 			if ( is_home() || is_front_page() ) {?>
 			<div id="marquee--latest">
 				<article id="marquee-<?php the_ID(); ?>" class="marquee-post">
-					<a alt="Overthinking everything so you don't have to." href="http://samkillermann.com/overthinking-everything-so-you-dont-have-to/" rel="bookmark">Overthinking everything so you don't have to.</a>
+					<a alt="Overthinking everything so you don't have to." href="https://www.samkillermann.com/overthinking-everything-so-you-dont-have-to/" rel="bookmark">Overthinking everything so you don't have to.</a>
 					<svg id="speech-bubble" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 11.53"><title>speech-bubble-arrow</title><path d="M0,0H20s-3.78,5.51-8,8C6.61,11.18,0,13,1,10S9,0,0,0Z"/></svg>
 				</article>
 			</div> <?php

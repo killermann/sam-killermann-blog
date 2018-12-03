@@ -237,7 +237,7 @@ function mailingListShortcode(){
 					<strong>Join the mailing list</strong>, get posts in your inbox, or subscribe in other ways to get the latest &amp; greatest.
 	            </p>
 
-				<a class="button" href="https://samkillermann.com/subscribe">Take me there.</a>
+				<a class="button" href="https://www.samkillermann.com/subscribe">Take me there.</a>
 	        </div>
 		</div>';
     return $heyHeyLookMailingList;

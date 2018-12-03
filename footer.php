@@ -115,16 +115,16 @@
 					</p>
 				</div><!--/follow-->
 			</div><!--/grid-->
-			<div class="site-info bigpad">
+			<div class="site-info bigpad wrap">
 				<h3>How I Built this Site</h3>
 				<p>
-					This website is powered by <a href="http://wordpress.org" alt="Wordpress">Wordpress</a> (free, open-source software) using <a href="https://github.com/killermann/sam-killermann-blog" alt="Sam Killermann Blog Theme">a custom theme I built</a> (which I released free &amp; open-source) on top of <a href="http://underscores.me/" alt="underscores starter theme">Underscores</a> (which is, you guessed it, free &amp; open-source).
+					<p>This is a <a href="https://wordpress.org">Wordpress</a> blog that is served as a static <a href="https://jamstack.org/">JAMstack</a> site using&nbsp;<a href="http://getshifter.io">Shifter</a>. I developed/designed a custom theme using <a href="http://underscores.me/">_s</a> as the boilerplate, paring down everything I didn't need*, to try to make it as fast and accessible as possible. The theme I made is all open source and uncopyrighted, and you can <a href="https://github.com/killermann/sam-killermann-blog">view it on Github</a>.</p>
 				</p>
 				<p>
-					It's hosted with WPEngine, which is <em>incredibly</em> not free, but it's worth the chunk of change because I have to have fancy hosting <a href="https://www.patreon.com/posts/i-migrated-ipms-16260203">or my sites go down a lot</a>. If you want to sign up with them, you can click these affiliate links for discounts (and to get me a few dollars thousands-of-dollars-a-year hosting bill): <a href="http://shareasale.com/r.cfm?b=1055761&u=593446&m=41388&urllink=&afftrack=">Discounted Personal Plan</a> or <a href="http://shareasale.com/r.cfm?b=1055765&u=593446&m=41388&urllink=&afftrack=">Discounted Business Plan (what I'm on)</a> at WPEngine.
+					*You might be wondering about the constantly shifting chameleon color scheme, and asking "Was <em>that</em> a need?" Yes, my friend. Because it makes me happy to visit this site, and I need to come here for this thing to work. So it was more than a need: it's everything.
 				</p>
 				<p>
-					If you want to build a blog <em>exactly</em> like this one, you have almost everything you need above to get started. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
+					If you want to build a blog <em>exactly</em> like this one, I've provided almost everything you need above to do so. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
 				</p>
 			</div><!-- .site-info -->
 			<div id="asterisk1-note">

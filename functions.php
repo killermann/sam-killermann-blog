@@ -27,12 +27,6 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		// Enable AMP templates in AMP for Wordpress dashboard_plugins
-
-		// add_theme_support( 'amp', array(
-		// 	'paired' => true,
-		// ) );
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -323,6 +317,56 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
+/*** CUSTOMIZE AMP FOR WORDPRESS PLUGIN **/
+
+add_action( 'amp_post_template_css', function( $amp_template ) {
+    ?>
+	body {
+		font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	}
+    nav.amp-wp-title-bar {background: #000;}
+
+	.amp-wp-article-featured-image amp-img {
+		width:100%;
+		height:auto;
+	}
+
+	.amp-wp-header {
+		background:#AF6EE2;
+		color:black;
+		font-weight:bold;
+	}
+    ul.jp-amp-list {
+        list-style: none;
+        display: inline;
+    }
+
+    ul.jp-amp-list li {
+        display: inline;
+        margin: 0 8px;
+    }
+    <?php
+});
+
+add_action( 'pre_amp_render_post', function () {
+    add_filter( 'the_content', function( $content ){
+        $post = get_post();
+        if( is_object( $post ) ){
+            $twitter = add_query_arg( array(
+                'url' => urlencode( get_permalink( $post->ID ) ),
+                'status' => urlencode( $post->post_title )
+            ),'https://twitter.com/share' );
+            $facebook = add_query_arg( array(
+                    'u' => urlencode( get_permalink( $post->ID ) )
+                ), 'https://www.facebook.com/sharer/sharer.php'
+            );
+        }
+        $share = sprintf( '<hr /><ul id="amp-jp-share" class="jp-amp-list">Share: <li id="twitter-share"><a href="%s" title="Share on Twitter">Twitter</a></li><li id="facebook-share"><a href="%s" title="Share on Facebook">Facebook</a></ul>', esc_url_raw( $twitter ), esc_url_raw( $facebook ) );
+        $content  .= $share;
+        return $content;
+    }, 1000 );
+});
+
 /** CLEANING UP HEAD BY REMOVING UNUSED STUFF **/
 
 remove_action( 'wp_head', 'wlwmanifest_link');
@@ -343,6 +387,11 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  */
 
 add_filter('the_content', function ($content) {
+
+	// Bail on amp
+	if (function_exists( 'is_amp_endpoint' ) && is_amp_endpoint()) {
+		return $content;
+	}
 	//-- Change src/srcset to data attributes.
 	$content = preg_replace("/<img(.*?)(src=|srcset=)(.*?)>/i", '<img$1data-$2$3>', $content);
 
@@ -356,21 +405,26 @@ add_filter('the_content', function ($content) {
 });
 
 /**
- * Use Lozad (lazy loading) for attachments/featured images
- */
+* Use Lozad (lazy loading) for attachments/featured images
+*/
 add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
-    // Bail on admin
-    if (is_admin()) {
-        return $attr;
-    }
+	// Bail on admin
+	if (is_admin()) {
+	 	return $attr;
+	}
 
-    $attr['data-src'] = $attr['src'];
+	// Bail on amp
+	if (function_exists( 'is_amp_endpoint' ) && is_amp_endpoint()) {
+		return $attr;
+	}
+
+	$attr['data-src'] = $attr['src'];
 	$attr['data-src-set'] = $attr['src-set'];
-    $attr['class'] .= ' lazy-load';
-    unset($attr['src']);
+	$attr['class'] .= ' lazy-load';
+	unset($attr['src']);
 	unset($attr['src-set']);
 
-    return $attr;
+	return $attr;
 }, 10, 2);
 
 /*------------------------------------*\

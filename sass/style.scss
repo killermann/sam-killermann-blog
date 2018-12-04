@@ -106,3 +106,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @media (prefers-color-scheme: dark) {
 	@import "modules/dark-mode";
 }
+
+/*--------------------------------------------------------------
+# Plugin Modules
+--------------------------------------------------------------*/
+
+@import "modules/serialize";

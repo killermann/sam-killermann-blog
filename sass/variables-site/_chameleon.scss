@@ -3,7 +3,7 @@
 
 a {
 	text-decoration:none;
-    transition: color 6.0s linear, border-color 6.0s linear;
+    transition: border-color 6.0s linear;
 }
 
 /* CHAMELEON */
@@ -27,7 +27,6 @@ a {
 .chameleon-bg {
 	background-color:$color__primary;
 	transition: background-color 6s linear;
-	a {color:#fff; text-decoration:underline;}
 }
 
 .color0 .chameleon-bg 	{background-color:$color__primary;}
@@ -68,49 +67,49 @@ a {
 .chameleon-fill {fill:$color__primary; transition: fill 6.0s linear}
 
 .color0 .chameleon-fill {fill:$color__primary;}
-.color1 .chameleon-fill  { fill: $purple;}
-.color2 .chameleon-fill  { fill: $blue;}
-.color3 .chameleon-fill  { fill: $light-blue;}
-.color4 .chameleon-fill  { fill: $teal;}
+.color1 .chameleon-fill {fill: $purple;}
+.color2 .chameleon-fill {fill: $blue;}
+.color3 .chameleon-fill {fill: $light-blue;}
+.color4 .chameleon-fill {fill: $teal;}
 .color5 .chameleon-fill {fill: $light-green;}
-.color6 .chameleon-fill  { fill:$green;}
-.color7 .chameleon-fill  { fill:$light-orange;}
-.color8 .chameleon-fill  { fill: $orange;}
-.color9 .chameleon-fill  { fill: $bright-red;}
-.color10 .chameleon-fill  { fill: $red;}
-.color11 .chameleon-fill  { fill: $pink;}
-.color12 .chameleon-fill  { fill: $fuschia;}
+.color6 .chameleon-fill {fill:$green;}
+.color7 .chameleon-fill {fill:$light-orange;}
+.color8 .chameleon-fill {fill: $orange;}
+.color9 .chameleon-fill {fill: $bright-red;}
+.color10 .chameleon-fill {fill: $red;}
+.color11 .chameleon-fill {fill: $pink;}
+.color12 .chameleon-fill {fill: $fuschia;}
 
 /* CHAMELEON BORDER */
 
 .chameleon-border {border-color:$color__primary; transition: border-color 6s linear}
 
 .color0 .chameleon-border {border-color:$color__primary;}
-.color1 .chameleon-border  {border-color:$purple}
-.color2 .chameleon-border  {border-color:$blue}
-.color3 .chameleon-border  {border-color:$light-blue}
-.color4 .chameleon-border  {border-color:$teal}
+.color1 .chameleon-border {border-color:$purple}
+.color2 .chameleon-border {border-color:$blue}
+.color3 .chameleon-border {border-color:$light-blue}
+.color4 .chameleon-border {border-color:$teal}
 .color5 .chameleon-border {border-color:$light-green}
-.color6 .chameleon-border  {border-color:$green}
-.color7 .chameleon-border  {border-color:$light-orange}
-.color8 .chameleon-border  {border-color:$orange}
-.color9 .chameleon-border  {border-color:$bright-red}
-.color10 .chameleon-border  {border-color:$red}
-.color11 .chameleon-border  {border-color:$pink}
-.color12 .chameleon-border  {border-color:$fuschia}
+.color6 .chameleon-border {border-color:$green}
+.color7 .chameleon-border {border-color:$light-orange}
+.color8 .chameleon-border {border-color:$orange}
+.color9 .chameleon-border {border-color:$bright-red}
+.color10 .chameleon-border {border-color:$red}
+.color11 .chameleon-border {border-color:$pink}
+.color12 .chameleon-border {border-color:$fuschia}
 
 .chameleon-colorborder {color:$color__primary; border-color:$color__primary; transition: color 6s linear, border 6s linear;}
 
 .color0 .chameleon-colorborder {color:$color__primary;border-color:$color__primary;}
-.color1 .chameleon-colorborder  { color: $purple;border-color:$purple}
-.color2 .chameleon-colorborder  { color: $blue;border-color:$blue}
-.color3 .chameleon-colorborder  { color: $light-blue;border-color:$light-blue}
-.color4 .chameleon-colorborder  { color: $teal;border-color:$teal}
+.color1 .chameleon-colorborder { color: $purple;border-color:$purple}
+.color2 .chameleon-colorborder { color: $blue;border-color:$blue}
+.color3 .chameleon-colorborder { color: $light-blue;border-color:$light-blue}
+.color4 .chameleon-colorborder { color: $teal;border-color:$teal}
 .color5 .chameleon-colorborder {color: $light-green; border-color:$light-green}
-.color6 .chameleon-colorborder  { color:$green; border-color:$green}
-.color7 .chameleon-colorborder  { color:$light-orange; border-color:$light-orange}
-.color8 .chameleon-colorborder  { color: $orange; border-color:$orange}
-.color9 .chameleon-colorborder  { color: $bright-red; border-color:$bright-red}
-.color10 .chameleon-colorborder  { color: $red; border-color:$red}
-.color11 .chameleon-colorborder  { color: $pink; border-color:$pink}
-.color12 .chameleon-colorborder  { color: $fuschia; border-color:$fuschia}
+.color6 .chameleon-colorborder { color:$green; border-color:$green}
+.color7 .chameleon-colorborder { color:$light-orange; border-color:$light-orange}
+.color8 .chameleon-colorborder { color: $orange; border-color:$orange}
+.color9 .chameleon-colorborder { color: $bright-red; border-color:$bright-red}
+.color10 .chameleon-colorborder { color: $red; border-color:$red}
+.color11 .chameleon-colorborder { color: $pink; border-color:$pink}
+.color12 .chameleon-colorborder { color: $fuschia; border-color:$fuschia}

@@ -1,0 +1,5 @@
+.srlzList .srlzList--item .dots,
+.srlzList .srlzList--item:before,
+.srlzList .srlzList--item:after {
+	@extend .chameleon-bg;
+}

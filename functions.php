@@ -27,6 +27,10 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+		// Enable AMP templates in AMP for Wordpress dashboard_plugins
+
+		add_theme_support( 'amp' );
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a

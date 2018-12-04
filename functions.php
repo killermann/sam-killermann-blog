@@ -29,7 +29,9 @@ if ( ! function_exists( 'sam_killermann_blog_setup' ) ) :
 
 		// Enable AMP templates in AMP for Wordpress dashboard_plugins
 
-		add_theme_support( 'amp' );
+		add_theme_support( 'amp', array(
+			'paired' => true,
+		) );
 
 		/*
 		 * Let WordPress manage the document title.

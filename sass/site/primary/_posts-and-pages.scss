@@ -154,6 +154,7 @@
 
 	.loop-content {
 		position:relative;
+		padding:6vw 4vw;
 
 		& + .loop-content:after {
 			display:block;
@@ -394,6 +395,7 @@
 /* Home Page Styles */
 
 #home-cover-story {
+	padding:6vw 4vw;
 	.posted-on {
 		display:none;
 	}

@@ -81,7 +81,6 @@
 	}
 
 .format-status{
-	margin:4vw auto;
 
 	.entry-header {
 		padding:0 20px 0 0;
@@ -91,7 +90,7 @@
 
 	.entry-content {
 		position:relative;
-		padding:4% !important;
+		padding:1.3em;
 		border-radius: 1.3em;
 		border:2px solid var(--bg-faint);
 		background:var(--bg-faint);
@@ -116,6 +115,7 @@
 	}
 
 	.cat-links, .tag-links {display:none;}
+
 }
 
 	#status-speech-bubble{
@@ -136,5 +136,4 @@
 	}
 	.single-format-status .format-status {
 		margin:4vw auto;
-		width:90%;
 	}

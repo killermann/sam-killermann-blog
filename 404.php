@@ -13,19 +13,22 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found bigpad">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'sam-killermann-blog' ); ?></h1>
+				<header class="page-header text-wrap">
+					<h1 class="page-title"><?php esc_html_e( 'Oof. That page is lost to history.', 'sam-killermann-blog' ); ?></h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'sam-killermann-blog' ); ?></p>
+				<div class="page-content text-wrap">
+					<p><?php esc_html_e( 'This is not the thing you were looking for. I may have deleted whatever it was (I do that sometimes), or the URL might have a tpyo in it. In any case, sorry you are here, and not there. Can I offer you the links below as an apology?', 'sam-killermann-blog' ); ?></p>
+
+					<h2>Popular Posts</h2>
+					<ol><li><a href="/my-list-of-100-dreams/">My List of 100 Dreams</a></li><li><a href="/genital-xenophobia-vs-genital-wanderlust/">Genital Xenophobia and Genital Wanderlust: Show Me Yours and I’ll Show You Mine</a></li><li><a href="/proud-humbled-misunderstanding/">&#8220;Proud&#8221; and &#8220;Humbled&#8221;: I do not think it means what you think it means</a></li><li><a href="/im-glad-chivalry-is-dead/">Why I&#8217;m Glad Chivalry is Dead</a></li><li><a href="/alone-not-lonely/">Being Alone Isn&#8217;t the Same As Being Lonely</a></li><li><a href="/stop-being-harder-on-self/">How I Rationalize Being So Hard On Myself, and How I&#8217;m Going to Stop</a></li><li><a href="/single-serving-friends/">Single Serving Friends</a></li></ol>
 
 					<?php
 						the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'sam-killermann-blog' ); ?></h2>
+						<h2><?php esc_html_e( 'Most Used Categories', 'sam-killermann-blog' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories( array(
@@ -33,7 +36,7 @@ get_header(); ?>
 								'order'      => 'DESC',
 								'show_count' => 1,
 								'title_li'   => '',
-								'number'     => 10,
+								'number'     => 7,
 							) );
 						?>
 						</ul>

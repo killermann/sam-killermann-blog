@@ -7,7 +7,7 @@
  * @package samkillermannblog
  */
 
-if ( ! is_single() ) : echo '<div class="loop-content bigpad chameleon-border">'; endif;
+if ( ! is_single() ) : echo '<div class="loop-content chameleon-border">'; endif;
 
 if ( in_category('patrons-only') ) :
 echo '<a class="sign-post for-patrons-only" href="' . home_url() . '/sign-up" title="Content for Patrons Only">

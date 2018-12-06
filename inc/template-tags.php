@@ -235,21 +235,21 @@ function get_loop_mailing_lists() {?>
 	<section class="interstitial chameleon-bg">
 		<div class="email-interstitial inner bigpad">
 			<h3 class="chameleon-color">
-				Want emails from me?<br/>
+				You want emails from me?<br/>
 				<strong>Here are two options.</strong>
 			</h3>
 			<div class="button-group grid medium-grid--fit small-grid--full">
 				<div class="grid-cell">
 					<a class="button" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" target="_blank">
-						Get Posts in Your Inbox
+						Posts in Your Inbox
 					</a>
-					<div class="description">Powered by Google's Feedburner, totally free for both of us. You'll only get an email when there is a new post here.</div>
+					<div class="description">Powered by Feedburner, totally free for both of us. You'll only get an email when there is a new post here.</div>
 				</div>
 				<div class="grid-cell">
 					<a class="button button-secondary" target="_blank" href="https://app.convertkit.com/landing_pages/402557?v=7" title="Sam Killermann Email List">
 						Join my Mailing List
 					</a>
-					<div class="description">Get emails about all of my projects, social good stuff, and activism. I send a few emails a month -- tops.</div>
+					<div class="description">Get emails about my projects, social good stuff, books, and activism. I send a few emails a month -- tops.</div>
 				</div>
 			</div>
 		</div>

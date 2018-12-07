@@ -23,7 +23,7 @@
 						Elsewhere, I've created a bunch of projects that have reached millions of people, been featured in TIME, the New York Times, the Atlantic, NatGeo, &amp; other fancy places, and I've been living as a professional author / activist / comedian person for almost a decade.
 					</p>
 
-					<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (sorry<a rel="bookmark" class="asterisk" id="asterisk1" href="#asterisk1-note">&#42;</a>)</p>
+					<p>Oh, and before you ask: yes, "Killerman<u>n</u>" is my real last name. (Sorry.)</p>
 
 					<p class="chameleon-color">
 						Here, I write articles for you focusing on topics like happiness, technology, doing-it-yourself, creativity, &amp; hummus.
@@ -111,25 +111,45 @@
 						<a target="_blank" href="https://www.youtube.com/c/SamKillermann" alt="Sam Killermann YouTube" class="button">YouTube</a>
 						<a target="_blank" href="http://github.com/killermann" alt="Sam Killermann Github" class="button">Github</a>
 						<a target="_blank" href="https://www.linkedin.com/in/killermann/" alt="Sam Killermann LinkedIn" class="button">LinkedIn</a>
-
 					</p>
 				</div><!--/follow-->
 			</div><!--/grid-->
-			<div class="site-info bigpad wrap">
-				<h3>How I Built this Site</h3>
-				<p>
-					<p>This is a <a href="https://wordpress.org">Wordpress</a> blog that is served as a static <a href="https://jamstack.org/">JAMstack</a> site using&nbsp;<a href="http://getshifter.io">Shifter</a>. I developed/designed a custom theme using <a href="http://underscores.me/">_s</a> as the boilerplate, paring down everything I didn't need*, to try to make it as fast and accessible as possible. The theme I made is all open source and uncopyrighted, and you can <a href="https://github.com/killermann/sam-killermann-blog">view it on Github</a>.</p>
-				</p>
-				<p>
-					*You might be wondering about the constantly shifting chameleon color scheme, and asking "Was <em>that</em> a need?" Yes, my friend. Because it makes me happy to visit this site, and I need to come here for this thing to work. So it was more than a need: it's everything.
-				</p>
-				<p>
-					If you want to build a blog <em>exactly</em> like this one, I've provided almost everything you need above to do so. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
-				</p>
-			</div><!-- .site-info -->
-			<div id="asterisk1-note">
-				<p><a rel="bookmark" href="#asterisk1">&#42; Not sorry.</a></p>
-			</div>
+			<div id="footer--how" class="chameleon-border mask-bg grid grid--full grid--center medium-grid--fit">
+				<div class="site-info grid-cell bigpad">
+					<h3>How I Built this Site</h3>
+					<p>
+						<p>This is a <a href="https://wordpress.org">Wordpress</a> blog that is served as a static <a href="https://jamstack.org/">JAMstack</a> site using&nbsp;<a href="http://getshifter.io">Shifter</a>. I developed/designed a custom theme using <a href="http://underscores.me/">_s</a> as the boilerplate, paring down everything I didn't need*, to try to make it as fast and accessible as possible. The theme I made is all open source and uncopyrighted, and you can <a href="https://github.com/killermann/sam-killermann-blog">view it on Github</a>.</p>
+					</p>
+					<p>
+						*You might be wondering about the constantly shifting chameleon color scheme, and asking "Was <em>that</em> a need?" Yes, my friend. Because it makes me happy to visit this site, and I need to come here for this thing to work. So it was more than a need: it's everything.
+					</p>
+					<p>
+						If you want to build a blog <em>exactly</em> like this one, I've provided almost everything you need above to do so. The only things missing are a solid understanding of HTML and CSS, a beginner's understanding of PHP, and a beginner's understanding of jQuery.
+					</p>
+				</div><!-- .site-info -->
+				<div class="grid-cell bigpad">
+					<article class="card">
+						<img class="card--image" src="https://www.samkillermann.com/wp-content/uploads/2018/12/sam-killermann-dot-com-100-pagespeed-score.jpg" alt="Image showing Google PageSpeed Score of 100">
+						<section class="pad">
+							<span class="primary-category">
+								meta af
+							</span>
+							<h4 class="card--title">
+								How I Made A WordPress Site with a 100 Score on Google Pagespeed Insights
+							</h4>
+							<p class="card--description">
+								While saving over $100 / month on Wordpress hosting. (Oh, and this isn't an ad, even though it sounds like one.)
+							</p>
+							<span class="card--cta grid grid--fit grid--spaceBetween">
+								Read How
+								<span class="icon">&rarr;</span>
+							</span>
+						</section>
+						<a href="https://samkillermann.com/how-i-made-a-wordpress-site-with-a-100-score-on-google-pagespeed-insights/" title="How I Made A WordPress Site with a 100 Score on Google Pagespeed Insights">
+						</a>
+					</article>
+				</div><!--/cell-->
+			</div><!--/grid-->
 		</section><!--/inner-->
 	</footer><!-- #colophon -->
 	<svg id="icon-pencil-alt" aria-hidden="true" data-prefix="fal" data-icon="pencil-alt" class="dont-render-dawg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M493.255 56.236l-37.49-37.49c-24.993-24.993-65.515-24.994-90.51 0L12.838 371.162.151 485.346c-1.698 15.286 11.22 28.203 26.504 26.504l114.184-12.687 352.417-352.417c24.992-24.994 24.992-65.517-.001-90.51zM164.686 347.313c6.249 6.249 16.379 6.248 22.627 0L368 166.627l30.059 30.059L174 420.745V386h-48v-48H91.255l224.059-224.059L345.373 144 164.686 324.687c-6.249 6.248-6.249 16.378 0 22.626zm-38.539 121.285l-58.995 6.555-30.305-30.305 6.555-58.995L63.255 366H98v48h48v34.745l-19.853 19.853zm344.48-344.48l-49.941 49.941-82.745-82.745 49.941-49.941c12.505-12.505 32.748-12.507 45.255 0l37.49 37.49c12.506 12.506 12.507 32.747 0 45.255z"></path></svg>

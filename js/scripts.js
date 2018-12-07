@@ -107,7 +107,7 @@ $( document ).ready(function() {
         $("html").get(0).style.setProperty('--bg-color', 'black');
         $("html").get(0).style.setProperty('--text-color', '#ddd');
         $("html").get(0).style.setProperty('--bg-faint', '#343434')
-        $("html").get(0).style.setProperty('--bg-mask', 'rgba(0,0,0,.78)')
+        $("html").get(0).style.setProperty('--bg-mask', 'rgba(0,0,0,.7)')
         document.getElementById("night-mode").classList.add('is-active');
 		document.getElementById("day-mode").classList.remove('is-active');
     });
@@ -117,7 +117,7 @@ $( document ).ready(function() {
         $("html").get(0).style.setProperty('--bg-color', 'white');
         $("html").get(0).style.setProperty('--text-color', 'black')
         $("html").get(0).style.setProperty('--bg-faint', '#eaeaea')
-        $("html").get(0).style.setProperty('--bg-mask', 'rgba(255,255,255,.85)')
+        $("html").get(0).style.setProperty('--bg-mask', 'rgba(255,255,255,.7)')
         document.getElementById("day-mode").classList.add('is-active');
         document.getElementById("night-mode").classList.remove('is-active');
     });

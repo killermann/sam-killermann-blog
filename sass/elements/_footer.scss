@@ -15,7 +15,7 @@
 	#footer-sK {
 		padding:4vw;
 		font-size:1.2em;
-		background:rgba(0,0,0,.8);
+		background:rgba(0,0,0,.7);
 		border-width:6px;
 		border-style:dashed;
 		color:rgba(white,.75);
@@ -61,13 +61,8 @@
 
 	#colophon--inner {
 		flex-wrap:wrap;
-		p a {
-			border-color:rgba(white,.7);
-			color:black;
-		}
 
 		h3 {
-			color:rgba(0,0,0,.7);
 			margin:0 auto .5em;
 		}
 
@@ -84,6 +79,24 @@
 			background:rgba(255,255,255,.8);
 			color:#000 !important;
 			text-decoration:none;
+		}
+	}
+
+	#footer--how {
+		border-width:6px;
+		border-style:dashed;
+		border-bottom:none;
+		border-left:none;
+		border-right:none;
+		color:var(--text-color);
+
+		.site-info {
+			flex-grow:2;
+		}
+
+		.card {
+			max-width:320px;
+			margin:0 auto;
 		}
 	}
 

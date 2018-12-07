@@ -3,6 +3,10 @@
 	text-align: center;
 }
 
+.mask-bg {
+	background-color:var(--bg-mask);
+}
+
 .dont-render-dawg {
 	position: absolute;
 	height: 0;

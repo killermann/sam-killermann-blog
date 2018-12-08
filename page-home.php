@@ -20,7 +20,7 @@ get_header(); ?>
 
 	if ( $home_cover_story->have_posts() ) {?>
 
-	<section id="home-cover-story">
+	<section id="home-cover-story" class="loop">
 
 		<?php while($home_cover_story->have_posts()) : $home_cover_story->the_post();
 

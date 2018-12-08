@@ -321,14 +321,40 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 add_action( 'amp_post_template_css', function( $amp_template ) {
     ?>
+
+	html {
+		background:#AF6EE2;
+	}
+
 	body {
 		font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+		line-height:1.55;
 	}
+
+	h1, h2, h3, h4, h5 {
+		line-height:1.2;
+	}
+
+	hr {
+		border:none;
+		opacity:.5;
+		height:1px;
+		background:#AF6EE2;
+	}
+
+	a,
+	a:visited,
+	.amp-wp-article-content a{
+		color:black;
+		text-decoration-color:#AF6EE2;
+	}
+
     nav.amp-wp-title-bar {background: #000;}
 
-	.amp-wp-article-featured-image amp-img {
-		width:100%;
-		height:auto;
+	.amp-site-title {
+		font-weight:900;
+		color:white;
+		text-shadow:0px 1px 1px rgba(0,0,0,.5);
 	}
 
 	.amp-wp-header {
@@ -336,32 +362,83 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 		color:black;
 		font-weight:bold;
 	}
-    ul.jp-amp-list {
+
+	.amp-wp-header .amp-wp-site-icon, .amp-wp-byline amp-img {
+		background:none;
+		border:none;
+	}
+
+	.amp-wp-article-featured-image amp-img {
+		width:100%;
+		height:auto;
+	}
+
+	.in-text--mailing-list {
+		border: 2px solid #AF6EE2;
+		border-radius:3px;
+		border-left:none;
+		width:44%;
+		border-bottom:none;
+		margin:0em 1em 1em -14px;
+		padding:18px 16px 4px 14px;
+		font-size:1em;
+		float:left;
+	}
+
+		.in-text--mailing-list h3 {
+			font-weight:900;
+			line-height:1;
+			margin:0 auto 15px;
+		}
+
+		.in-text--mailing-list p {
+			margin:0;
+			font-size:.75em;
+			font-family:$sans-serif !important;
+			line-height:1.2;
+		}
+
+		.in-text--mailing-list .button {
+			display:block;
+			font-size:.75em;
+			background:#AF6EE2;
+			color:white;
+			font-family: $sans-serif;
+			padding:.5em .3em;
+			border-radius:4px;
+			box-shadow:4px 4px 0px rgba(0,0,0,.2);
+			text-align:center;
+			line-height:1.2;
+			font-weight:bold;
+			text-decoration:uppercase;
+			margin:15px 0 0 !important;
+		}
+
+	ul.jp-amp-list {
         list-style: none;
         display: inline;
+		color:#696969;
     }
 
-    ul.jp-amp-list li {
-        display: inline;
-        margin: 0 8px;
-    }
+	    ul.jp-amp-list li {
+	        display: inline;
+	        margin: 0 8px;
+	    }
+
     <?php
 });
 
 add_action( 'pre_amp_render_post', function () {
     add_filter( 'the_content', function( $content ){
-        $post = get_post();
-        if( is_object( $post ) ){
-            $twitter = add_query_arg( array(
-                'url' => urlencode( get_permalink( $post->ID ) ),
-                'status' => urlencode( $post->post_title )
-            ),'https://twitter.com/share' );
-            $facebook = add_query_arg( array(
-                    'u' => urlencode( get_permalink( $post->ID ) )
-                ), 'https://www.facebook.com/sharer/sharer.php'
-            );
-        }
-        $share = sprintf( '<hr /><ul id="amp-jp-share" class="jp-amp-list">Share: <li id="twitter-share"><a href="%s" title="Share on Twitter">Twitter</a></li><li id="facebook-share"><a href="%s" title="Share on Facebook">Facebook</a></ul>', esc_url_raw( $twitter ), esc_url_raw( $facebook ) );
+        $share = '<hr />
+		<ul id="amp-subscribe" class="jp-amp-list">Subscribe:
+			<li id="feedburner">
+				<a target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" title="Get posts in your inbox">Get Posts in Your Inbox</a></li><li id="mailing-list">
+			</li>
+			<li>
+				<a target="_blank" href="https://app.convertkit.com/landing_pages/402557?v=7" title="Join My List">Join My Personal Mailing List</a>
+			</li>
+		</ul><hr />';
         $content  .= $share;
         return $content;
     }, 1000 );

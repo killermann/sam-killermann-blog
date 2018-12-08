@@ -317,6 +317,7 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
+
 /*** CUSTOMIZE AMP FOR WORDPRESS PLUGIN **/
 
 add_action( 'amp_post_template_css', function( $amp_template ) {
@@ -352,7 +353,7 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
     nav.amp-wp-title-bar {background: #000;}
 
 	.amp-site-title {
-		font-weight:900;
+		font-weight:700;
 		color:white;
 		text-shadow:0px 1px 1px rgba(0,0,0,.5);
 	}
@@ -418,11 +419,14 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
         list-style: none;
         display: inline;
 		color:#696969;
+		padding:0;
+		margin:0;
     }
 
 	    ul.jp-amp-list li {
-	        display: inline;
-	        margin: 0 8px;
+	        display: inline-block;
+			padding:0;
+	        margin: 0 10px 0 0;
 	    }
 
     <?php
@@ -433,9 +437,9 @@ add_action( 'pre_amp_render_post', function () {
         $share = '<hr />
 		<ul id="amp-subscribe" class="jp-amp-list">Subscribe:
 			<li id="feedburner">
-				<a target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" title="Get posts in your inbox">Get Posts in Your Inbox</a></li><li id="mailing-list">
+				<a target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" title="Get posts in your inbox">Get Posts in Your Inbox</a>
 			</li>
-			<li>
+			<li id="mailing-list">
 				<a target="_blank" href="https://app.convertkit.com/landing_pages/402557?v=7" title="Join My List">Join My Personal Mailing List</a>
 			</li>
 		</ul><hr />';
@@ -443,6 +447,25 @@ add_action( 'pre_amp_render_post', function () {
         return $content;
     }, 1000 );
 });
+
+/**
+ * Make the AMP structured data (metadata) use the last modified date as the published date
+ */
+function isa_amp_metadata_date_modified( $metadata, $post ) {
+
+    $metadata['datePublished'] = $metadata['dateModified'];
+
+    return $metadata;
+}
+add_filter( 'amp_post_template_metadata', 'isa_amp_metadata_date_modified', 10, 2 );
+
+/**
+ * Do not load Merriweather Google fonts on AMP pages
+ */
+add_action( 'amp_post_template_head', 'isa_remove_amp_google_fonts', 2 );
+function isa_remove_amp_google_fonts() {
+    remove_action( 'amp_post_template_head', 'amp_post_template_add_fonts' );
+}
 
 /** CLEANING UP HEAD BY REMOVING UNUSED STUFF **/
 

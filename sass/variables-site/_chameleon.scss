@@ -3,12 +3,13 @@
 
 a {
 	text-decoration:none;
+	text-decoration-color:$color__primary;
     transition: border-color 6.0s linear;
 }
 
 /* CHAMELEON */
 
-.color0 a {border-color:$color__primary}
+.color0 a {border-color:$violet}
 .color1 a {border-color:$purple}
 .color2 a {border-color:$blue}
 .color3 a {border-color:$light-blue}
@@ -29,7 +30,7 @@ a {
 	transition: background-color 6s linear;
 }
 
-.color0 .chameleon-bg 	{background-color:$color__primary;}
+.color0 .chameleon-bg 	{background-color:$violet;}
 .color1 .chameleon-bg  	{background-color:$purple}
 .color2 .chameleon-bg  	{background-color:$blue}
 .color3 .chameleon-bg  	{background-color:$light-blue}
@@ -48,7 +49,7 @@ a {
 
 .chameleon-color {color:$color__primary; transition: color 6.0s linear}
 
-.color0 .chameleon-color {color:$color__primary;}
+.color0 .chameleon-color {color:$violet;}
 .color1 .chameleon-color  { color: $purple;}
 .color2 .chameleon-color  { color: $blue;}
 .color3 .chameleon-color  { color: $light-blue;}
@@ -66,7 +67,7 @@ a {
 
 .chameleon-fill {fill:$color__primary; transition: fill 6.0s linear}
 
-.color0 .chameleon-fill {fill:$color__primary;}
+.color0 .chameleon-fill {fill:$violet;}
 .color1 .chameleon-fill {fill: $purple;}
 .color2 .chameleon-fill {fill: $blue;}
 .color3 .chameleon-fill {fill: $light-blue;}
@@ -84,7 +85,7 @@ a {
 
 .chameleon-border {border-color:$color__primary; transition: border-color 6s linear}
 
-.color0 .chameleon-border {border-color:$color__primary;}
+.color0 .chameleon-border {border-color:$violet;}
 .color1 .chameleon-border {border-color:$purple}
 .color2 .chameleon-border {border-color:$blue}
 .color3 .chameleon-border {border-color:$light-blue}
@@ -100,7 +101,7 @@ a {
 
 .chameleon-colorborder {color:$color__primary; border-color:$color__primary; transition: color 6s linear, border 6s linear;}
 
-.color0 .chameleon-colorborder {color:$color__primary;border-color:$color__primary;}
+.color0 .chameleon-colorborder {color:$violet;border-color:$violet;}
 .color1 .chameleon-colorborder { color: $purple;border-color:$purple}
 .color2 .chameleon-colorborder { color: $blue;border-color:$blue}
 .color3 .chameleon-colorborder { color: $light-blue;border-color:$light-blue}

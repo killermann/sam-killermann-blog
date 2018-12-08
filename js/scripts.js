@@ -40,10 +40,10 @@ $( document ).ready(function() {
 
     // Switch colors
     Chameleon.changeColor = function() {
-      Chameleon.bodyElement.removeClass( 'color' + Chameleon.colorT % Chameleon.noOfColors );
-      Chameleon.colorT++;
-      Chameleon.bodyElement.addClass( 'color' + Chameleon.colorT % Chameleon.noOfColors );
-      setTimeout( Chameleon.changeColor, Chameleon.duration * 1000 );
+        Chameleon.bodyElement.removeClass( 'color' + Chameleon.colorT % Chameleon.noOfColors );
+        Chameleon.colorT++;
+        Chameleon.bodyElement.addClass( 'color' + Chameleon.colorT % Chameleon.noOfColors );
+        setTimeout( Chameleon.changeColor, Chameleon.duration * 1000 );
     };
 
     // Get ready, set ... GO!

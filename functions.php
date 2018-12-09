@@ -468,13 +468,6 @@ add_action( 'pre_amp_render_post', function () {
         return $content;
     }, 1000 );
 });
-add_filter( 'amp_post_template_data', 'sam_killermann_blog_amp_set_site_icon_url' );
-
-function sam_killermann_blog_amp_set_site_icon_url( $data ) {
-	// Ideally a 32x32 image
-	$data['site_icon_url'] = get_stylesheet_directory_uri() . '/amp/sam-killermann-blog-logo.png';
-	return $data;
-}
 
 /**
  * Make the AMP structured data (metadata) use the last modified date as the published date
@@ -505,7 +498,7 @@ function amp_modify_json_metadata( $metadata, $post ) {
 
 		$metadata['publisher']['logo'] = array(
 			'@type' => 'ImageObject',
-			'url' => get_stylesheet_directory_uri().'/amp/sam-killerman-blog-logo.png',
+			'url' => get_stylesheet_directory_uri().'/amp/sam-killermann-blog-logo.png',
 			'height' => 60,
 			'width' => 280,
 		);

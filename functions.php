@@ -320,8 +320,7 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 /*** CUSTOMIZE AMP FOR WORDPRESS PLUGIN **/
 
-add_action( 'amp_post_template_css', function( $amp_template ) {
-    ?>
+add_action( 'amp_post_template_css', function( $amp_template ) { ?>
 
 	html {
 		background:#AF6EE2;
@@ -369,6 +368,25 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 		border:none;
 	}
 
+	.amp-wp-header div {
+		padding:7px 12px;
+	}
+
+	.amp-wp-header a {
+		display:block;
+		text-indent:-9999px;
+		background-image:url(https://www.samkillermann.com/wp-content/themes/sam-killermann-blog/amp/sam-killermann-blog-logo.png);
+		background-repeat:no-repeat;
+		background-size:contain;
+		margin:0 auto 0 0;
+		height:24px;
+		width:112px;
+	}
+
+	.amp-wp-header .amp-wp-site-icon {
+		display:none;
+	}
+
 	.amp-wp-article-featured-image amp-img {
 		width:100%;
 		height:auto;
@@ -395,7 +413,7 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 		.in-text--mailing-list p {
 			margin:0;
 			font-size:.75em;
-			font-family:$sans-serif !important;
+			font-family:"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 			line-height:1.2;
 		}
 
@@ -404,7 +422,6 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 			font-size:.75em;
 			background:#AF6EE2;
 			color:white;
-			font-family: $sans-serif;
 			padding:.5em .3em;
 			border-radius:4px;
 			box-shadow:4px 4px 0px rgba(0,0,0,.2);
@@ -412,7 +429,7 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 			line-height:1.2;
 			font-weight:bold;
 			text-decoration:uppercase;
-			margin:15px 0 0 !important;
+			margin:15px 0 0;
 		}
 
 	ul.jp-amp-list {
@@ -429,13 +446,17 @@ add_action( 'amp_post_template_css', function( $amp_template ) {
 	        margin: 0 10px 0 0;
 	    }
 
+	.amp-wp-footer p {
+		line-height:1.2;
+	}
+
     <?php
 });
 
 add_action( 'pre_amp_render_post', function () {
     add_filter( 'the_content', function( $content ){
         $share = '<hr />
-		<ul id="amp-subscribe" class="jp-amp-list">Subscribe:
+		<ul id="amp-subscribe" class="jp-amp-list">Subscribe (free):
 			<li id="feedburner">
 				<a target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog" title="Get posts in your inbox">Get Posts in Your Inbox</a>
 			</li>
@@ -447,6 +468,13 @@ add_action( 'pre_amp_render_post', function () {
         return $content;
     }, 1000 );
 });
+add_filter( 'amp_post_template_data', 'sam_killermann_blog_amp_set_site_icon_url' );
+
+function sam_killermann_blog_amp_set_site_icon_url( $data ) {
+	// Ideally a 32x32 image
+	$data['site_icon_url'] = get_stylesheet_directory_uri() . '/amp/sam-killermann-blog-logo.png';
+	return $data;
+}
 
 /**
  * Make the AMP structured data (metadata) use the last modified date as the published date

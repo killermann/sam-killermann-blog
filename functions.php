@@ -479,13 +479,41 @@ function sam_killermann_blog_amp_set_site_icon_url( $data ) {
 /**
  * Make the AMP structured data (metadata) use the last modified date as the published date
  */
-function isa_amp_metadata_date_modified( $metadata, $post ) {
+
+add_filter( 'amp_post_template_metadata', 'amp_metadata_date_modified', 10, 2 );
+
+function amp_metadata_date_modified( $metadata, $post ) {
 
     $metadata['datePublished'] = $metadata['dateModified'];
 
     return $metadata;
 }
-add_filter( 'amp_post_template_metadata', 'isa_amp_metadata_date_modified', 10, 2 );
+
+/**
+ * Add Custom Publisher logo to AMP Metadata
+ */
+
+add_filter( 'amp_post_template_metadata', 'amp_modify_json_metadata', 10, 2 );
+
+function amp_modify_json_metadata( $metadata, $post ) {
+
+   if( 'post'=== $post->post_type  ){
+
+		$metadata['@type'] = 'Article';
+
+		$metadata['publisher']['name'] = ' sK&#039;s Blog ';
+
+		$metadata['publisher']['logo'] = array(
+			'@type' => 'ImageObject',
+			'url' => get_stylesheet_directory_uri().'/amp/sam-killerman-blog-logo.png',
+			'height' => 60,
+			'width' => 280,
+		);
+
+   return $metadata;
+
+  }
+}
 
 /**
  * Do not load Merriweather Google fonts on AMP pages

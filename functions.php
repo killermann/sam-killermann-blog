@@ -503,9 +503,9 @@ function amp_modify_json_metadata( $metadata, $post ) {
 			'width' => 280,
 		);
 
-   return $metadata;
-
-  }
+   	return $metadata;
+	
+	}
 }
 
 /**

@@ -10,7 +10,6 @@ get_header(); ?>
 		'post_type' => 'post', // if the post type is post
 		'posts_per_page' => 1,
 		'orderby' => 'date',
-		'tag_slug__in' => 'cover-stories',
 		'ignore_sticky_posts' => 1
 	);
 

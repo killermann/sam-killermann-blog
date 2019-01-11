@@ -67,30 +67,30 @@
 				</svg>
 			</a>
 
-			<a href="#site-navigation" class="button" title="Navigate the Site">Menu</a>
+			<nav class="navis"><a href="#site-navigation" class="button" title="Navigate the Site">Menu</a></nav>
 
 			<nav id="masthead--nav" class="sK-nav">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Popular'});">
 					<svg class="spin-hover"><use xlink:href="#icon-heartbeat"></svg>
 					<span>Popular</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Fresh'});">
 					<svg class="spin-hover"><use xlink:href="#icon-air-freshener"></svg>
 					<span>Fresh</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Subscribe'});">
 					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
 					<span>Subscribe</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Books'});">
 					<svg class="spin-hover"><use xlink:href="#icon-books"></svg>
 					<span>Books</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'About'});">
 					<svg class="spin-hover"><use xlink:href="#icon-pencil-alt"></svg>
 					<span>About</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Say Hi'});">
 					<svg class="spin-hover"><use xlink:href="#icon-kiss-wink-heart"></svg>
 					<span>Say Hi</span>
 				</a>
@@ -99,6 +99,7 @@
 	</header><!-- #masthead -->
 
 	<div id="primary" class="content-area">
+
 		<div id="marquee">
 			<?php $marquee_latest = new WP_Query(
 				array(
@@ -149,4 +150,5 @@
 				</button>
 			</div>
 		</div><!--/marquee-->
+
 		<section id="content" class="site-content">

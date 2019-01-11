@@ -9,33 +9,6 @@
 		margin-bottom:10px;
 		justify-content: space-between;
 		align-items: flex-start;
-
-		.button {
-			background:rgba(255,255,255,.9);
-			padding:0 .7em;
-			margin:5px;
-			font-size:.8em;
-			color:black;
-			line-height:30px;
-			text-decoration:none;
-			font-weight:bold;
-			border:none;
-			border-radius:3px;
-			box-shadow: 3px 3px 0px 0px rgba(0,0,0,.4);
-
-			.open {display:none;}
-
-			&:hover {
-				background:#fff;
-				box-shadow: 5px 5px 3px 0 rgba(0,0,0,.4);
-			}
-
-			&:active {
-				box-shadow:none;
-				background:rgba(0,0,0,.5);
-				color:#000;
-			}
-		}
 	}
 
 	#masthead-logo {
@@ -107,10 +80,6 @@
 	display:none;
 }
 
-@media (min-width:768px){
-
-}
-
 @media (min-width:1030px){
 
 	#marquee {
@@ -129,6 +98,7 @@
 		line-height:2;
 		border-radius:5px;
 		flex-basis:auto;
+		margin-left:-22px;
 	}
 
 	.marquee-post {
@@ -160,15 +130,6 @@
 		}
 	}
 
-	.site-access {
-		padding:10px;
-
-		a {
-			margin:2px 5px;
-			border:none;
-		}
-	}
-
 	#breadcrumbs {
 		vertical-align: middle;
 		max-width:400px;
@@ -179,8 +140,13 @@
 		margin:0;
 	}
 
+	#masthead {
+		background:none;
+	}
+
 	#masthead--inner {
 		display:flex;
+		background:none;
 		height:auto;
 		align-items:center;
 		justify-content:flex-start;
@@ -188,10 +154,6 @@
 		position:sticky;
 		min-height:100vh;
 		top:0px;
-
-		.button {
-			display:none;
-		}
 	}
 
 	#masthead-logo {
@@ -211,5 +173,11 @@
 			width:100%;
 			margin:1vh auto;
 		}
+	}
+}
+
+@media (min-width:1440px){
+	#marquee {
+		margin-right:-140px;
 	}
 }

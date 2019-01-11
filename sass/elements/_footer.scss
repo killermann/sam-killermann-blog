@@ -1,9 +1,21 @@
+#site-navigation {
+	position:relative;
+	.button {
+		position:absolute;
+		top:0px;
+		right:0px;
+	}
+}
 #footer--nav {
-	padding:2em 0;
+	padding:3em 0;
 
 	a {
 		width:30.333%;
 		margin:1.5%;
+
+		&:hover, &:focus {
+			color:white;
+		}
 	}
 }
 

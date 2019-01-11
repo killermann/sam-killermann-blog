@@ -30,3 +30,20 @@
 		grid-column: span 2;
 	}
 }
+
+
+@media screen and (min-width:1440px) {
+	#page {
+		display: grid;
+		grid-template-columns: 144px 1fr 144px;
+	}
+
+	#masthead {
+		flex:1;
+		position:relative;
+	}
+
+	#colophon {
+		grid-column: span 3;
+	}
+}

@@ -210,11 +210,15 @@
 		margin:.2em auto .3em;
 	}
 
-	.primary-category, .byline, .posted-on{
+	.primary-category, .byline, .posted-on, .more-link{
 		font-weight:900;
 		font-size:.75em;
 		text-transform:uppercase;
 		line-height:1;
+	}
+
+	.more-link {
+		font-family:$sans-serif;
 	}
 
 .single {

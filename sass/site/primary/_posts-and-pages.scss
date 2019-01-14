@@ -14,12 +14,6 @@
 	margin-left: auto;
 	margin-right:auto;
 
-	blockquote, pre, form{
-		max-width:800px;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
 	.alignleft, img.alignleft {
 		margin-right: 4vw;
 		margin-left:-4vw;
@@ -407,11 +401,10 @@
 #asterisk1-note {padding:0 4vw 4vw;}
 
 .interstitial {
-	border-radius:1em;
+
 	.inner {
 		background:rgba(0,0,0,.75);
 		background:linear-gradient(to bottom right, rgba(0,0,0,.75), rgba(0,0,0,.5)) no-repeat;
-		border-radius:1em;
 	}
 }
 
@@ -650,6 +643,15 @@ MEDIA QUERIES
 	// 		margin-right:4vw;
 	// 	}
 	// }
+
+	.interstitial {
+		margin:5px;
+		border-radius:1em;
+
+		.inner {
+			border-radius:1em;
+		}
+	}
 
 }
 

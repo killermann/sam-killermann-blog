@@ -99,6 +99,8 @@
 		border-radius:5px;
 		flex-basis:auto;
 		margin-left:-22px;
+		position:relative;
+		z-index:10;
 	}
 
 	.marquee-post {
@@ -142,6 +144,12 @@
 
 	#masthead {
 		background:none;
+
+		&:hover {
+			#masthead--nav {
+				opacity:1;
+			}
+		}
 	}
 
 	#masthead--inner {
@@ -168,6 +176,8 @@
 		flex-grow:1;
 		flex-direction:column;
 		flex-wrap:nowrap;
+		opacity:.65;
+		transition:all .5s;
 
 		a {
 			width:100%;

@@ -8,8 +8,14 @@
 
 	.entry-content {
 		font-size:1.5em;
-		max-width:520px;
+		max-width:620px;
 		margin:5vw auto !important;
+
+		blockquote {
+			border:none;
+			padding:0;
+			font-size:1em;
+		}
 
 		blockquote p, p {
 			display:inline;
@@ -19,7 +25,6 @@
 			color:black;
 			font-family:$sans-serif !important;
 			background: lighten($teal,20%);
-
 		}
 
 		cite, p cite {

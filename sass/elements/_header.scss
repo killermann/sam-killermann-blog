@@ -190,4 +190,20 @@
 	#marquee {
 		margin-right:-140px;
 	}
+
+	#sideline {
+		position:absolute;
+		writing-mode: vertical-rl;
+		height:100vh;
+		padding:60px 0;
+		text-align:center;
+		line-height:1;
+		width:144px;
+		align-items:center;
+		justify-content: center;
+		font-size:.75em;
+		font-weight:700;
+		text-transform: uppercase;
+		letter-spacing:.05em;
+	}
 }

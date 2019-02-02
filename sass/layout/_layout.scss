@@ -15,6 +15,10 @@
 	padding:4vw;
 }
 
+#sideline {
+	display:none;
+}
+
 @media screen and (min-width:1030px) {
 	#page {
 		display: grid;
@@ -24,10 +28,15 @@
 	#masthead {
 		flex:1;
 		position:relative;
+		grid-column: 1 / span 1;
+	}
+
+	#primary {
+		grid-column: 2 / span 1;
 	}
 
 	#colophon {
-		grid-column: span 2;
+		grid-column: 1 / span 2;
 	}
 }
 
@@ -38,12 +47,12 @@
 		grid-template-columns: 144px 1fr 144px;
 	}
 
-	#masthead {
-		flex:1;
-		position:relative;
-	}
+	.home, .blog { #sideline {
+		display:flex;
+		grid-column: 3 / span 1;
+	}}
 
 	#colophon {
-		grid-column: span 3;
+		grid-column: 1 / span 3;
 	}
 }

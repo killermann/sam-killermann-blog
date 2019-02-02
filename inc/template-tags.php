@@ -215,25 +215,8 @@ function sam_killermann_blog_primary_category() {
 }
 
 
-function getLoopSubscribe() { ?>
-
-	<article class="subscribeLoop clearfix yellow-bg rounded">
-		<h3 class="subscribe-heading">Subscribe</h3>
-		<h4>Never miss a new episode<br/>
-			<small>(unless you want to)</small></h4>
-		<ul class="hostingPlatforms">
-			<li>
-				<a data-ot="Email List" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" target="_blank" id="email" href="">
-					💌
-				</a>
-			</li>
-		</ul>
-	</article>
-
-<?php }
-
 function get_loop_mailing_lists() {?>
-	<section class="interstitial chameleon-bg">
+	<section class="interstitial chameleon-bg wrap">
 		<div class="email-interstitial inner bigpad">
 			<h3 class="chameleon-color">
 				You want emails from me?<br/>
@@ -259,7 +242,7 @@ function get_loop_mailing_lists() {?>
 <?php }
 
 function get_loop_post_formats() {?>
-	<section class="chameleon-bg interstitial">
+	<section class="chameleon-bg interstitial wrap">
 		<div class="post-formats-interstitial inner bigpad">
 			<h3>
 				Browse by Format

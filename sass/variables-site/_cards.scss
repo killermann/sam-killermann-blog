@@ -1,5 +1,5 @@
 .card {
-	border-radius:4px;
+	border-radius:25px;
 	box-shadow: 5px 5px 0 0 rgba(6,41,66,.2);
 	overflow:hidden;
 	background-color:var(--bg-color);
@@ -45,7 +45,7 @@
 	.card--cta {
 		border:2px solid var(--bg-faint);
 		padding:10px;
-		border-radius:6px;
+		border-radius:12px;
 		margin:0 10px 10px;
 	}
 

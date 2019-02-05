@@ -104,11 +104,6 @@
 	}
 }
 
-	.post-thumbnail:hover img, .post-thumbnail:focus img {
-		opacity:.75!important;
-		transform: scale(1.07);
-	}
-
 .lazy-load {
     transition: opacity .15s;
     opacity: 0;
@@ -188,6 +183,11 @@
 
 	.byline, .more-link, .posted-on, .primary-category {
 		opacity:.65;
+	}
+
+	.post-thumbnail:hover img, .post-thumbnail:focus img {
+		opacity:.75!important;
+		transform: scale(1.07);
 	}
 }
 

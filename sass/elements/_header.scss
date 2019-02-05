@@ -190,10 +190,13 @@
 @media (min-width:1440px){
 	#marquee {
 		margin-right:-140px;
+		position:relative;
+		z-index:1;
 	}
 
 	#sideline {
 		position:absolute;
+		z-index:0;
 		writing-mode: vertical-rl;
 		height:100vh;
 		padding:60px 0;

@@ -27,12 +27,12 @@
 	if(localStorage.getItem("colorScheme")==="night") {
 		root.style.setProperty('--bg-color', 'black');
 		root.style.setProperty('--text-color', '#ddd');
-		root.style.setProperty('--bg-faint', '#343434');
+		root.style.setProperty('--bg-faint', '#222222');
 		root.style.setProperty('--bg-mask', 'rgba(0,0,0,.78)');
 	} else if (localStorage.getItem("colorScheme")==="day") {
 		root.style.setProperty('--bg-color', 'white');
 		root.style.setProperty('--text-color', 'black');
-		root.style.setProperty('--bg-faint', '#eaeaea');
+		root.style.setProperty('--bg-faint', '#f3f3f3');
 		root.style.setProperty('--bg-mask', 'rgba(255,255,255,.85)');
 	}</script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

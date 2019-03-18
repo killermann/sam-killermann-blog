@@ -145,9 +145,16 @@
 		position:relative;
 		padding:6vw 4vw;
 
+		.entry-header {
+			position:relative;
+			a {
+				border-bottom: none;
+			}
+		}
+
 		.format-standard {
 			border-radius:25px;
-			box-shadow:0 10px 50px 0 rgba(48,9,91,.3);
+			background: var(--bg-faint);
 			overflow:hidden;
 
 			.entry-header-text {
@@ -165,6 +172,12 @@
 
 			.entry-content {
 				display:none;
+			}
+
+			&:hover, &:focus {
+				.post-thumbnail img {
+					transform: scale(1.07);
+				}
 			}
 		}
 
@@ -185,17 +198,24 @@
 		opacity:.65;
 	}
 
-	.post-thumbnail:hover img, .post-thumbnail:focus img {
-		opacity:.75!important;
-		transform: scale(1.07);
+	.absolute-link {
+		border-radius: 25px;
+	}
+
+	.absolute-link:hover, .absolute-link:focus {
+		box-shadow: inset 0px 0px 0px 5px $purple;
 	}
 }
 
 .sign-post {
 	border:3px solid white !important;
 	display:block;
-	font-size:14px;
-	float:right;
+	font-size:calc(8px + .2vw);
+	position: absolute;
+	z-index: 100;
+	cursor: pointer;
+	right: 2vw;
+	top: 3vw;
 	overflow:hidden;
 	text-align:center;
 	border-radius:2px;
@@ -527,12 +547,12 @@
 
 		.grid {
 			justify-content: center;
+			align-items: center;
 		}
 
 		.hero {z-index:8888}
 
 		.grid-cell.option {
-			align-self:stretch;
 			align-items: stretch;
 			text-align:center;
 			padding:0;
@@ -598,7 +618,7 @@
 	}
 
 	#signup-FAQ {
-		margin:2vw auto;
+		margin:2vw auto 6em;
 		width:100%;
 
 		h2 {
@@ -685,7 +705,7 @@ MEDIA QUERIES
 	}
 
 	.loop .loop-content .format-standard {
-		box-shadow:0 20px 120px 0 rgba(48,9,91,.3);
+		// box-shadow:0 20px 120px 0 rgba(48,9,91,.3);
 	}
 
 }

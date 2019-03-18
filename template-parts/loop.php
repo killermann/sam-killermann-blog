@@ -7,11 +7,11 @@
  * @package samkillermannblog
  */
 
-if ( ! is_single() ) : echo '<div class="loop-content chameleon-border">'; endif;
+if ( ! is_single() ) : echo '<div class="loop-content">'; endif;
 
 if ( in_category('patrons-only') ) :
-echo '<a class="sign-post for-patrons-only" href="' . home_url() . '/sign-up" title="Content for Patrons Only">
-	<div class="sign-title">Patrons Only</div>
+echo '<a class="sign-post for-patrons-only" href="' . home_url() . '/subscribe" title="Content for Employers Only">
+	<div class="sign-title">Employers Only</div>
 	<div class="sign-description">No General Admittance</div>
 </a>';
 endif;

@@ -214,6 +214,32 @@ function sam_killermann_blog_primary_category() {
 	}
 }
 
+function get_loop_subscribe() {?>
+	<section class="interstitial chameleon-bg wrap">
+		<div class="email-interstitial inner bigpad">
+			<h3 class="chameleon-color">
+				Do you want to be my boss?<br/>
+				<strong>Take credit for my work.</strong>
+			</h3>
+			<div class="button-group grid medium-grid--fit small-grid--full">
+				<div class="grid-cell">
+					<a class="button" href="https://patreon.com/join/killermann" target="_blank">
+						Be My Boss on Patreon
+					</a>
+					<div class="description">Pay part of my salary (starting at $1/month). Fund my work here and elsewhere.</div>
+				</div>
+				<div class="grid-cell">
+					<a class="button button-secondary" target="_blank" href="https://www.bemyboss.es" title="Learn about being Sam Killermann's Boss">
+						Learn More
+					</a>
+					<div class="description">Not sure what I mean? Watch this video and read all about being one of my employers.</div>
+				</div>
+			</div>
+		</div>
+		<!--/email-inter-->
+	</section>
+<?php }
+
 
 function get_loop_mailing_lists() {?>
 	<section class="interstitial chameleon-bg wrap">
@@ -288,20 +314,15 @@ if ( ! function_exists( 'sam_killermann_blog_post_thumbnail' ) ) :
 function sam_killermann_blog_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
-	}
+	}?>
 
-	if ( !is_single() ) : ?>
-	<a class="post-thumbnail chameleon-bg" href="<?php the_permalink(); ?>" aria-hidden="true"><?php
-	else : ?><div class="post-thumbnail chameleon-bg">
-	<?php endif;?>
+	<div class="post-thumbnail">
 		<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
-			) );
-
-	if ( !is_single() ) : ?></a><?php else: ?></div><?php endif;?>
-
+			) );?>
+	</div>
 	<?php
 } endif;

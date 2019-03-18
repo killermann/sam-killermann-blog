@@ -17,7 +17,7 @@
 			if ( is_single() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
-				the_title( '<h2 class="h1 entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2 class="h1 entry-title">', '</h2>' );
 			endif;
 			if ( has_excerpt() ) :
 				echo '<p class="excerpt">';
@@ -28,6 +28,9 @@
 			sam_killermann_blog_posted_by();?>
 		</div>
 		<?php sam_killermann_blog_post_thumbnail(); ?>
+		<?php if ( !is_single() ){ ?>
+			<a class="absolute-link" href="<?php echo the_permalink(); ?>" title="<?php echo the_title();?>" rel="bookmark"></a>
+		<?php }  ?>
 	</header><!-- .entry-header -->
 
 	<section class="entry-content text-wrap">

@@ -22,7 +22,7 @@ get_header(); ?>
 	</section><!--/hero-->
 	<section id="signup-options">
 		<div class="grid">
-			<div id="signup-options--sambassador" class="grid-cell option chameleon-border">
+			<!-- <div id="signup-options--sambassador" class="grid-cell option chameleon-border">
 				<div class="chameleon-bg">
 					<h3 class="chameleon-color">
 						SAMbassador
@@ -55,15 +55,19 @@ get_header(); ?>
 					</li>
 				</ul>
 				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'SAMBassador - Sign-up Page'});" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=2396885">Become SAMbassador</a>
-			</div>
+			</div> -->
 			<div id="signup-options--patreon" class="grid-cell option chameleon-border chameleon">
 				<div class="chameleon-bg">
 					<h3 class="chameleon-color">
-						Member / Supporter
+						Employer / Member
 						<small>$1+ per Month</small>
 					</h3>
 				</div>
 				<ul>
+					<li>
+						<span class="icon">💼</span>
+						<span>Be <a href="https://bemyboss.es" title="Be Sam Killermann's Boss">my boss</a></span>
+					</li>
 					<li>
 						<span class="icon">🔐</span>
 						<span>Locked content on this site</span>
@@ -90,7 +94,7 @@ get_header(); ?>
 					</li>
 
 				</ul>
-				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Member/Supporter - Sign-up Page'});" alt="Sign up on Patreon" href="https://www.patreon.com/bePatron?c=1432684&rid=000000">Become Member</a>
+				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Member/Supporter - Sign-up Page'});" alt="Sign up on Patreon" href="patreon.com/join/killermann">Become my Boss</a>
 			</div>
 			<div id="signup-options--mailing-list" class="grid-cell option chameleon-border chameleon">
 				<div class="chameleon-bg">
@@ -106,14 +110,14 @@ get_header(); ?>
 					</li>
 					<li>
 						<span class="icon">🌟</span>
-						<span>Never miss a popular article or special announcement</span>
+						<span>Never miss an article, challenge, or link.</span>
 					</li>
 					<li>
 						<span class="icon">💯</span>
 						<span>Zero spam, easy unsubscribe</span>
 					</li>
 				</ul>
-				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Mailing List', eventAction: 'button_click', eventLabel: 'Sign-up Page'});" alt="Join Mailing List" href="http://eepurl.com/HVL7X">Join Mailing List</a>
+				<a class="button" onClick="ga('send', 'event', { eventCategory: 'Mailing List', eventAction: 'button_click', eventLabel: 'Sign-up Page'});" alt="Join Mailing List" href="https://feedburner.google.com/fb/a/mailverify?uri=samkillermannblog">Get Posts via Email</a>
 			</div>
 		</div><!--/options-->
 	</section>

@@ -5,19 +5,14 @@ Template Name: Sign-Up Page
 
 get_header(); ?>
 
-	<section class="hero">
-		<div class="hero--section grid grid--full grid--center">
-			<div class="hero--text grid-cell">
-				<?php
-				while ( have_posts() ) : the_post();
+	<section class="hero bigpad">
+		<?php
+		while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'page' );
 
-				endwhile; // End of the loop.
-				?>
-			</div>
-
-		</div><!--hero-section-->
+		endwhile; // End of the loop.
+		?>
 
 	</section><!--/hero-->
 	<section id="signup-options">

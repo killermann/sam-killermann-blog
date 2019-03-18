@@ -545,7 +545,7 @@
 	#signup-options {
 		display:block;
 		width:100%;
-		margin-top:-6vw;
+		padding:0 4vw;
 
 		.grid {
 			justify-content: center;
@@ -559,7 +559,8 @@
 			text-align:center;
 			padding:0;
 			z-index:8889;
-			max-width:320px;
+			max-width:90%;
+			width: 360px;
 			margin:0 20px 20px;
 			box-shadow:12px 15px 1px 0 rgba(0,0,0,.15);
 			border-radius:2px;
@@ -620,7 +621,7 @@
 	}
 
 	#signup-FAQ {
-		margin:2vw auto 6em;
+		margin:4em auto 6em;
 		width:100%;
 
 		h2 {

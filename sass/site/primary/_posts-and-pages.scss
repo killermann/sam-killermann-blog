@@ -147,8 +147,19 @@
 
 		.entry-header {
 			position:relative;
+
 			a {
 				border-bottom: none;
+			}
+
+			.absolute-link {
+				border-radius: 25px;
+				@extend .chameleon-border;
+			}
+
+			.absolute-link:hover, .absolute-link:focus {
+				border-width: 5px;
+				border-style: solid;
 			}
 		}
 
@@ -196,16 +207,6 @@
 
 	.byline, .more-link, .posted-on, .primary-category {
 		opacity:.65;
-	}
-
-	.absolute-link {
-		border-radius: 25px;
-		@extend .chameleon-border;
-	}
-
-	.absolute-link:hover, .absolute-link:focus {
-		border-width: 5px;
-		border-style: solid;
 	}
 }
 

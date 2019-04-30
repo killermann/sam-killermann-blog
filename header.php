@@ -97,10 +97,10 @@
 			</nav><!--/mastheadnav-->
 		</div>
 	</header><!-- #masthead -->
-
+<!--
 	<div id="sideline">
 		<span class="chameleon-color">The Official Weblog of Internet Person Sam Killermann</span>
-	</div>
+	</div> -->
 
 	<div id="primary" class="content-area">
 

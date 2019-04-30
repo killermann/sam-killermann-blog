@@ -124,6 +124,7 @@
 	.absolute-link {
 		@extend .chameleon-bg;
 		opacity: 0;
+		border-radius: 25px;
 	}
 
 	.absolute-link:hover, .absolute-link:focus {

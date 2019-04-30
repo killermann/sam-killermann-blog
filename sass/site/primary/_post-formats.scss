@@ -116,7 +116,7 @@
 		opacity: 0;
 	}
 
-	.absolute-link:hover {
+	.absolute-link:hover, .absolute-link:focus {
 		opacity: .2;
 	}
 }

@@ -93,6 +93,16 @@
 
 	.entry-title {
 		font-size: 1.2em;
+
+		.chameleon-color {
+			display: inline-block;
+			transition: transform .3s ease-out, color 6s linear;
+		}
+	}
+
+	&:hover .entry-title .chameleon-color,
+	&:focus .entry-title .chameleon-color {
+		transform: translate(10px);
 	}
 
 	.primary-category {

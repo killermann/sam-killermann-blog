@@ -85,6 +85,42 @@
 		}
 	}
 
+.format-link {
+	padding: 25px;
+	border-radius: 25px;
+	overflow: hidden;
+	position:relative;
+
+	.entry-title {
+		font-size: 1.2em;
+	}
+
+	.primary-category {
+		opacity: 1;
+	}
+
+	.entry-header {
+		margin: 0;
+	}
+
+	.entry-content {
+		font-size: .8em;
+
+		p {
+			margin: 1em 0 0;
+		}
+	}
+
+	.absolute-link {
+		@extend .chameleon-bg;
+		opacity: 0;
+	}
+
+	.absolute-link:hover {
+		opacity: .2;
+	}
+}
+
 .format-status{
 
 	.entry-header {

@@ -326,6 +326,11 @@
 		}
 	}
 
+	.post-thumbnail {
+		margin-left: -25px;
+		margin-right: -25px;
+	}
+
 	.post-thumbnail:hover img, .post-thumbnail:focus img {
 		opacity: 1 !important;
 		transform: none !important;

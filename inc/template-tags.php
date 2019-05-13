@@ -105,7 +105,7 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 			</div>
 			<div id="footer-feedburner" class="bigpad">
 
-				<div class="inner bigpad">
+				<div class="inner">
 					<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow">
 						<h2 class="chameleon-color">Do you want new posts in your inbox?</h2>
 						<p>I can make that happen. We have the technology. Just don't expect a bunch of emails from me.</p>

@@ -53,13 +53,13 @@ get_header(); ?>
 
 			if ( $count == 0 ) :
 
-				get_loop_subscribe();
+				get_loop_mailing_lists();
 
 				get_template_part( 'template-parts/loop' );
 
 			elseif ( $count == 7 ) :
 
-				get_loop_mailing_lists();
+				get_loop_subscribe();
 
 				get_template_part( 'template-parts/loop' );
 

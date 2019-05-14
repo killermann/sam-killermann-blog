@@ -58,29 +58,33 @@
 		<section id="site-navigation" class="navis">
 			<a href="#masthead" class="button" title="Back to Top">Top</a>
 			<nav id="footer--nav" class="sK-nav">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'About'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation" onClick="gtag('event', 'About - Footer');">
 					<svg class="spin-hover"><use xlink:href="#icon-pencil-alt"></svg>
 					<span>About</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Subscribe'});">
-					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
-					<span>Subscribe</span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>sections" title="Sections" rel="navigation" onClick="gtag('event', 'Sections - Footer');">
+					<svg class="spin-hover"><use xlink:href="#icon-couch"></svg>
+					<span>Sections</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Popular'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation" onClick="gtag('event', 'Popular - Footer');">
 					<svg class="spin-hover"><use xlink:href="#icon-heartbeat"></svg>
 					<span>Popular</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Fresh'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation" onClick="gtag('event', 'Fresh - Footer');">
 					<svg class="spin-hover"><use xlink:href="#icon-air-freshener"></svg>
 					<span>Fresh</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Books'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation" onClick="gtag('event', 'Books - Footer');">
 					<svg class="spin-hover"><use xlink:href="#icon-books"></svg>
 					<span>Books</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Say Hi'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation" onClick="gtag('event', 'Say Hi - Footer');">
 					<svg class="spin-hover"><use xlink:href="#icon-kiss-wink-heart"></svg>
 					<span>Say Hi</span>
+				</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation" onClick="gtag('event', 'Subscribe - Footer');">
+					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
+					<span>Subscribe</span>
 				</a>
 			</nav><!--/mastheadnav-->
 		</section><!-- #site-navigation -->
@@ -105,7 +109,7 @@
 					<p>
 						I don't use social media a lot, so the mailing list is your best bet, but if you insist:
 					</p>
-					<p>
+					<p class="button-group">
 						<a target="_blank" href="https://instagram.com/killermann" title="Sam Killermann Instagram" class="button" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Instagram'});">Instagram</a>
 						<a target="_blank" href="https://patreon.com/killermann" title="Sam Killermann Patreon" class="button" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Patreon'});">Patreon</a>
 						<a target="_blank" href="https://facebook.com/samkillermann" title="Sam Killermann Facebook" class="button" onClick="ga('send', 'event', { eventCategory: 'Footer', eventAction: 'button_click', eventLabel: 'Facebook'});">Facebook</a>
@@ -162,6 +166,7 @@
 	<svg id="icon-kiss-wink-heart" aria-hidden="true" data-prefix="fal" data-icon="kiss-wink-heart" class="dont-render-dawg spin-hover" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 504 512"><path fill="currentColor" d="M499.6 392.3c-5.2-13.6-15.2-24.3-27.4-31.8 15-31.8 23.8-67 23.8-104.5C496 119 385 8 248 8S0 119 0 256s111 248 248 248c36.1 0 70.2-8.1 101.2-22.1 9.5 11.6 24.7 17.8 40.7 13.7l65.4-16.9c37.5-9.8 58.3-49.8 44.3-86.4zm-176.4 10.1l13.8 49.9c-27.2 12.5-57.2 19.7-89 19.7-119.1 0-216-96.9-216-216S128.9 40 248 40s216 96.9 216 216c0 33.9-8 65.9-22 94.4-1-.1-18.6-30.4-56.1-30.4-41.9 0-74.5 39.8-62.7 82.4zm124 45.3l-65.4 16.9c-4 1.1-8.5-1.3-9.8-5.6l-18-65.1c-5.2-18.9 6.9-38.3 26.8-41.4 17.7-2.8 34 9.5 38.6 26l1.8 6.6 6.7-1.7c14.3-3.7 34.7 1.7 41.8 20.4 7.2 18.8-3.5 38.9-22.5 43.9zM304 308c0-19.2-28.7-41.5-71.5-44-3.8-.4-7.4 2.4-8.2 6.2-.9 3.8 1.1 7.7 4.7 9.2l16.9 7.2c13 5.5 20.7 13.5 20.7 21.5s-7.7 16-20.7 21.5l-17 7.2c-5.7 2.4-6 12.2 0 14.8l16.9 7.2c13 5.5 20.7 13.5 20.7 21.5s-7.7 16-20.7 21.5l-17 7.2c-3.6 1.5-5.6 5.4-4.7 9.2.8 3.6 4.1 6.2 7.8 6.2h.5c42.8-2.5 71.5-24.8 71.5-44 0-13-13.4-27.3-35.2-36C290.6 335.3 304 321 304 308zM168 176c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm235.8 46.1c-4-25.2-34.2-42.1-59.8-42.1s-55.9 16.9-59.8 42.1c-1.8 10.9 11.3 18.4 19.8 10.8l9.5-8.5c14.8-13.2 46.2-13.2 61 0l9.5 8.5c8.6 7.5 21.6.2 19.8-10.8z"></path></svg>
 	<svg id="icon-moon" aria-hidden="true" data-prefix="fas" data-icon="moon" class="dont-render-dawg" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
 	<svg id="icon-sun" aria-hidden="true" data-prefix="fas" data-icon="sun" class="dont-render-dawg" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+	<svg id="icon-couch" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="couch" class="dont-render-dawg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M576 196.6V128c0-53-43-96-96-96H160c-53 0-96 43-96 96v68.6C29.4 207.3 3.1 236.9.3 273-2 302 9.9 329.5 32 347.6V440c0 22.1 17.9 40 40 40h88c4 0 30.2-.9 31.9-32h256.2c1.4 30.8 28 32 31.9 32h88c22.1 0 40-17.9 40-40v-92.4c22-18.1 34-45.5 31.7-74.6-2.8-36.1-29.1-65.7-63.7-76.4zM144 432H80V321.3l-11.9-7C54.6 306.5 47 292 48.2 276.7 49.7 256.5 69.4 240 92 240h12c22.1 0 40 17.9 40 40v152zm304-128v96H192v-96h256zm3.7-48H188.2c-9.8-34.3-39.7-59.8-76.2-63.2V128c0-26.5 21.5-48 48-48h320c26.5 0 48 21.5 48 48v64.8c-36.6 3.4-66.5 28.9-76.3 63.2zm120.2 58.4l-11.9 7V432h-64V280c0-22.1 17.9-40 40-40h12c22.6 0 42.3 16.5 43.9 36.8 1.1 15.3-6.5 29.7-20 37.6z"></path></svg>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 

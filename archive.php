@@ -14,7 +14,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="archive-header">
+			<header class="archive-header wrap <?php echo single_term_title();?>">
 			<?php
 				echo '<h1 class="page-title">';
 				echo single_term_title();
@@ -22,7 +22,7 @@ get_header(); ?>
 				the_archive_description( '<div class="archive-description wrap entry-content">', '</div><hr/>' );
 			?>
 			</header><!-- .page-header -->
-			<section class="loop">
+			<section id="latest-posts" class="loop">
 
 				<?php
 				/* Start the Loop */

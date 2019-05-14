@@ -22,6 +22,7 @@
 
 		gtag('config', 'UA-45231959-1');
 	</script>
+
 	<script>
 	let root = document.documentElement;
 	if(localStorage.getItem("colorScheme")==="night") {
@@ -70,27 +71,31 @@
 			<nav class="navis"><a href="#site-navigation" class="button" title="Navigate the Site">Menu</a></nav>
 
 			<nav id="masthead--nav" class="sK-nav">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Popular'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>popular" title="Popular" rel="navigation" onClick="gtag('event', 'Popular - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-heartbeat"></svg>
 					<span>Popular</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Fresh'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>all" title="Fresh" rel="navigation" onClick="gtag('event', 'Fresh - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-air-freshener"></svg>
 					<span>Fresh</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Subscribe'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>sections" title="Sections" rel="navigation" onClick="gtag('event', 'Sections - Header');">
+					<svg class="spin-hover"><use xlink:href="#icon-couch"></svg>
+					<span>Sections</span>
+				</a>
+				<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe" rel="navigation" onClick="gtag('event', 'Subscribe - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-prescription-bottle-alt"></svg>
 					<span>Subscribe</span>
-				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Books'});">
+				</a> -->
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>books" title="Books" rel="navigation" onClick="gtag('event', 'Books - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-books"></svg>
 					<span>Books</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'About'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>about" title="About" rel="navigation" onClick="gtag('event', 'About - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-pencil-alt"></svg>
 					<span>About</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation" onClick="ga('send', 'event', { eventCategory: 'Navigation', eventAction: 'button_click', eventLabel: 'Say Hi'});">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" title="Say Hi" rel="navigation" onClick="gtag('event', 'Say Hi - Header');">
 					<svg class="spin-hover"><use xlink:href="#icon-kiss-wink-heart"></svg>
 					<span>Say Hi</span>
 				</a>
@@ -144,14 +149,17 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>/tag/patrons-only/" alt="">Patrons-Only 👉</a>
 				<a onClick="ga('send', 'event', { eventCategory: 'Sign-up', eventAction: 'button_click', eventLabel: 'Header'});" id="sign-up" href="<?php echo esc_url( home_url( '/' ) ); ?>/sign-up" alt="Sign up">Sign up</a>
 			</nav> -->
+			<div class="flex align-center">
+				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>subscribe" title="Subscribe to the Blog">Subscribe</a>
 
-			<div id="day-or-night" class="color-scheme">
-				<button id="day-mode" title="Day Mode">
-					<svg><use xlink:href="#icon-sun"></svg>
-				</button>
-				<button id="night-mode" title="Night Mode">
-					<svg><use xlink:href="#icon-moon"></svg>
-				</button>
+				<div id="day-or-night" class="color-scheme">
+					<button id="day-mode" title="Day Mode">
+						<svg><use xlink:href="#icon-sun"></svg>
+					</button>
+					<button id="night-mode" title="Night Mode">
+						<svg><use xlink:href="#icon-moon"></svg>
+					</button>
+				</div>
 			</div>
 		</div><!--/marquee-->
 

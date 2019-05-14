@@ -47,10 +47,12 @@
 		grid-template-columns: 144px 1fr 144px;
 	}
 
-	.home, .blog { #sideline {
-		display:flex;
-		grid-column: 3 / span 1;
-	}}
+	.home, .blog {
+		#sideline {
+			display:flex;
+			grid-column: 3 / span 1;
+		}
+	}
 
 	#colophon {
 		grid-column: 1 / span 3;

@@ -288,40 +288,49 @@
 		}
 	}
 
-	.entry-footer {
+	.authorBox {
+		@extend .wrap;
+		border-width:2px;
+		margin: 4vw -4vw;
+		padding: 25px;
+		border-style:solid;
+		border-left:none;
+		border-bottom:none;
+		border-radius:2px 5px 2px 2px;
 
-		.authorBox {
-			@extend .wrap;
-			border-width:2px;
-			margin:4vw auto;
-			padding:4vw 4vw 0;
-			border-style:solid;
-			border-left:none;
-			border-bottom:none;
-			border-radius:2px;
+		.heading {
+			margin:0 auto .7em;
+			text-align:center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
 
-			.heading {
-				margin:0 auto .7em;
-				text-align:center;
+			span {
+				margin: .5em;
 			}
+		}
 
-			.author-avatar {
-				width:200px;
-				text-align:center;
-				float:left;
-				margin:0 2vw 2vw -4vw;
+		.author-avatar {
+			width:200px;
+			max-width: 45%;
+			text-align:center;
+			float:left;
+			margin:0 2vw 2vw -4vw;
 
-				a {border:none;}
+			a {border:none;}
 
-				img {
-					border-radius:200px;
-					@extend .spin-hover;
-				}
+			img {
+				border-radius:200px;
+				@extend .spin-hover;
 			}
+		}
 
-			.author-description {
+		.author-description {
+			font-size: calc(12px + .4vw);
 
-				p {margin:0 0 4vw;}
+			p {
+				padding-right: 4vw;
 			}
 		}
 	}

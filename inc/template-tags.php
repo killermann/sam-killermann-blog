@@ -43,7 +43,7 @@ if ( ! function_exists( 'sam_killermann_blog_posted_by' ) ) :
 			$byline = sprintf(
 				/* translators: %s: post author. */
 				esc_html_x( 'by %s', 'post author', 'sam-killermann-blog' ),
-				'<span class="author vcard"><a rel="bookmark" class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+				'<span class="author vcard"><a rel="bookmark" class="url fn n" href="#About-Sam-Killermann">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 		else :
 			$byline = sprintf(
@@ -136,18 +136,18 @@ if ( ! function_exists( 'sam_killermann_blog_entry_footer' ) ) :
 			if ( $author_description ) : ?>
 
 
-				<div class="authorBox chameleon-border authorID-<?php echo $authorID ?> clearfix">
-					<h4 class="heading">
+				<div id="About-Sam-Killermann" class="authorBox chameleon-border clearfix">
+					<h3 class="heading">
 						<span>
 							<?php printf( esc_html__( 'By %s', 'text_domain' ), esc_html( $author ) ); ?>
 						</span>
 						<?php
 						if ($author_twitter) { ?>
-						<a href="https://twitter.com/<?php echo $author_twitter ?>" data-size="large" class="twitter-follow-button" data-show-count="true">@<?php echo $author_twitter ?>
+						<a href="https://twitter.com/<?php echo $author_twitter ?>" class="twitter-follow-button" data-show-count="true">@<?php echo $author_twitter ?>
 						</a>
 						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 						<?php } ?>
-					</h4>
+					</h3>
 					<?php if ( $author_avatar ) { ?>
 					<div class="author-avatar">
 						<a title="View All Posts by Author" href="<?php echo esc_url( $author_url ); ?>" rel="author">
